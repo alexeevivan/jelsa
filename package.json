@@ -1,0 +1,32 @@
+{
+	"name": "jelsa",
+	"version": "1.0.0",
+	"description": "jel'sa karaoke website source code",
+	"main": "index.js",
+	"scripts": {
+		"dev": "webpack --mode development",
+		"build": "webpack --mode production"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alexeevivan/jelsa.git"
+	},
+	"author": "alexeev ivan <alexeevivan92@gmail.com>",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/alexeevivan/jelsa/issues"
+	},
+	"homepage": "https://github.com/alexeevivan/jelsa#readme",
+	"devDependencies": {
+		"clean-webpack-plugin": "^4.0.0",
+		"gsap": "^3.11.4",
+		"html-webpack-plugin": "^5.5.0",
+		"swiper": "^9.0.5",
+		"three": "^0.149.0",
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.1"
+	},
+	"dependencies": {
+		"lodash": "^4.17.21"
+	}
+}
