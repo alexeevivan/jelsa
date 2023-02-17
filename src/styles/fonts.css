@@ -1,0 +1,9 @@
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../assets/fonts/SFProDisplay-Thin.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "ss";
+	src: url("../assets/fonts/suissnord.ttf") format("truetype");
+}

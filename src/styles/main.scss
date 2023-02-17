@@ -1,0 +1,22 @@
+body {
+	background-image: url("../assets/content/bg.jpg");
+	background-size: 50px;
+	color: var(--color-header);
+	font-family: "raleway";
+}
+
+.hero-section {
+	.hero {
+		width: calc(var(--index) * 30);
+		position: absolute;
+		right: 0;
+	}
+}
+
+.container {
+	padding: 0 6vw;
+
+	.main-header {
+		.main-title {}
+	}
+}

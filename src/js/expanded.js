@@ -1,7 +1,7 @@
 // ==========================================================
 // Swiper, GSAP & others libraries
 // ==========================================================
-import Swiper, { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper';
+import Swiper, { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper";
 Swiper.use([Navigation, Pagination]);
 
 
