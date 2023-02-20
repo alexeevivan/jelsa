@@ -34,9 +34,6 @@ module.exports = {
 	entry: {
 		main: "./js/index.js",
 		expanded: "./js/expanded.js",
-		gsap: "./js/gsap.min.js",
-		scrollTrigger: "./js/ScrollTrigger.min.js",
-		scrollSmoother: "./js/ScrollSmoother.min.js",
 	},
 	output: {
 		filename: filename("js"),
@@ -55,7 +52,7 @@ module.exports = {
 		},
 	},
 	devServer: {
-		port: 4200,
+		port: 4300,
 		hot: isDev
 	},
 	devtool: isProd ? false : "source-map",
@@ -66,7 +63,8 @@ module.exports = {
 				template: "./index.html",
 				minify: {
 					collapseWhitespace: isProd
-				}
+				},
+				include: /\/includes/,
 			}
 		),
 		new CleanWebpackPlugin(),
@@ -120,7 +118,7 @@ module.exports = {
 			{
 				test: /\.(ttf|woff|woff2|eot)$/,
 				type: "asset/resource",
-			}
+			},
 		]
 	},
 }

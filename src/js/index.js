@@ -1,6 +1,7 @@
 import * as $ from "jquery";
 import "@styles/main.css";
 import "@styles/main.scss";
+import "@styles/header.scss";
 import "@styles/null.scss";
 import "@styles/fonts.scss";
 

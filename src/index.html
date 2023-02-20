@@ -16,17 +16,59 @@
 </head>
 
 <body>
-	<header class="hero-section">
-		<img class="hero" src="assets/content/hero.png" alt="alt" srcset="">
-	</header>
+	<%= require('html-loader!./html/includes/header.html').default %>
+		<div class="wrapper">
+			<div class="content">
+				<header class="hero-section">
+					<img data-speed="0.9" class="hero" src="assets/content/jelsa-dancer.png" alt="alt" srcset="">
+					<div class="container">
+						<div data-speed=".75" class="main-header">
+							<div class="main-title">
+								<h1 class="main-title__name">
+									jel'sa
+								</h1>
+								<p class="main-title__description">
+									club karaoke &amp; restaurant
+								</p>
+							</div>
+						</div>
+					</div>
+				</header>
 
-	<div class="container">
-		<div class="main-header">
-			<h1 class="main-title">
-				jel'sa
-			</h1>
+				<div class="portfolio">
+					<div class="container">
+						<main class="gallery">
+							<div data-speed=".9" class="gallery__left">
+								<img class="gallery__item" src="assets/content/1.jpg" alt="alt">
+								<img class="gallery__item" src="assets/content/1.jpg" alt="alt">
+								<div class="text-block gallery__item">
+									<h2 class="text-block__h">
+										Lorem ipsum dolor sit amet.
+									</h2>
+									<p class="text-block__p">
+										Lorem ipsum dolor sit amet.
+									</p>
+								</div>
+								<img class="gallery__item" src="assets/content/1.jpg" alt="alt">
+							</div>
+							<div data-speed="1.1" class="gallery__right">
+								<div class="text-block gallery__item">
+									<h2 class="text-block__h">
+										Lorem ipsum dolor sit amet.
+									</h2>
+									<p class="text-block__p">
+										Lorem ipsum dolor sit amet.
+									</p>
+								</div>
+								<img class="gallery__item" src="assets/content/1.jpg" alt="alt">
+								<img class="gallery__item" src="assets/content/1.jpg" alt="alt">
+								<img class="gallery__item" src="assets/content/1.jpg" alt="alt">
+							</div>
+						</main>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
 
 </body>
 
