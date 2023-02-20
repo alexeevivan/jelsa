@@ -1,9 +1,10 @@
 import * as $ from "jquery";
 import "@styles/main.css";
 import "@styles/main.scss";
-import "@styles/header.scss";
-import "@styles/null.scss";
-import "@styles/fonts.scss";
+import "@styles/_header.scss";
+import "@styles/_null.scss";
+import "@styles/_fonts.scss";
+import "@styles/_vendor.scss";
 
 
 // ==========================================================

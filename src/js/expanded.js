@@ -2,8 +2,8 @@
 // Swiper, GSAP & others libraries
 // ==========================================================
 import * as $ from "jquery";
-import Swiper, { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper";
-Swiper.use([Navigation, Pagination]);
+import swiper, { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper";
+swiper.use([Navigation, Pagination, Autoplay, EffectCoverflow]);
 import gsap from "./gsap.min.js";
 import ScrollTrigger from "./ScrollTrigger.min.js";
 import ScrollSmoother from "./ScrollSmoother.min.js";
@@ -34,42 +34,18 @@ if (ScrollSmoother.isTouch !== 1) {
 // Swiper Slider
 // ==========================================================
 
-const swiper = new Swiper('.swiper-container', {
-	modules: [Navigation, Pagination, Autoplay, EffectCoverflow],
-	effect: 'coverflow',
+const mySwiper = new swiper(".swiper-container", {
+
+	slidesPerView: "auto",
+	loop: true,
+	speed: 2000,
+	allowTouchMove: false,
+	autoplay: {
+		delay: 2000,
+	},
+	effect: "coverflow",
 	grabCursor: true,
 	centeredSlides: true,
-	slidesPerView: 'auto',
-	simulateTouch: false,
-	loop: true,
-
-	// If we need pagination
-	pagination: {
-		el: '.swiper-pagination',
-		clickable: true,
-		// renderBullet: function (index, className) {
-		// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-		// },
-		type: 'bullets',
-	},
-
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-	coverflowEffect: {
-		rotate: 50,
-		stretch: 0,
-		depth: 100,
-		modifier: 1,
-		slideShadows: true,
-	},
-
-	autoplay: {
-		// delay: 100,
-		disableOnInteraction: false,
-		pauseOnMouseEnter: true,
-	},
 });
 
 
@@ -86,3 +62,20 @@ $(function () {
 		}
 	});
 });
+
+// ==========================================================
+// BG animation while scrolling
+// ==========================================================
+
+(function () {
+	$(window).scroll(function () {
+		var Num = $(window).scrollTop() / 500;
+		var Num2 = $(window).scrollTop() * .0015; // higher number for more zoom
+		var Num2mod = Num2 + 1;
+		var Num3 = $(window).scrollTop() * .1; // Title speed
+		var Num3mod = Num3 + 1;
+		return $('.shade').css('opacity', Num),
+			$(".pl__text").css({ "transform": "scale(" + Num2mod + ")" }),
+			$(".text").css({ "margin-top": "-" + Num3mod + "px" });
+	});
+}.call(this));

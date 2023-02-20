@@ -1,6 +1,4 @@
-$mainColor: #1A1A1A;
-$darkBlue: #0B111E;
-$darkGreen: #223843;
+$mainColor: #04070F;
 $cyan: #17fffb;
 $white: #ffffff;
 $creamy: #D2D4D7;
@@ -20,7 +18,7 @@ $md1: 1440px;
 	transition: all ease-out 1.5s;
 
 	&.active {
-		background: $darkBlue;
+		background: $mainColor;
 	}
 
 	.header__container {
@@ -144,80 +142,5 @@ $md1: 1440px;
 				}
 			}
 		}
-	}
-}
-
-@keyframes test {
-
-	0% {
-		filter: drop-shadow(0px 0px 10px #405DE6);
-	}
-
-	6% {
-		filter: drop-shadow(0px 0px 10px #5B51D8);
-	}
-
-	12% {
-		filter: drop-shadow(0px 0px 10px #833AB4);
-	}
-
-	18% {
-		filter: drop-shadow(0px 0px 10px #C13584);
-	}
-
-	24% {
-		filter: drop-shadow(0px 0px 10px #E1306C);
-	}
-
-	30% {
-		filter: drop-shadow(0px 0px 10px #FD1D1D);
-	}
-
-	36% {
-		filter: drop-shadow(0px 0px 10px #F56040);
-	}
-
-	42% {
-		filter: drop-shadow(0px 0px 10px #F77737);
-	}
-
-	48% {
-		filter: drop-shadow(0px 0px 10px #FCAF45);
-	}
-
-	54% {
-		filter: drop-shadow(0px 0px 10px #FFDC80);
-	}
-
-	60% {
-		filter: drop-shadow(0px 0px 10px #FCAF45);
-	}
-
-	66% {
-		filter: drop-shadow(0px 0px 10px #F77737);
-	}
-
-	72% {
-		filter: drop-shadow(0px 0px 10px #F56040);
-	}
-
-	78% {
-		filter: drop-shadow(0px 0px 10px #FD1D1D);
-	}
-
-	84% {
-		filter: drop-shadow(0px 0px 10px #E1306C);
-	}
-
-	90% {
-		filter: drop-shadow(0px 0px 10px #C13584);
-	}
-
-	95% {
-		filter: drop-shadow(0px 0px 10px #833AB4);
-	}
-
-	100% {
-		filter: drop-shadow(0px 0px 10px #5B51D8);
 	}
 }
