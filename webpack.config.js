@@ -34,6 +34,7 @@ module.exports = {
 	entry: {
 		main: "./js/index.js",
 		expanded: "./js/expanded.js",
+		circles: "./js/circles.js",
 	},
 	output: {
 		filename: filename("js"),

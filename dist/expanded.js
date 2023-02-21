@@ -87,7 +87,7 @@ const mySwiper = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](".swiper-con
 		delay: 2000,
 	},
 	effect: "coverflow",
-	grabCursor: true,
+	grabCursor: false,
 	centeredSlides: true,
 });
 
@@ -122,6 +122,70 @@ jquery__WEBPACK_IMPORTED_MODULE_0__(function () {
 			jquery__WEBPACK_IMPORTED_MODULE_0__(".text").css({ "margin-top": "-" + Num3mod + "px" });
 	});
 }.call(undefined));
+
+
+// ==========================================================
+// Cocktails list animation
+// ==========================================================
+
+const textArray = [
+	"sidecar",
+	"mai-tai",
+	"aviation",
+	"appletini",
+	"papa doble",
+	"aperol spritz",
+	"the boulevardier",
+	"corpse reviver #2",
+	"porn star martini",
+	"perfect martini",
+	"old fashioned",
+	"whiskey sour",
+	"penicillin",
+	"manhattan",
+	"bramble",
+];
+
+const callsign = document.querySelector("#callsign");
+let delay = 2500;
+let animateInDuration = 500;
+let animateOutDuration = 500;
+
+function replaceText(i) {
+	setTimeout(function () {
+		callsign.innerText = textArray[i];
+		console.log(textArray[i]);
+	}, delay * i)
+};
+
+function animateIn(i) {
+	setTimeout(function () {
+		callsign.className = "js-animate-in";
+	}, delay * i);
+	if (i != 0) {
+		setTimeout(function () {
+			callsign.className = "";
+		}, delay * i - (delay - animateInDuration));
+	}
+};
+
+function animateOut(i) {
+	setTimeout(function () {
+		callsign.className = "js-animate-out";
+	}, delay * i + (delay - animateOutDuration))
+};
+
+
+function animate(i) {
+	for (i = 0; i < textArray.length; i++) {
+		replaceText(i);
+		animateIn(i);
+		animateOut(i);
+	}
+}
+
+animate();
+setInterval(animate, delay * textArray.length);
 
 /***/ }),
 

@@ -140,6 +140,54 @@ body {
   width: auto;
   margin: 0 auto;
 }
+.wrapper .content .portfolio .container .gallery .gallery__left .gallery__item.canvas-container,
+.wrapper .content .portfolio .container .gallery .gallery__right .gallery__item.canvas-container {
+  position: relative;
+  top: 0;
+  width: 564px;
+  height: calc(var(--index) * 20);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: -1;
+}
+.wrapper .content .portfolio .container .gallery .gallery__left .gallery__item.canvas-container #circles,
+.wrapper .content .portfolio .container .gallery .gallery__right .gallery__item.canvas-container #circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 564px;
+  height: calc(var(--index) * 20);
+  z-index: -1;
+}
+.wrapper .content .portfolio .container .gallery .gallery__left .gallery__item.canvas-container .gallery__cocktails,
+.wrapper .content .portfolio .container .gallery .gallery__right .gallery__item.canvas-container .gallery__cocktails {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(var(--index) * 20);
+  position: relative;
+}
+.wrapper .content .portfolio .container .gallery .gallery__left .gallery__item.canvas-container .gallery__cocktails p,
+.wrapper .content .portfolio .container .gallery .gallery__right .gallery__item.canvas-container .gallery__cocktails p {
+  color: red;
+  font-size: calc(var(--index) * 1.25);
+  text-transform: uppercase;
+}
+.wrapper .content .portfolio .container .gallery .gallery__left .gallery__item.canvas-container .gallery__cocktails p.js-animate-in,
+.wrapper .content .portfolio .container .gallery .gallery__right .gallery__item.canvas-container .gallery__cocktails p.js-animate-in {
+  animation-name: animate-in;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.wrapper .content .portfolio .container .gallery .gallery__left .gallery__item.canvas-container .gallery__cocktails p.js-animate-out,
+.wrapper .content .portfolio .container .gallery .gallery__right .gallery__item.canvas-container .gallery__cocktails p.js-animate-out {
+  animation-name: animate-out;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
 .wrapper .content .portfolio .container .gallery .gallery__left .gallery__item .text-block__h,
 .wrapper .content .portfolio .container .gallery .gallery__right .gallery__item .text-block__h {
   font-size: calc(var(--index) * 1.75);
@@ -150,6 +198,27 @@ body {
 }
 .wrapper .content .portfolio .container .gallery .gallery__right .gallery__item {
   margin: var(--gallery-gap) 0 0 0;
+}
+
+@keyframes animate-in {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes animate-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
 }
 /*!****************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./styles/_header.scss ***!
