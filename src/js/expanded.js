@@ -4,9 +4,9 @@
 import * as $ from "jquery";
 import swiper, { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper";
 swiper.use([Navigation, Pagination, Autoplay, EffectCoverflow]);
-import gsap from "./gsap.min.js";
-import ScrollTrigger from "./ScrollTrigger.min.js";
-import ScrollSmoother from "./ScrollSmoother.min.js";
+import gsap from "./_vendors/gsap.min.js";
+import ScrollTrigger from "./_vendors/ScrollTrigger.min.js";
+import ScrollSmoother from "./_vendors/ScrollSmoother.min.js";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 
@@ -34,9 +34,9 @@ if (ScrollSmoother.isTouch !== 1) {
 // Swiper Slider
 // ==========================================================
 
-const mySwiper = new swiper(".swiper-container", {
+const karaokeSlider = new swiper(".gallery-container", {
 
-	slidesPerView: "auto",
+	slidesPerView: "1",
 	loop: true,
 	speed: 2000,
 	allowTouchMove: false,
@@ -143,3 +143,14 @@ function animate(i) {
 
 animate();
 setInterval(animate, delay * textArray.length);
+
+// ==========================================================
+// 360 deg panorama
+// ==========================================================
+let container = document.querySelector('#newsline__panoramic');
+let panorama = new PANOLENS.ImagePanorama("https://i.imgur.com/wTCPouq.jpg");
+let viewer = new PANOLENS.Viewer({
+	container: container
+});
+
+viewer.add(panorama);

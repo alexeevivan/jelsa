@@ -11,11 +11,13 @@
 		Jel'sa
 	</title>
 
-	<link rel="shortcut icon" href="assets/favicon.ico" type="image/png">
+	<link rel="shortcut icon" href="assets/content/logo.png" type="image/png">
 
 </head>
 
 <body>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/105/three.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/panolens@0.11.0/build/panolens.min.js"></script>
 	<%= require('html-loader!./html/includes/header.html').default %>
 		<div class="wrapper">
 			<div class="content">
@@ -41,7 +43,7 @@
 							<div data-speed=".9" class="gallery__left">
 								<div class="gallery__item gallery__description">
 									<div class="gallery__text">
-										<span>
+										<p>
 											Караоке клуб JEL'SA &mdash; это построенные по уникальным акустическим
 											проектам
 											залы!
@@ -52,7 +54,7 @@
 											&laquo;EVOLUTION&raquo;! Уникальный дизайн
 											интерьера, множество арт-объектов и авторская мебель! Профессиональная
 											АРТ-команда!
-										</span>
+										</p>
 									</div>
 									<div class="gallery__logo">
 										<div class="gallery__item">
@@ -68,7 +70,7 @@
 								</div>
 								<div class="text-block gallery__item">
 									<h2 class="text-block__h">
-										Бар
+										бар
 									</h2>
 								</div>
 								<div class="gallery__item canvas-container">
@@ -79,43 +81,78 @@
 								</div>
 								<div class="text-block gallery__item">
 									<h2 class="text-block__h">
-										Караоке
+										ресторан
 									</h2>
-									<p class="text-block__p">
-										Lorem ipsum dolor sit amet.
-									</p>
 								</div>
-								<img class="gallery__item" src="assets/content/1.jpg" alt="alt">
+								<div class="gallery__item gallery__description">
+									<div class="gallery__text">
+										<p>
+											В основе концепции лежит тезисное убеждение, что идеала можно достичь за
+											счёт простого и уважительного отношения к продуктам.<br> Наше <span
+												class="gallery__menu-a-la-karte">menu a
+												la karte</span> &mdash; японские роллы и блюда высокой европейской
+											кухни.
+										</p>
+									</div>
+									<a class="gallery__button" href="#" target="_blank" rel="noopener noreferrer">
+										меню кухни <span></span>
+									</a>
+								</div>
 							</div>
 							<div data-speed="1.1" class="gallery__right">
 								<div class="text-block gallery__item">
 									<h2 class="text-block__h">
-										Караоке
+										караоке
 									</h2>
 								</div>
-								<div class="gallery__item slider">
-									<div class="swiper-container">
-										<div class="swiper-wrapper">
-											<div class="swiper-slide">
-												<img class="gallery__item slider-image"
+								<div class="gallery__item gallery-slider">
+									<div class="swiper-container gallery-container">
+										<div class="swiper-wrapper gallery-wrapper">
+											<div class="swiper-slide gallery-slide">
+												<img class="gallery__item gallery-image"
 													src="assets/content/jelsa-vokals-1.jpg" alt="karaoke singer photo">
 											</div>
-											<div class="swiper-slide">
-												<img class="gallery__item slider-image"
+											<div class="swiper-slide gallery-slide">
+												<img class="gallery__item gallery-image"
 													src="assets/content/jelsa-vokals-1.jpg" alt="karaoke singer photo">
 											</div>
-											<div class="swiper-slide">
-												<img class="gallery__item slider-image"
+											<div class="swiper-slide gallery-slide">
+												<img class="gallery__item gallery-image"
 													src="assets/content/jelsa-vokals-1.jpg" alt="karaoke singer photo">
 											</div>
 										</div>
 									</div>
 								</div>
-								<img class="gallery__item" src="assets/content/1.jpg" alt="alt">
+								<div class="gallery__item gallery__description">
+									<div class="gallery__text">
+										<p>
+											Ощутите вкус и аромат классического коктейля, будто заказали его в
+											баре Сингапура.<br> Лучшие ингредиенты, приверженность рецептурам
+											IBA &mdash; для нас качество &mdash; главный
+											приоритет.<br> Для новых эмоций мы создали коктейли категории
+											<span class="gallery__signature">signature</span>
+										</p>
+									</div>
+									<a class="gallery__button" href="#" target="_blank" rel="noopener noreferrer">
+										барное меню <span></span>
+									</a>
+								</div>
 								<img class="gallery__item" src="assets/content/1.jpg" alt="alt">
 							</div>
 						</main>
 					</div>
+				</div>
+
+				<div class="newsline">
+					<div class="newsline__header">
+						<h2 class="newsline__h">
+							в<span>и</span>ртуальный т<span>у</span>р
+						</h2>
+						<p class="newsline__p">
+							выберите стол
+						</p>
+					</div>
+					<div id="newsline__panoramic"></div>
 				</div>
 			</div>
 		</div>

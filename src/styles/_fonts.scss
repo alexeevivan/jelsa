@@ -16,3 +16,16 @@
 	font-style: normal;
 	font-display: swap;
 }
+
+@font-face {
+	font-family: "Shelley Andante Script";
+	src: url("../assets/fonts/Shelley-AndanteScript.eot");
+	src: local("Shelley Andante Script"), local("../assets/fonts/Shelley-AndanteScript"),
+		url("../assets/fonts/Shelley-AndanteScript.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Shelley-AndanteScript.woff2") format("woff2"),
+		url("../assets/fonts/Shelley-AndanteScript.woff") format("woff"),
+		url("../assets/fonts/Shelley-AndanteScript.ttf") format("truetype");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
