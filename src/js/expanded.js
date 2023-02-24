@@ -1,6 +1,7 @@
 // ==========================================================
 // Swiper, GSAP & others libraries
 // ==========================================================
+
 import * as $ from "jquery";
 import swiper, { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper";
 swiper.use([Navigation, Pagination, Autoplay, EffectCoverflow]);
@@ -147,7 +148,7 @@ setInterval(animate, delay * textArray.length);
 // ==========================================================
 // 360 deg panorama
 // ==========================================================
-let container = document.querySelector('#newsline__panoramic');
+let container = document.querySelector('#hall__panoramic');
 let panorama = new PANOLENS.ImagePanorama("https://i.imgur.com/wTCPouq.jpg");
 let viewer = new PANOLENS.Viewer({
 	container: container
