@@ -12,7 +12,7 @@ const isProd = !isDev;
 const optimization = () => {
 	const config = {
 		splitChunks: {
-			chunks: "all",
+			chunks: "initial",
 		}
 	}
 
@@ -32,13 +32,25 @@ module.exports = {
 	context: path.resolve(__dirname, "src"),
 	mode: "development",
 	entry: {
-		main: "./js/index.js",
-		expanded: "./js/expanded.js",
-		circles: "./js/circles.js",
+		app: {
+			import: "./js/index.js"
+		},
+		expanded: {
+			import: "./js/expanded.js"
+		},
+		circles: {
+			import: "./js/circles.js"
+		},
+		panoramic: {
+			import: "./js/panoramic.js"
+		},
+		barList: {
+			import: "./js/bar-list.js"
+		},
 	},
 	output: {
-		filename: filename("js"),
-		// filename: "[name].bundle.js",
+		// filename: filename("js"),
+		filename: "[name].bundle.js",
 		path: path.resolve(__dirname, "dist")
 	},
 	resolve: {
@@ -62,11 +74,33 @@ module.exports = {
 	plugins: [
 		new HTMLWebpackPlugin(
 			{
+				filename: "./index.html",
 				template: "./index.html",
 				minify: {
 					collapseWhitespace: isProd
 				},
 				include: /\/includes/,
+				chunks: ["app", "expanded", "circles"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./view-tour-1.html",
+				template: "./view-tour-1.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["panoramic"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./bar-list.html",
+				template: "./bar-list.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["barList"]
 			}
 		),
 		new CleanWebpackPlugin(),
@@ -76,13 +110,13 @@ module.exports = {
 					{
 						from: path.resolve(__dirname, "src/assets/"),
 						to: path.resolve(__dirname, "dist/assets")
-					}
+					},
 				]
 			}
 		),
 		new MiniCssExtractPlugin(
 			{
-				filename: filename("css"),
+				filename: "[name].css",
 			}
 		)
 	],
@@ -120,7 +154,7 @@ module.exports = {
 			{
 				test: /\.(ttf|woff|woff2|eot)$/,
 				type: "asset/resource",
-			},
+			}
 		]
 	},
 }

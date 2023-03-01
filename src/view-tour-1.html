@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>
+		Jel'sa
+	</title>
+
+	<link rel="shortcut icon" href="./assets/content/logo.png" type="image/png">
+
+</head>
+
+<body>
+	<%= require("html-loader!./html/includes/_header.html").default %>
+		<div class="wrapper">
+			<div class="content">
+				<section class="hall">
+					<h2>
+						#1
+					</h2>
+					<div id="hall__panoramic"></div>
+				</section>
+			</div>
+		</div>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/105/three.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/panolens@0.11.0/build/panolens.min.js"></script>
+		<script src="https://github.com/pchen66/panolens.js" async></script>
+</body>
+
+</html>

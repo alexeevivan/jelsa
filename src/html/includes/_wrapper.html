@@ -1,6 +1,6 @@
 <div class="wrapper">
 	<div class="content">
-		<header class="hero-section">
+		<header class="hero-section" id="home">
 			<img data-speed="0.9" class="hero" src="../../assets/content/jelsa-singer.png" alt="alt">
 			<div class="container">
 				<div data-speed=".75" class="main-header">
@@ -37,13 +37,16 @@
 							</div>
 							<div class="gallery__logo">
 								<div class="gallery__item">
-									<img src="../../assets/content/ast.png" alt="ast-studio">
+									<img data-src="../../assets/content/ast.png" loading="lazy" alt="ast-studio"
+										class="lazyload">
 								</div>
 								<div class="gallery__item">
-									<img src="../../assets/content/Meyer-sound.png" alt="meyer-sound">
+									<img data-src="../../assets/content/Meyer-sound.png" loading="lazy"
+										alt="meyer-sound" class="lazyload">
 								</div>
 								<div class="gallery__item">
-									<img src="../../assets/content/s-e.png" alt="studio-evolution">
+									<img data-src="../../assets/content/s-e.png" loading="lazy" alt="studio-evolution"
+										class="lazyload">
 								</div>
 							</div>
 						</div>
@@ -88,16 +91,19 @@
 							<div class="swiper-container gallery-container">
 								<div class="swiper-wrapper gallery-wrapper">
 									<div class="swiper-slide gallery-slide">
-										<img class="gallery__item gallery-image"
-											src="../../assets/content/jelsa-vokals-1.jpg" alt="karaoke singer photo">
+										<img class="gallery__item gallery-image lazyload"
+											data-src="../../assets/content/jelsa-vokals-1.jpg" loading="lazy"
+											alt="karaoke singer photo">
 									</div>
 									<div class="swiper-slide gallery-slide">
-										<img class="gallery__item gallery-image"
-											src="../../assets/content/jelsa-vokals-1.jpg" alt="karaoke singer photo">
+										<img class="gallery__item gallery-image lazyload"
+											data-src="../../assets/content/jelsa-vokals-1.jpg" loading="lazy"
+											alt="karaoke singer photo" class="lazyload">
 									</div>
 									<div class="swiper-slide gallery-slide">
-										<img class="gallery__item gallery-image"
-											src="../../assets/content/jelsa-vokals-1.jpg" alt="karaoke singer photo">
+										<img class="gallery__item gallery-image lazyload"
+											data-src="../../assets/content/jelsa-vokals-1.jpg" loading="lazy"
+											alt="karaoke singer photo" class="lazyload">
 									</div>
 								</div>
 							</div>
@@ -112,11 +118,12 @@
 									<span class="gallery__signature">signature</span>
 								</p>
 							</div>
-							<a class="gallery__button" href="#" target="_blank" rel="noopener noreferrer">
+							<a class="gallery__button" href="./bar-list.html" rel="noopener noreferrer">
 								барное меню <span></span>
 							</a>
 						</div>
-						<img class="gallery__item" src="../../assets/content/1.jpg" alt="alt">
+						<img class="gallery__item lazyload" data-src="../../assets/content/1.jpg" loading="lazy"
+							alt="alt">
 					</div>
 				</main>
 			</div>
@@ -133,9 +140,16 @@
 			</div>
 			<div class="hall__info">
 				<div class="hall__scheme">
-					<img src="../../assets/content/hall-scheme-full.png" alt="">
+					<img class="lazyload" data-src="../../assets/content/hall-scheme.png" loading="lazy"
+						alt="hall-scheme">
 					<div class="hall__interactive">
-						<a class="hall__table-1" href="#" target="_blank" rel="noopener noreferrer">
+						<a class="hall__scene" href="#" target="_blank" rel="noopener noreferrer">
+							сцена
+						</a>
+						<a class="hall__bar" href="#" target="_blank" rel="noopener noreferrer">
+							бар
+						</a>
+						<a class="hall__table-1" href="./view-tour-1.html" target="_blank" rel="noopener noreferrer">
 							1
 						</a>
 						<a class="hall__table-2" href="#" target="_blank" rel="noopener noreferrer">
@@ -144,18 +158,45 @@
 						<a class="hall__table-3" href="#" target="_blank" rel="noopener noreferrer">
 							3
 						</a>
+						<a class="hall__table-5" href="#" target="_blank" rel="noopener noreferrer">
+							5
+						</a>
+						<a class="hall__table-6" href="#" target="_blank" rel="noopener noreferrer">
+							6
+						</a>
+						<a class="hall__table-7" href="#" target="_blank" rel="noopener noreferrer">
+							7
+						</a>
+						<a class="hall__table-8" href="#" target="_blank" rel="noopener noreferrer">
+							8
+						</a>
+						<a class="hall__table-9" href="#" target="_blank" rel="noopener noreferrer">
+							9
+						</a>
+						<a class="hall__table-10" href="#" target="_blank" rel="noopener noreferrer">
+							10
+						</a>
+						<a class="hall__table-11" href="#" target="_blank" rel="noopener noreferrer">
+							11
+						</a>
+						<a class="hall__table-12" href="#" target="_blank" rel="noopener noreferrer">
+							12
+						</a>
+						<a class="hall__table-14" href="#" target="_blank" rel="noopener noreferrer">
+							14
+						</a>
+						<a class="hall__table-15" href="#" target="_blank" rel="noopener noreferrer">
+							15
+						</a>
 					</div>
 				</div>
 				<div class="hall__reserve">
-					<h2 class="hall__reserve-h">
-						зарезервировать стол
-					</h2>
 					<ul class="hall__specials">
 						<li>
-							Lorem ipsum dolor sit amet.
+							Вход свободный. Всегда
 						</li>
 						<li>
-							Lorem ipsum dolor sit amet.
+							Просторный зал на 75 мест.
 						</li>
 						<li>
 							Lorem ipsum dolor sit amet.
@@ -164,9 +205,27 @@
 							Lorem ipsum dolor sit amet.
 						</li>
 					</ul>
+					<a class="hall__reserve-h" href="tel:+375447506008">
+						забронировать стол
+					</a>
 				</div>
 			</div>
-			<div id="hall__panoramic"></div>
 		</section>
+
+		<footer class="footer">
+			<ul>
+				<li>
+					<a href="#home">
+						<img src="../../assets/content/wings.png" alt="logo">
+						ООО &laquo;Вокал Индастрит&raquo;
+					</a>
+				</li>
+				<li>
+					<a href="">
+						Политика конфиденциальности
+					</a>
+				</li>
+			</ul>
+		</footer>
 	</div>
 </div>

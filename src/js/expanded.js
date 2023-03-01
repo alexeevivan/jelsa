@@ -28,6 +28,34 @@ if (ScrollSmoother.isTouch !== 1) {
 			scrub: true
 		}
 	})
+
+	let itemsL = gsap.utils.toArray('.gallery__left .gallery__item')
+
+	itemsL.forEach(item => {
+		gsap.fromTo(item, { opacity: 0, x: -50 }, {
+			opacity: 1, x: 0,
+			scrollTrigger: {
+				trigger: item,
+				start: '-850',
+				end: '-100',
+				scrub: true
+			}
+		})
+	})
+
+	let itemsR = gsap.utils.toArray('.gallery__right .gallery__item')
+
+	itemsR.forEach(item => {
+		gsap.fromTo(item, { opacity: 0, x: 50 }, {
+			opacity: 1, x: 0,
+			scrollTrigger: {
+				trigger: item,
+				start: '-750',
+				end: 'top',
+				scrub: true
+			}
+		})
+	})
 }
 
 
@@ -48,38 +76,6 @@ const karaokeSlider = new swiper(".gallery-container", {
 	grabCursor: false,
 	centeredSlides: true,
 });
-
-
-// ==========================================================
-// Header animation
-// ==========================================================
-$(function () {
-	$(window).on("scroll", function () {
-		if ($(window).scrollTop() > 200) {
-			$(".header").addClass("active");
-		} else {
-			//remove the background property so it comes transparent again (defined in your css)
-			$(".header").removeClass("active");
-		}
-	});
-});
-
-// ==========================================================
-// BG animation while scrolling
-// ==========================================================
-
-(function () {
-	$(window).scroll(function () {
-		var Num = $(window).scrollTop() / 500;
-		var Num2 = $(window).scrollTop() * .0015; // higher number for more zoom
-		var Num2mod = Num2 + 1;
-		var Num3 = $(window).scrollTop() * .1; // Title speed
-		var Num3mod = Num3 + 1;
-		return $('.shade').css('opacity', Num),
-			$(".pl__text").css({ "transform": "scale(" + Num2mod + ")" }),
-			$(".text").css({ "margin-top": "-" + Num3mod + "px" });
-	});
-}.call(this));
 
 
 // ==========================================================
@@ -144,14 +140,3 @@ function animate(i) {
 
 animate();
 setInterval(animate, delay * textArray.length);
-
-// ==========================================================
-// 360 deg panorama
-// ==========================================================
-let container = document.querySelector('#hall__panoramic');
-let panorama = new PANOLENS.ImagePanorama("https://i.imgur.com/wTCPouq.jpg");
-let viewer = new PANOLENS.Viewer({
-	container: container
-});
-
-viewer.add(panorama);
