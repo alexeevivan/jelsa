@@ -97,7 +97,7 @@ $md1: 1440px;
 				display: inline-flex;
 				height: calc(var(--index) * 1.8);
 				padding: 0 var(--index);
-				border: 1px solid #231E70;
+				border: 1px solid $japanese-indigo;
 				border-radius: 8px;
 				position: relative;
 				justify-content: center;

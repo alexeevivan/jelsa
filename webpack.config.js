@@ -47,6 +47,7 @@ module.exports = {
 		barList: {
 			import: "./js/bar-list.js"
 		},
+		barListSlider: "./js/components/bar-list-slider.js",
 	},
 	output: {
 		// filename: filename("js"),
@@ -100,7 +101,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["barList"]
+				chunks: ["barList", "barListSlider"]
 			}
 		),
 		new CleanWebpackPlugin(),

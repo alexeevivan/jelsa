@@ -14,55 +14,8 @@
 	<%= require("html-loader!./html/includes/_header.html").default %>
 		<div class="wrapper">
 			<div class="content">
-				<section class="bar-list">
-					<div class="bar-list__slider">
-						<div class="swiper-container bar-list__container">
-							<div class="swiper-wrapper bar-list__wrapper">
-								<div class="swiper-slide bar-list__slide">
-									<div class="bar-list__item">
-										<div class="bar-list__picture">
-											<img class="bar-list__image" src="../../assets/content/jelsa-vokals-1.jpg"
-												alt="karaoke singer photo">
-										</div>
-										<div class="bar-list__description">
-											<h2>
-												Wine
-											</h2>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide bar-list__slide">
-									<div class="bar-list__item">
-										<div class="bar-list__picture">
-											<img class="bar-list__image" src="../../assets/content/jelsa-vokals-1.jpg"
-												alt="karaoke singer photo">
-										</div>
-										<div class="bar-list__description">
-											<h2>
-												Wine
-											</h2>
-										</div>
-									</div>
-								</div>
-								<div class="swiper-slide bar-list__slide">
-									<div class="bar-list__item">
-										<div class="bar-list__picture">
-											<img class="bar-list__image" src="../../assets/content/jelsa-vokals-1.jpg"
-												alt="karaoke singer photo">
-										</div>
-										<div class="bar-list__description">
-											<h2>
-												Wine
-											</h2>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-pagination bar-list-pagination"></div>
-						</div>
-					</div>
-				</section>
-				<%= require("html-loader!./html/includes/_footer.html").default %>
+				<%= require("html-loader!./html/includes/_bar-list-slider.html").default %>
+					<%= require("html-loader!./html/includes/_footer.html").default %>
 			</div>
 		</div>
 </body>

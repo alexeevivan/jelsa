@@ -1,12 +1,11 @@
 import "@styles/main.scss";
 import "@styles/bar-list.scss";
+import "@styles/_bar-list-slider.scss";
 import "@styles/_header.scss";
 import "@styles/_footer.scss";
 import "@styles/_null.scss";
 import "@styles/_fonts.scss";
 import * as $ from "jquery";
-import swiper, { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper";
-swiper.use([Navigation, Pagination, Autoplay, EffectCoverflow]);
 
 // ==========================================================
 // Header animation
@@ -23,21 +22,57 @@ $(function () {
 });
 
 // ==========================================================
-// Swiper
+// Cocktails list animation
 // ==========================================================
-const barListSlider = new swiper(".bar-list__container", {
-	slidesPerView: "1",
-	loop: true,
-	speed: 2000,
-	allowTouchMove: false,
-	autoplay: {
-		delay: 2000,
-	},
-	effect: "coverflow",
-	grabCursor: false,
-	centeredSlides: true,
-	direction: "horizontal",
-	pagination: {
-		el: '.swiper-pagination',
-	},
-});
+
+const textArray = [
+	"glera",
+	"merlot",
+	"chardonnay",
+	"pinot noir",
+	"pinot meunier",
+	"gewürztraminer",
+	"sauvignon blanc",
+	"cabernet sauvignon",
+];
+
+const callsign = document.querySelector("#callsign");
+let delay = 2500;
+let animateInDuration = 500;
+let animateOutDuration = 500;
+
+function replaceText(i) {
+	setTimeout(function () {
+		callsign.innerText = textArray[i];
+		console.log(textArray[i]);
+	}, delay * i)
+};
+
+function animateIn(i) {
+	setTimeout(function () {
+		callsign.className = "js-animate-in";
+	}, delay * i);
+	if (i != 0) {
+		setTimeout(function () {
+			callsign.className = "";
+		}, delay * i - (delay - animateInDuration));
+	}
+};
+
+function animateOut(i) {
+	setTimeout(function () {
+		callsign.className = "js-animate-out";
+	}, delay * i + (delay - animateOutDuration))
+};
+
+
+function animate(i) {
+	for (i = 0; i < textArray.length; i++) {
+		replaceText(i);
+		animateIn(i);
+		animateOut(i);
+	}
+}
+
+animate();
+setInterval(animate, delay * textArray.length);
