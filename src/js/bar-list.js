@@ -1,6 +1,7 @@
 import "@styles/main.scss";
 import "@styles/bar-list.scss";
 import "@styles/_bar-list-slider.scss";
+import "@styles/_bar-list-modal.scss";
 import "@styles/_header.scss";
 import "@styles/_footer.scss";
 import "@styles/_null.scss";
@@ -15,7 +16,6 @@ $(function () {
 		if ($(window).scrollTop() > 200) {
 			$(".header").addClass("active");
 		} else {
-			//remove the background property so it comes transparent again (defined in your css)
 			$(".header").removeClass("active");
 		}
 	});

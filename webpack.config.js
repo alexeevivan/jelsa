@@ -32,7 +32,7 @@ module.exports = {
 	context: path.resolve(__dirname, "src"),
 	mode: "development",
 	entry: {
-		app: {
+		main: {
 			import: "./js/index.js"
 		},
 		expanded: {
@@ -48,11 +48,12 @@ module.exports = {
 			import: "./js/bar-list.js"
 		},
 		barListSlider: "./js/components/bar-list-slider.js",
+		barListModal: "./js/components/bar-list-modal.js",
 	},
 	output: {
-		// filename: filename("js"),
-		filename: "[name].bundle.js",
-		path: path.resolve(__dirname, "dist")
+		filename: "assets/js/[name].bundle.js",
+		path: path.resolve(__dirname, "dist"),
+		assetModuleFilename: "assets/content/[name][ext]",
 	},
 	resolve: {
 		extensions: [
@@ -60,7 +61,7 @@ module.exports = {
 		],
 		alias: {
 			"@": path.resolve(__dirname, "src"),
-			"@content": path.resolve(__dirname, "src/assets/content"),
+			"@content": path.resolve(__dirname, "src/assets/content/"),
 			"@svg": path.resolve(__dirname, "src/assets/svg"),
 			"@fonts": path.resolve(__dirname, "src/assets/fonts"),
 			"@styles": path.resolve(__dirname, "src/styles"),
@@ -81,7 +82,8 @@ module.exports = {
 					collapseWhitespace: isProd
 				},
 				include: /\/includes/,
-				chunks: ["app", "expanded", "circles"]
+				chunks: ["main", "expanded", "circles"],
+				cache: false,
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -101,7 +103,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["barList", "barListSlider"]
+				chunks: ["barList", "barListSlider", "barListModal"]
 			}
 		),
 		new CleanWebpackPlugin(),
@@ -117,7 +119,7 @@ module.exports = {
 		),
 		new MiniCssExtractPlugin(
 			{
-				filename: "[name].css",
+				filename: "assets/styles/[name].css",
 			}
 		)
 	],
@@ -145,16 +147,25 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(png|jpg|jpeg|gif)$/,
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
 				type: "asset/resource",
+				generator: {
+					filename: "assets/content/[name].[ext]",
+				},
 			},
 			{
 				test: /\.svg$/,
-				use: ["svg-inline-loader"],
+				type: "asset/resource",
+				generator: {
+					filename: "assets/svg/[name][ext]",
+				},
 			},
 			{
 				test: /\.(ttf|woff|woff2|eot)$/,
 				type: "asset/resource",
+				generator: {
+					filename: "assets/fonts/[name][ext]",
+				},
 			}
 		]
 	},

@@ -347,9 +347,12 @@ img {
 											text-align: right;
 										}
 
-										.modal {
+										.trigger {
 											color: $creamy;
 											background-color: $transparent;
+											font-family: "raleway", sans-serif;
+											font-weight: 400;
+											font-size: calc(var(--index) * 0.5);
 										}
 									}
 								}
@@ -399,7 +402,7 @@ img {
 
 							.product-slider__title,
 							.product-slider__price {
-								transition: 1s linear;
+								transition: .3s linear;
 								opacity: 0;
 								visibility: hidden;
 							}
@@ -409,7 +412,7 @@ img {
 									transition: 1s linear;
 									border-right: 1px solid $transparent;
 
-									.product-labels__title {
+									&__title {
 										transition: 1s linear;
 										opacity: 0;
 										visibility: hidden;
@@ -460,6 +463,12 @@ img {
 			@media screen and (max-width: 767px) {
 				border-radius: 20px;
 			}
+
+			&:nth-of-type(1) {
+				img {
+					filter: opacity(0.4) blur(6px) hue-rotate(145deg);
+				}
+			}
 		}
 
 		&__cover {
@@ -471,7 +480,7 @@ img {
 			height: 100%;
 			display: block;
 			object-fit: cover;
-			transition: 1s linear;
+			transition: .1s linear;
 
 			&.description-hide {
 				opacity: 0;
@@ -575,15 +584,6 @@ img {
 			justify-content: center;
 		}
 
-		// .hr-vertical {
-		// 	width: 1px;
-		// 	background: #9fa3a7;
-		// 	align-self: stretch;
-		// 	margin: 0 35px;
-		// 	flex-shrink: 0;
-		// 	opacity: .5;
-		// }
-
 		@media screen and (max-width: 767px) {
 			justify-content: center;
 			flex-wrap: wrap;
@@ -617,8 +617,7 @@ img {
 		}
 
 		&__title {
-			font-family: "raleway", sans-serif;
-			font-weight: 700;
+			font-family: "SF Pro Display", sans-serif;
 			letter-spacing: 3px;
 			font-size: calc(var(--index) * .65);
 			margin-bottom: 10px;
@@ -731,7 +730,7 @@ img {
 		align-items: center;
 
 		.product__menu-btn {
-			font-family: "Helvetica", "Arial", sans-serif;
+			font-family: "SF Pro Display", sans-serif;
 			display: inline-block;
 			font-size: calc(var(--index) * .5);
 			padding: 0.5rem 1.5rem;
@@ -873,6 +872,7 @@ img {
 				&.description-hide {
 					opacity: 0;
 					visibility: hidden;
+					transition: .3s linear;
 				}
 			}
 
