@@ -1,11 +1,18 @@
 $base-duration: 0.25s;
 
+
 // Colors
+$mainColor: #04070F;
 $primary: slategray;
 $accent: tomato;
 $white: whitesmoke;
 $green: #2ecc71;
 $red: #e74c3c;
+$wine-spectator: #8D1205;
+$robert-parker: #179B3B;
+$james-suckling: #B11A12;
+$creamy: #D2D4D7;
+$japanese-indigo: #163D4F;
 
 // Breakpoints
 $sm: 20rem;
@@ -39,19 +46,22 @@ $lg: 64rem;
 	}
 
 	.component-wrapper {
-		position: relative;
+		position: absolute;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: flex-start;
-		width: 50%;
+		justify-content: center;
+		width: 100%;
+		height: calc(var(--index) * 17);
 		margin: 0;
+		top: 0;
+		left: 0;
 		padding: 2.5rem;
-		background-color: white;
+		background-color: $creamy;
 		border-radius: 0.3125rem;
-		box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5);
-		transform: scale(0.0);
-		transition: transform $base-duration;
+		box-shadow: 0 0 2.5rem rgb(0 0 0 / 50%);
+		transform: scale(0);
+		transition: transform 0.25s;
 		transition-delay: 0.15s;
 
 		.close {
@@ -106,7 +116,8 @@ $lg: 64rem;
 			padding: 0 0 1.25rem;
 
 			h2 {
-				font-size: 1.5rem;
+				color: $japanese-indigo;
+				font-size: calc(var(--index) * 1.2);
 				font-weight: bold;
 			}
 		}
@@ -114,10 +125,80 @@ $lg: 64rem;
 		.component {
 			position: relative;
 			display: flex;
+			flex-direction: column;
 
-			p {
-				font-size: 0.875rem;
+			&__description {
+				font-size: calc(var(--index) * .6);
 				line-height: 1.75;
+				text-align: justify;
+				font-family: "SF Pro Display";
+				color: $primary;
+			}
+
+			&__info {
+				margin: var(--index) 0 0 0;
+
+				ul {
+					display: inline-flex;
+					width: 100%;
+					justify-content: space-between;
+
+					li {
+						width: 30%;
+						display: inline-grid;
+						grid-template-columns: auto 1fr;
+						font-size: calc(var(--index) * .6);
+						font-family: "SF Pro Display";
+						text-transform: capitalize;
+						list-style: none;
+						color: $primary;
+
+						span {
+							color: $mainColor;
+							margin: 0 5px 0 0;
+						}
+
+						&:nth-of-type(1),
+						&:nth-of-type(4) {
+							width: 15%;
+						}
+					}
+				}
+			}
+
+			&__ratings {
+				display: flex;
+				width: 25%;
+				margin: calc(var(--index) * 1.5) 0 0 0;
+				align-items: center;
+				justify-content: space-between;
+
+				.component__wine-spectator,
+				.component__robert-parker,
+				.component__james-suckling {
+					padding: calc(var(--index) * .4);
+					border: 1px solid;
+					font-size: calc(var(--index) * .5);
+					font-family: "SF Pro Display", sans-serif;
+					text-transform: uppercase;
+					border-radius: 8px;
+					cursor: pointer;
+				}
+
+				.component__wine-spectator {
+					color: $wine-spectator;
+					border-color: $wine-spectator;
+				}
+
+				.component__robert-parker {
+					color: $robert-parker;
+					border-color: $robert-parker;
+				}
+
+				.component__james-suckling {
+					color: $james-suckling;
+					border-color: $james-suckling;
+				}
 			}
 		}
 	}

@@ -345,6 +345,7 @@ img {
 
 										&:nth-of-type(even) {
 											text-align: right;
+											font-family: sans-serif;
 										}
 
 										.trigger {
@@ -353,6 +354,10 @@ img {
 											font-family: "raleway", sans-serif;
 											font-weight: 400;
 											font-size: calc(var(--index) * 0.5);
+
+											span {
+												color: $fuchsia;
+											}
 										}
 									}
 								}
@@ -809,6 +814,26 @@ img {
 				&:after {
 					display: block;
 					animation: bottomBubbles ease-in-out 0.75s forwards;
+				}
+			}
+
+			&.open-btn {
+				.main-btn-text {
+					display: inline-block;
+				}
+
+				.hidden-btn-text {
+					display: none;
+				}
+			}
+
+			&.close-btn {
+				.main-btn-text {
+					display: none;
+				}
+
+				.hidden-btn-text {
+					display: inline-block;
 				}
 			}
 		}

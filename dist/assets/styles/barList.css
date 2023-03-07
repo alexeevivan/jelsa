@@ -358,6 +358,7 @@ img {
 }
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td:nth-of-type(even) {
   text-align: right;
+  font-family: sans-serif;
 }
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger {
   color: #D2D4D7;
@@ -365,6 +366,9 @@ img {
   font-family: "raleway", sans-serif;
   font-weight: 400;
   font-size: calc(var(--index) * 0.5);
+}
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger span {
+  color: #ff0081;
 }
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.champagne {
   grid-column: 1;
@@ -741,6 +745,18 @@ img {
   display: block;
   animation: bottomBubbles ease-in-out 0.75s forwards;
 }
+.product-overlay .product__menu-btn.open-btn .main-btn-text {
+  display: inline-block;
+}
+.product-overlay .product__menu-btn.open-btn .hidden-btn-text {
+  display: none;
+}
+.product-overlay .product__menu-btn.close-btn .main-btn-text {
+  display: none;
+}
+.product-overlay .product__menu-btn.close-btn .hidden-btn-text {
+  display: inline-block;
+}
 .product-img {
   position: absolute;
   z-index: 2;
@@ -883,15 +899,18 @@ img {
   transform: scale(1);
 }
 .modal .component-wrapper {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  width: 50%;
+  justify-content: center;
+  width: 100%;
+  height: calc(var(--index) * 17);
   margin: 0;
+  top: 0;
+  left: 0;
   padding: 2.5rem;
-  background-color: white;
+  background-color: #D2D4D7;
   border-radius: 0.3125rem;
   box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5);
   transform: scale(0);
@@ -942,16 +961,76 @@ img {
   padding: 0 0 1.25rem;
 }
 .modal .component-wrapper .modal-header h2 {
-  font-size: 1.5rem;
+  color: #163D4F;
+  font-size: calc(var(--index) * 1.2);
   font-weight: bold;
 }
 .modal .component-wrapper .component {
   position: relative;
   display: flex;
+  flex-direction: column;
 }
-.modal .component-wrapper .component p {
-  font-size: 0.875rem;
+.modal .component-wrapper .component__description {
+  font-size: calc(var(--index) * 0.6);
   line-height: 1.75;
+  text-align: justify;
+  font-family: "SF Pro Display";
+  color: slategray;
+}
+.modal .component-wrapper .component__info {
+  margin: var(--index) 0 0 0;
+}
+.modal .component-wrapper .component__info ul {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.modal .component-wrapper .component__info ul li {
+  width: 30%;
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  font-size: calc(var(--index) * 0.6);
+  font-family: "SF Pro Display";
+  text-transform: capitalize;
+  list-style: none;
+  color: slategray;
+}
+.modal .component-wrapper .component__info ul li span {
+  color: #04070F;
+  margin: 0 5px 0 0;
+}
+.modal .component-wrapper .component__info ul li:nth-of-type(1), .modal .component-wrapper .component__info ul li:nth-of-type(4) {
+  width: 15%;
+}
+.modal .component-wrapper .component__ratings {
+  display: flex;
+  width: 25%;
+  margin: calc(var(--index) * 1.5) 0 0 0;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal .component-wrapper .component__ratings .component__wine-spectator,
+.modal .component-wrapper .component__ratings .component__robert-parker,
+.modal .component-wrapper .component__ratings .component__james-suckling {
+  padding: calc(var(--index) * 0.4);
+  border: 1px solid;
+  font-size: calc(var(--index) * 0.5);
+  font-family: "SF Pro Display", sans-serif;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.modal .component-wrapper .component__ratings .component__wine-spectator {
+  color: #8D1205;
+  border-color: #8D1205;
+}
+.modal .component-wrapper .component__ratings .component__robert-parker {
+  color: #179B3B;
+  border-color: #179B3B;
+}
+.modal .component-wrapper .component__ratings .component__james-suckling {
+  color: #B11A12;
+  border-color: #B11A12;
 }
 
 /*# sourceMappingURL=barList.css.map*/
