@@ -5,6 +5,7 @@ $white: #ffffff;
 $creamy: #D2D4D7;
 $fuchsia: #ff0081;
 $transparent: rgba(0, 0, 0, 0);
+$vertical-line-color: #9fa3a77d;
 $button-bg: $creamy;
 $md1: 1440px;
 
@@ -224,12 +225,6 @@ img {
 		right: 0;
 		overflow: hidden;
 		margin: 0 auto;
-		transition: 1s linear;
-
-		&.menu-show {
-			animation: flexibleSlider .5s linear;
-			width: 92%;
-		}
 
 		@media screen and (max-width: 1200px) {
 			width: 80%;
@@ -294,9 +289,11 @@ img {
 						}
 					}
 
-					&.bar-list__aperitif {
+					&.bar-list__aperitif,
+					&.bar-list__spirits {
 
-						.product-slider__aperitif-menu {
+						.product-slider__aperitif-menu,
+						.product-slider__spirits-menu {
 							position: absolute;
 							z-index: 1;
 							top: 0;
@@ -335,52 +332,67 @@ img {
 								}
 							}
 
-							.product-slider__wine-list {
+							.product-slider__wine-list,
+							.product-slider__spirits-list {
 								tr {
 									td {
 										text-align: left;
-										font-family: "raleway", sans-serif;
-										font-weight: 400;
+										font-family: "Raleway", sans-serif;
+										font-weight: 500;
 										font-size: calc(var(--index) * .5);
+										user-select: none;
+										color: $creamy;
+										-webkit-user-select: none;
+										-moz-user-select: none;
 
 										&:nth-of-type(even) {
 											text-align: right;
 											font-family: sans-serif;
 										}
 
-										.trigger {
+										.trigger,
+										.trigger-spirits {
 											color: $creamy;
 											background-color: $transparent;
-											font-family: "raleway", sans-serif;
-											font-weight: 400;
-											font-size: calc(var(--index) * 0.5);
+											font-family: "Raleway", sans-serif;
+											font-weight: 300;
+											font-size: calc(var(--index) * .5);
 
-											span {
+											.rose {
 												color: $fuchsia;
+											}
+
+											&:hover {
+												font-weight: 500;
 											}
 										}
 									}
 								}
 
-								&.champagne {
+								&.champagne,
+								&.whiskey {
 									grid-column: 1;
 								}
 
-								&.spumante {
+								&.spumante,
+								&.cognac {
 									grid-column: 3;
 								}
 
-								&.light {
+								&.light,
+								&.vodka {
 									grid-column: 1;
 									grid-row: 2;
 								}
 
-								&.red {
+								&.red,
+								&.rum {
 									grid-column: 3;
 									grid-row: 2;
 								}
 
-								&.rose {
+								&.rose,
+								&.tequila {
 									grid-column: 1;
 									grid-row: 3;
 								}
@@ -396,7 +408,8 @@ img {
 								opacity: 0;
 								transition: 1s linear;
 
-								.product-slider__wine-list {
+								&__wine-list,
+								&__spirits-list {
 									display: none;
 								}
 							}
@@ -405,44 +418,41 @@ img {
 						&.description-hide {
 							transition: 1s linear;
 
-							.product-slider__title,
-							.product-slider__price {
-								transition: .3s linear;
-								opacity: 0;
-								visibility: hidden;
-							}
+							.product-slider {
 
-							.product-ctr {
-								.product-labels {
-									transition: 1s linear;
-									border-right: 1px solid $transparent;
-
-									&__title {
-										transition: 1s linear;
-										opacity: 0;
-										visibility: hidden;
-									}
+								&__title,
+								&__price {
+									transition: .3s linear;
+									opacity: 0;
+									visibility: hidden;
 								}
 
-								.product-inf {
-									transition: 1s linear;
-									border-right: 1px solid $transparent;
+								.product-ctr {
+									.product-labels {
+										transition: .5s linear;
+										border-right: 1px solid $transparent;
 
-									.product-inf__percent {
-										transition: 1s linear;
-										opacity: 0;
-										visibility: hidden;
+										&__title {
+											transition: .5s linear;
+											opacity: 0;
+											visibility: hidden;
+										}
+									}
+
+									.product-inf {
+										transition: .5s linear;
+										border-right: 1px solid $transparent;
+
+										.product-inf__percent {
+											transition: .5s linear;
+											opacity: 0;
+											visibility: hidden;
+										}
 									}
 								}
 							}
 						}
 					}
-				}
-
-				circle {
-					animation: progress 1s ease-out forwards;
-					animation-delay: .5s;
-					opacity: 0.75;
 				}
 			}
 
@@ -533,7 +543,7 @@ img {
 
 		&__title {
 			margin: 0;
-			font-weight: 900;
+			font-weight: 500;
 			font-size: calc(var(--index) * 1.5);
 			letter-spacing: 2px;
 			opacity: 0;
@@ -605,7 +615,7 @@ img {
 	}
 
 	&-labels {
-		border-right: 1px solid #9fa3a77d;
+		border-right: 1px solid $vertical-line-color;
 
 		@media screen and (max-width: 767px) {
 			width: 100%;
@@ -623,9 +633,11 @@ img {
 
 		&__title {
 			font-family: "SF Pro Display", sans-serif;
+			font-weight: 300;
 			letter-spacing: 3px;
 			font-size: calc(var(--index) * .65);
 			margin-bottom: 10px;
+			color: $creamy;
 		}
 
 		&__group {
@@ -674,10 +686,11 @@ img {
 
 	&-inf {
 		height: 100%;
-		border-right: 1px solid #9fa3a77d;
+		border-right: 1px solid $vertical-line-color;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		transition: .3s linear;
 
 		@media screen and (max-width: 767px) {
 			width: 100%;
@@ -688,10 +701,14 @@ img {
 			font-size: calc(var(--index) * .5);
 			letter-spacing: 1px;
 			margin-bottom: 12px;
-			font-family: "raleway", sans-serif;
+			font-family: "Raleway", sans-serif;
+			font-weight: normal;
 			position: relative;
 
 			p {
+				font-family: "SF Pro Display";
+				letter-spacing: 3px;
+				font-weight: 300;
 				color: $creamy;
 				font-size: calc(var(--index) * .5);
 				text-transform: uppercase;
@@ -721,10 +738,14 @@ img {
 		}
 
 		&__title {
-			font-family: "raleway", sans-serif;
-			font-weight: 700;
+			font-family: "Raleway", sans-serif;
+			font-weight: 500;
 			letter-spacing: 2px;
 			font-size: calc(var(--index) * .5);
+		}
+
+		&.description-hide {
+			opacity: 0;
 		}
 
 	}
@@ -734,20 +755,22 @@ img {
 		justify-content: center;
 		align-items: center;
 
-		.product__menu-btn {
-			font-family: "SF Pro Display", sans-serif;
+		.product__menu-btn,
+		.product__spirits-btn {
+			font-family: "Raleway", sans-serif;
+			font-weight: normal;
 			display: inline-block;
 			font-size: calc(var(--index) * .5);
-			padding: 0.5rem 1.5rem;
 			-webkit-appearance: none;
 			appearance: none;
-			background-color: $button-bg;
-			color: $mainColor;
+			background-color: $vertical-line-color;
+			color: $creamy;
 			border-radius: 4px;
 			border: none;
-			cursor: pointer;
 			position: relative;
-			transition: transform ease-in 0.1s;
+			transition: .3s linear;
+			width: calc(var(--index) * 3);
+			height: calc(var(--index) * 1);
 			// box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
 
 			&:focus {
@@ -805,7 +828,13 @@ img {
 				// box-shadow: 0 2px 25px rgb(255, 0, 132);
 			}
 
-			&.animate {
+			&:hover {
+				transition: .3s linear;
+				color: $mainColor;
+				background-color: $creamy;
+			}
+
+			&.animate-btn {
 				&:before {
 					display: block;
 					animation: topBubbles ease-in-out 0.75s forwards;
@@ -814,26 +843,6 @@ img {
 				&:after {
 					display: block;
 					animation: bottomBubbles ease-in-out 0.75s forwards;
-				}
-			}
-
-			&.open-btn {
-				.main-btn-text {
-					display: inline-block;
-				}
-
-				.hidden-btn-text {
-					display: none;
-				}
-			}
-
-			&.close-btn {
-				.main-btn-text {
-					display: none;
-				}
-
-				.hidden-btn-text {
-					display: inline-block;
 				}
 			}
 		}
@@ -881,6 +890,8 @@ img {
 			justify-content: center;
 			pointer-events: none;
 			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
 			top: 50%;
 			right: 0;
 			transform: translateY(-50%) translateX(-130px);
@@ -945,27 +956,5 @@ img {
 	100% {
 		background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
 		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
-	}
-}
-
-@keyframes flexibleSlider {
-	0% {
-		width: 75%;
-	}
-
-	25% {
-		width: 69%;
-	}
-
-	50% {
-		width: 75%;
-	}
-
-	75% {
-		width: 81%;
-	}
-
-	100% {
-		width: 92%;
 	}
 }

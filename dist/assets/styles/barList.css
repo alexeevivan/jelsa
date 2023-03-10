@@ -209,11 +209,6 @@ img {
   right: 0;
   overflow: hidden;
   margin: 0 auto;
-  transition: 1s linear;
-}
-.product-slider.menu-show {
-  animation: flexibleSlider 0.5s linear;
-  width: 92%;
 }
 @media screen and (max-width: 1200px) {
   .product-slider {
@@ -315,7 +310,9 @@ img {
 .product-slider__item.swiper-slide-active .product-slider__content > *:nth-child(15) {
   transition-delay: 2.8s;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -330,107 +327,242 @@ img {
   column-gap: var(--index);
   padding: calc(var(--index) * 0.5) calc(var(--index) * 1);
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .vertical-line {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .vertical-line,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .vertical-line, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .vertical-line,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .vertical-line {
   width: 2px;
   background: #D2D4D7;
   flex-shrink: 0;
   opacity: 0.5;
   grid-column: 2;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .vertical-line:nth-of-type(1) {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .vertical-line:nth-of-type(1),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .vertical-line:nth-of-type(1), .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .vertical-line:nth-of-type(1),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .vertical-line:nth-of-type(1) {
   grid-row: 1;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .vertical-line:nth-of-type(2) {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .vertical-line:nth-of-type(2),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .vertical-line:nth-of-type(2), .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .vertical-line:nth-of-type(2),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .vertical-line:nth-of-type(2) {
   grid-row: 2;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .vertical-line:nth-of-type(3) {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .vertical-line:nth-of-type(3),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .vertical-line:nth-of-type(3), .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .vertical-line:nth-of-type(3),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .vertical-line:nth-of-type(3) {
   grid-row: 3;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list tr td,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list tr td,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list tr td, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list tr td,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list tr td,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list tr td,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td {
   text-align: left;
-  font-family: "raleway", sans-serif;
-  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
   font-size: calc(var(--index) * 0.5);
+  user-select: none;
+  color: #D2D4D7;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td:nth-of-type(even) {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td:nth-of-type(even),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list tr td:nth-of-type(even),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list tr td:nth-of-type(even),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list tr td:nth-of-type(even), .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list tr td:nth-of-type(even),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list tr td:nth-of-type(even),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list tr td:nth-of-type(even),
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td:nth-of-type(even) {
   text-align: right;
   font-family: sans-serif;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger-spirits,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger-spirits,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list tr td .trigger,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list tr td .trigger-spirits,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger-spirits, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger-spirits,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger-spirits,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list tr td .trigger,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list tr td .trigger-spirits,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger-spirits {
   color: #D2D4D7;
   background-color: rgba(0, 0, 0, 0);
-  font-family: "raleway", sans-serif;
-  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
   font-size: calc(var(--index) * 0.5);
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger span {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger-spirits .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger-spirits .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list tr td .trigger .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list tr td .trigger-spirits .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger-spirits .rose, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger-spirits .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger-spirits .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list tr td .trigger .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list tr td .trigger-spirits .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger .rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger-spirits .rose {
   color: #ff0081;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.champagne {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger-spirits:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger-spirits:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list tr td .trigger:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list tr td .trigger-spirits:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger-spirits:hover, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger-spirits:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list tr td .trigger-spirits:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list tr td .trigger:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list tr td .trigger-spirits:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger:hover,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger-spirits:hover {
+  font-weight: 500;
+}
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.champagne, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.whiskey,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list.champagne,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list.whiskey,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list.champagne,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list.whiskey,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list.champagne,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list.whiskey, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list.champagne, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list.whiskey,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list.champagne,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list.whiskey,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list.champagne,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list.whiskey,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list.champagne,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list.whiskey {
   grid-column: 1;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.spumante {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.spumante, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.cognac,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list.spumante,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list.cognac,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list.spumante,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list.cognac,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list.spumante,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list.cognac, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list.spumante, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list.cognac,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list.spumante,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list.cognac,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list.spumante,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list.cognac,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list.spumante,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list.cognac {
   grid-column: 3;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.light {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.light, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.vodka,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list.light,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list.vodka,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list.light,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list.vodka,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list.light,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list.vodka, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list.light, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list.vodka,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list.light,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list.vodka,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list.light,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list.vodka,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list.light,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list.vodka {
   grid-column: 1;
   grid-row: 2;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.red {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.red, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.rum,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list.red,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list.rum,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list.red,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list.rum,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list.red,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list.rum, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list.red, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list.rum,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list.red,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list.rum,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list.red,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list.rum,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list.red,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list.rum {
   grid-column: 3;
   grid-row: 2;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.rose {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.rose, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.tequila,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list.rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list.tequila,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list.rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list.tequila,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list.rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list.tequila, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list.rose, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list.tequila,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list.rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list.tequila,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list.rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list.tequila,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list.rose,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list.tequila {
   grid-column: 1;
   grid-row: 3;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.vermouth {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list.vermouth,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list.vermouth,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list.vermouth,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list.vermouth, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list.vermouth,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list.vermouth,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list.vermouth,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list.vermouth {
   grid-column: 3;
   grid-row: 3;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu.menu-hide {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu.menu-hide,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu.menu-hide, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu.menu-hide,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu.menu-hide {
   z-index: -1;
   opacity: 0;
   transition: 1s linear;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu.menu-hide .product-slider__wine-list {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu.menu-hide__wine-list, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu.menu-hide__spirits-list,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu.menu-hide__wine-list,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu.menu-hide__spirits-list, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu.menu-hide__wine-list, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu.menu-hide__spirits-list,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu.menu-hide__wine-list,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu.menu-hide__spirits-list {
   display: none;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide {
   transition: 1s linear;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider__title,
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider__price {
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider__title, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider__price, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider__title, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider__price {
   transition: 0.3s linear;
   opacity: 0;
   visibility: hidden;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-ctr .product-labels {
-  transition: 1s linear;
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider .product-ctr .product-labels, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider .product-ctr .product-labels {
+  transition: 0.5s linear;
   border-right: 1px solid rgba(0, 0, 0, 0);
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-ctr .product-labels__title {
-  transition: 1s linear;
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider .product-ctr .product-labels__title, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider .product-ctr .product-labels__title {
+  transition: 0.5s linear;
   opacity: 0;
   visibility: hidden;
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-ctr .product-inf {
-  transition: 1s linear;
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider .product-ctr .product-inf, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider .product-ctr .product-inf {
+  transition: 0.5s linear;
   border-right: 1px solid rgba(0, 0, 0, 0);
 }
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-ctr .product-inf .product-inf__percent {
-  transition: 1s linear;
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider .product-ctr .product-inf .product-inf__percent, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider .product-ctr .product-inf .product-inf__percent {
+  transition: 0.5s linear;
   opacity: 0;
   visibility: hidden;
-}
-.product-slider__item.swiper-slide-active circle {
-  animation: progress 1s ease-out forwards;
-  animation-delay: 0.5s;
-  opacity: 0.75;
 }
 .product-slider__card {
   height: 100%;
@@ -516,7 +648,7 @@ img {
 }
 .product-slider__title {
   margin: 0;
-  font-weight: 900;
+  font-weight: 500;
   font-size: calc(var(--index) * 1.5);
   letter-spacing: 2px;
   opacity: 0;
@@ -599,9 +731,11 @@ img {
 }
 .product-labels__title {
   font-family: "SF Pro Display", sans-serif;
+  font-weight: 300;
   letter-spacing: 3px;
   font-size: calc(var(--index) * 0.65);
   margin-bottom: 10px;
+  color: #D2D4D7;
 }
 .product-labels__group {
   display: flex;
@@ -643,6 +777,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.3s linear;
 }
 @media screen and (max-width: 767px) {
   .product-inf {
@@ -654,10 +789,14 @@ img {
   font-size: calc(var(--index) * 0.5);
   letter-spacing: 1px;
   margin-bottom: 12px;
-  font-family: "raleway", sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
   position: relative;
 }
 .product-inf__percent p {
+  font-family: "SF Pro Display";
+  letter-spacing: 3px;
+  font-weight: 300;
   color: #D2D4D7;
   font-size: calc(var(--index) * 0.5);
   text-transform: uppercase;
@@ -681,35 +820,43 @@ img {
   transform: translate(-50%, -50%);
 }
 .product-inf__title {
-  font-family: "raleway", sans-serif;
-  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
   letter-spacing: 2px;
   font-size: calc(var(--index) * 0.5);
+}
+.product-inf.description-hide {
+  opacity: 0;
 }
 .product-overlay {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.product-overlay .product__menu-btn {
-  font-family: "SF Pro Display", sans-serif;
+.product-overlay .product__menu-btn,
+.product-overlay .product__spirits-btn {
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
   display: inline-block;
   font-size: calc(var(--index) * 0.5);
-  padding: 0.5rem 1.5rem;
   -webkit-appearance: none;
   appearance: none;
-  background-color: #D2D4D7;
-  color: #04070F;
+  background-color: rgba(159, 163, 167, 0.4901960784);
+  color: #D2D4D7;
   border-radius: 4px;
   border: none;
-  cursor: pointer;
   position: relative;
-  transition: transform ease-in 0.1s;
+  transition: 0.3s linear;
+  width: calc(var(--index) * 3);
+  height: calc(var(--index) * 1);
 }
-.product-overlay .product__menu-btn:focus {
+.product-overlay .product__menu-btn:focus,
+.product-overlay .product__spirits-btn:focus {
   outline: 0;
 }
-.product-overlay .product__menu-btn:before, .product-overlay .product__menu-btn:after {
+.product-overlay .product__menu-btn:before, .product-overlay .product__menu-btn:after,
+.product-overlay .product__spirits-btn:before,
+.product-overlay .product__spirits-btn:after {
   position: absolute;
   content: "";
   display: block;
@@ -720,42 +867,41 @@ img {
   transition: all ease-in-out 0.5s;
   background-repeat: no-repeat;
 }
-.product-overlay .product__menu-btn:before {
+.product-overlay .product__menu-btn:before,
+.product-overlay .product__spirits-btn:before {
   display: none;
   top: -75%;
   background-image: radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, transparent 20%, #17fffb 20%, transparent 30%), radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, transparent 10%, #17fffb 15%, transparent 20%), radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, #17fffb 20%, transparent 20%);
   background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
   background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
 }
-.product-overlay .product__menu-btn:after {
+.product-overlay .product__menu-btn:after,
+.product-overlay .product__spirits-btn:after {
   display: none;
   bottom: -75%;
   background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
   background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
   background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
 }
-.product-overlay .product__menu-btn:active {
+.product-overlay .product__menu-btn:active,
+.product-overlay .product__spirits-btn:active {
   transform: scale(0.9);
 }
-.product-overlay .product__menu-btn.animate:before {
+.product-overlay .product__menu-btn:hover,
+.product-overlay .product__spirits-btn:hover {
+  transition: 0.3s linear;
+  color: #04070F;
+  background-color: #D2D4D7;
+}
+.product-overlay .product__menu-btn.animate-btn:before,
+.product-overlay .product__spirits-btn.animate-btn:before {
   display: block;
   animation: topBubbles ease-in-out 0.75s forwards;
 }
-.product-overlay .product__menu-btn.animate:after {
+.product-overlay .product__menu-btn.animate-btn:after,
+.product-overlay .product__spirits-btn.animate-btn:after {
   display: block;
   animation: bottomBubbles ease-in-out 0.75s forwards;
-}
-.product-overlay .product__menu-btn.open-btn .main-btn-text {
-  display: inline-block;
-}
-.product-overlay .product__menu-btn.open-btn .hidden-btn-text {
-  display: none;
-}
-.product-overlay .product__menu-btn.close-btn .main-btn-text {
-  display: none;
-}
-.product-overlay .product__menu-btn.close-btn .hidden-btn-text {
-  display: inline-block;
 }
 .product-img {
   position: absolute;
@@ -802,6 +948,8 @@ img {
   justify-content: center;
   pointer-events: none;
   user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   top: 50%;
   right: 0;
   transform: translateY(-50%) translateX(-130px);
@@ -855,27 +1003,11 @@ img {
     background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
 }
-@keyframes flexibleSlider {
-  0% {
-    width: 75%;
-  }
-  25% {
-    width: 69%;
-  }
-  50% {
-    width: 75%;
-  }
-  75% {
-    width: 81%;
-  }
-  100% {
-    width: 92%;
-  }
-}
 /*!************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./styles/_bar-list-modal.scss ***!
   \************************************************************************************************************************/
-.modal {
+.modal,
+.modal-spirits {
   position: fixed;
   top: 0;
   left: 0;
@@ -888,36 +1020,44 @@ img {
   transition: background-color 0.25s ease;
   z-index: 9999;
 }
-.modal.modal-show {
+.modal.modal-show, .modal.modal-show-spirits,
+.modal-spirits.modal-show,
+.modal-spirits.modal-show-spirits {
   position: fixed;
   width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  background-color: rgba(4, 7, 15, 0.5098039216);
   transition: background-color 0.25s;
 }
-.modal.modal-show > .component-wrapper {
+.modal.modal-show > .component-wrapper,
+.modal.modal-show > .component-wrapper-spirits, .modal.modal-show-spirits > .component-wrapper,
+.modal.modal-show-spirits > .component-wrapper-spirits,
+.modal-spirits.modal-show > .component-wrapper,
+.modal-spirits.modal-show > .component-wrapper-spirits,
+.modal-spirits.modal-show-spirits > .component-wrapper,
+.modal-spirits.modal-show-spirits > .component-wrapper-spirits {
   transform: scale(1);
 }
-.modal .component-wrapper {
-  position: absolute;
+.modal .component-wrapper,
+.modal-spirits .component-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: calc(var(--index) * 40 * 0.92);
   height: calc(var(--index) * 17);
-  margin: 0;
-  top: 0;
-  left: 0;
+  margin: 0 0 6% 0;
   padding: 2.5rem;
   background-color: #D2D4D7;
-  border-radius: 0.3125rem;
+  border-radius: 30px;
   box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5);
   transform: scale(0);
   transition: transform 0.25s;
   transition-delay: 0.15s;
 }
-.modal .component-wrapper .close {
+.modal .component-wrapper .close,
+.modal-spirits .component-wrapper .close {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -931,26 +1071,34 @@ img {
   font-size: 1.5rem;
   transition: 0.25s linear;
 }
-.modal .component-wrapper .close:before, .modal .component-wrapper .close:after {
+.modal .component-wrapper .close:before, .modal .component-wrapper .close:after,
+.modal-spirits .component-wrapper .close:before,
+.modal-spirits .component-wrapper .close:after {
   position: absolute;
   content: "";
   width: 1.25rem;
   height: 0.125rem;
   background-color: black;
 }
-.modal .component-wrapper .close:before {
+.modal .component-wrapper .close:before,
+.modal-spirits .component-wrapper .close:before {
   transform: rotate(-45deg);
 }
-.modal .component-wrapper .close:after {
+.modal .component-wrapper .close:after,
+.modal-spirits .component-wrapper .close:after {
   transform: rotate(45deg);
 }
-.modal .component-wrapper .close:hover {
+.modal .component-wrapper .close:hover,
+.modal-spirits .component-wrapper .close:hover {
   transform: rotate(360deg);
 }
-.modal .component-wrapper .close:hover:before, .modal .component-wrapper .close:hover:after {
+.modal .component-wrapper .close:hover:before, .modal .component-wrapper .close:hover:after,
+.modal-spirits .component-wrapper .close:hover:before,
+.modal-spirits .component-wrapper .close:hover:after {
   background-color: tomato;
 }
-.modal .component-wrapper .modal-header {
+.modal .component-wrapper .modal-header,
+.modal-spirits .component-wrapper .modal-header {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -960,49 +1108,62 @@ img {
   margin: 0;
   padding: 0 0 1.25rem;
 }
-.modal .component-wrapper .modal-header h2 {
+.modal .component-wrapper .modal-header h2,
+.modal-spirits .component-wrapper .modal-header h2 {
   color: #163D4F;
   font-size: calc(var(--index) * 1.2);
   font-weight: bold;
 }
-.modal .component-wrapper .component {
+.modal .component-wrapper .component,
+.modal-spirits .component-wrapper .component {
   position: relative;
   display: flex;
   flex-direction: column;
 }
-.modal .component-wrapper .component__description {
+.modal .component-wrapper .component__description,
+.modal-spirits .component-wrapper .component__description {
   font-size: calc(var(--index) * 0.6);
   line-height: 1.75;
   text-align: justify;
-  font-family: "SF Pro Display";
+  font-family: "Raleway";
+  font-weight: 300;
   color: slategray;
 }
-.modal .component-wrapper .component__info {
+.modal .component-wrapper .component__info,
+.modal-spirits .component-wrapper .component__info {
   margin: var(--index) 0 0 0;
 }
-.modal .component-wrapper .component__info ul {
+.modal .component-wrapper .component__info ul,
+.modal-spirits .component-wrapper .component__info ul {
   display: inline-flex;
   width: 100%;
   justify-content: space-between;
+  font-family: "SF Pro Display Thin";
 }
-.modal .component-wrapper .component__info ul li {
+.modal .component-wrapper .component__info ul li,
+.modal-spirits .component-wrapper .component__info ul li {
   width: 30%;
   display: inline-grid;
   grid-template-columns: auto 1fr;
   font-size: calc(var(--index) * 0.6);
-  font-family: "SF Pro Display";
   text-transform: capitalize;
   list-style: none;
   color: slategray;
 }
-.modal .component-wrapper .component__info ul li span {
+.modal .component-wrapper .component__info ul li span,
+.modal-spirits .component-wrapper .component__info ul li span {
   color: #04070F;
   margin: 0 5px 0 0;
+  font-family: "SF Pro Display";
+  font-weight: 300;
 }
-.modal .component-wrapper .component__info ul li:nth-of-type(1), .modal .component-wrapper .component__info ul li:nth-of-type(4) {
+.modal .component-wrapper .component__info ul li:nth-of-type(1), .modal .component-wrapper .component__info ul li:nth-of-type(4),
+.modal-spirits .component-wrapper .component__info ul li:nth-of-type(1),
+.modal-spirits .component-wrapper .component__info ul li:nth-of-type(4) {
   width: 15%;
 }
-.modal .component-wrapper .component__ratings {
+.modal .component-wrapper .component__ratings,
+.modal-spirits .component-wrapper .component__ratings {
   display: flex;
   width: 25%;
   margin: calc(var(--index) * 1.5) 0 0 0;
@@ -1011,26 +1172,40 @@ img {
 }
 .modal .component-wrapper .component__ratings .component__wine-spectator,
 .modal .component-wrapper .component__ratings .component__robert-parker,
-.modal .component-wrapper .component__ratings .component__james-suckling {
+.modal .component-wrapper .component__ratings .component__james-suckling,
+.modal .component-wrapper .component__ratings .component__wine-enthusiast,
+.modal-spirits .component-wrapper .component__ratings .component__wine-spectator,
+.modal-spirits .component-wrapper .component__ratings .component__robert-parker,
+.modal-spirits .component-wrapper .component__ratings .component__james-suckling,
+.modal-spirits .component-wrapper .component__ratings .component__wine-enthusiast {
   padding: calc(var(--index) * 0.4);
-  border: 1px solid;
+  border: 0.5px solid;
   font-size: calc(var(--index) * 0.5);
   font-family: "SF Pro Display", sans-serif;
+  font-weight: 300;
   text-transform: uppercase;
   border-radius: 8px;
   cursor: pointer;
 }
-.modal .component-wrapper .component__ratings .component__wine-spectator {
+.modal .component-wrapper .component__ratings .component__wine-spectator,
+.modal-spirits .component-wrapper .component__ratings .component__wine-spectator {
   color: #8D1205;
   border-color: #8D1205;
 }
-.modal .component-wrapper .component__ratings .component__robert-parker {
+.modal .component-wrapper .component__ratings .component__robert-parker,
+.modal-spirits .component-wrapper .component__ratings .component__robert-parker {
   color: #179B3B;
   border-color: #179B3B;
 }
-.modal .component-wrapper .component__ratings .component__james-suckling {
+.modal .component-wrapper .component__ratings .component__james-suckling,
+.modal-spirits .component-wrapper .component__ratings .component__james-suckling {
   color: #B11A12;
   border-color: #B11A12;
+}
+.modal .component-wrapper .component__ratings .component__wine-enthusiast,
+.modal-spirits .component-wrapper .component__ratings .component__wine-enthusiast {
+  color: #617D8B;
+  border-color: #617D8B;
 }
 
 /*# sourceMappingURL=barList.css.map*/

@@ -1,15 +1,40 @@
 @font-face {
-	font-family: "raleway";
-	src: url("../assets/fonts/raleway-regular.woff2") format('woff2');
+	font-family: "Raleway";
+	src: url("../assets/fonts/Raleway-Light.eot");
+	src: url("../assets/fonts/Raleway-Light.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Raleway-Light.woff2") format("woff2"),
+		url("../assets/fonts/Raleway-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Raleway";
+	src: url("../assets/fonts/Raleway-Regular.eot");
+	src: url("../assets/fonts/Raleway-Regular.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Raleway-Regular.woff2") format("woff2"),
+		url("../assets/fonts/Raleway-Regular.woff") format("woff");
 	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Raleway";
+	src: url("../assets/fonts/Raleway-Medium.eot");
+	src: url("../assets/fonts/Raleway-Medium.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/Raleway-Medium.woff2") format("woff2"),
+		url("../assets/fonts/Raleway-Medium.woff") format("woff");
+	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
 }
 
 
 @font-face {
-	font-family: "outfit";
-	src: url("../assets/fonts/outfit-regular.woff2") format('woff2');
+	font-family: "Outfit";
+	src: url("../assets/fonts/outfit-regular.woff2") format("woff2");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -17,7 +42,7 @@
 
 @font-face {
 	font-family: "Imprint MT Shadow";
-	src: url("../assets/fonts/ImprintMT-Shadow.woff2") format('woff2');
+	src: url("../assets/fonts/ImprintMT-Shadow.woff2") format("woff2");
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
@@ -38,7 +63,46 @@
 
 @font-face {
 	font-family: "SF Pro Display";
-	src: url("../assets/fonts/SFProDisplay-Thin.ttf") format("truetype");
+	src: url("../assets/fonts/SFProDisplay-Regular.eot");
+	src: url("../assets/fonts/SFProDisplay-Regular.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/SFProDisplay-Regular.woff2") format("woff2"),
+		url("../assets/fonts/SFProDisplay-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "SF Pro Display";
+	src: url("../assets/fonts/SFProDisplay-Light.eot");
+	src: url("../assets/fonts/SFProDisplay-Light.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/SFProDisplay-Light.woff2") format("woff2"),
+		url("../assets/fonts/SFProDisplay-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "SF Pro Display Thin";
+	src: url("../assets/fonts/SFProDisplay-Thin.eot");
+	src: url("../assets/fonts/SFProDisplay-Thin.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/SFProDisplay-Thin.woff2") format("woff2"),
+		url("../assets/fonts/SFProDisplay-Thin.woff") format("woff");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "SF Pro Display Ultra-Light";
+	src: url("../assets/fonts/SFProDisplay-Ultralight.eot");
+	src: url("../assets/fonts/SFProDisplay-Ultralight.eot?#iefix") format("embedded-opentype"),
+		url("../assets/fonts/SFProDisplay-Ultralight.woff2") format("woff2"),
+		url("../assets/fonts/SFProDisplay-Ultralight.woff") format("woff");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {

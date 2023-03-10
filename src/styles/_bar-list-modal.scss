@@ -11,6 +11,7 @@ $red: #e74c3c;
 $wine-spectator: #8D1205;
 $robert-parker: #179B3B;
 $james-suckling: #B11A12;
+$wine-enthusiast: #617D8B;
 $creamy: #D2D4D7;
 $japanese-indigo: #163D4F;
 
@@ -20,7 +21,8 @@ $med: 48rem;
 $lg: 64rem;
 
 
-.modal {
+.modal,
+.modal-spirits {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -33,32 +35,32 @@ $lg: 64rem;
 	transition: background-color $base-duration ease;
 	z-index: 9999;
 
-	&.modal-show {
+	&.modal-show,
+	&.modal-show-spirits {
 		position: fixed;
 		width: 100%;
-		height: 100vh;
-		background-color: rgba(0, 0, 0, 0.5);
+		height: 100%;
+		background-color: #04070f82;
 		transition: background-color $base-duration;
 
-		>.component-wrapper {
+		>.component-wrapper,
+		>.component-wrapper-spirits {
 			transform: scale(1.0);
 		}
 	}
 
 	.component-wrapper {
-		position: absolute;
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 100%;
+		width: calc(var(--index) * 40 * .92);
 		height: calc(var(--index) * 17);
-		margin: 0;
-		top: 0;
-		left: 0;
+		margin: 0 0 6% 0;
 		padding: 2.5rem;
-		background-color: $creamy;
-		border-radius: 0.3125rem;
+		background-color: #D2D4D7;
+		border-radius: 30px;
 		box-shadow: 0 0 2.5rem rgb(0 0 0 / 50%);
 		transform: scale(0);
 		transition: transform 0.25s;
@@ -131,7 +133,8 @@ $lg: 64rem;
 				font-size: calc(var(--index) * .6);
 				line-height: 1.75;
 				text-align: justify;
-				font-family: "SF Pro Display";
+				font-family: "Raleway";
+				font-weight: 300;
 				color: $primary;
 			}
 
@@ -142,13 +145,13 @@ $lg: 64rem;
 					display: inline-flex;
 					width: 100%;
 					justify-content: space-between;
+					font-family: "SF Pro Display Thin";
 
 					li {
 						width: 30%;
 						display: inline-grid;
 						grid-template-columns: auto 1fr;
 						font-size: calc(var(--index) * .6);
-						font-family: "SF Pro Display";
 						text-transform: capitalize;
 						list-style: none;
 						color: $primary;
@@ -156,6 +159,8 @@ $lg: 64rem;
 						span {
 							color: $mainColor;
 							margin: 0 5px 0 0;
+							font-family: "SF Pro Display";
+							font-weight: 300;
 						}
 
 						&:nth-of-type(1),
@@ -175,11 +180,13 @@ $lg: 64rem;
 
 				.component__wine-spectator,
 				.component__robert-parker,
-				.component__james-suckling {
+				.component__james-suckling,
+				.component__wine-enthusiast {
 					padding: calc(var(--index) * .4);
-					border: 1px solid;
+					border: .5px solid;
 					font-size: calc(var(--index) * .5);
 					font-family: "SF Pro Display", sans-serif;
+					font-weight: 300;
 					text-transform: uppercase;
 					border-radius: 8px;
 					cursor: pointer;
@@ -198,6 +205,11 @@ $lg: 64rem;
 				.component__james-suckling {
 					color: $james-suckling;
 					border-color: $james-suckling;
+				}
+
+				.component__wine-enthusiast {
+					color: $wine-enthusiast;
+					border-color: $wine-enthusiast;
 				}
 			}
 		}
