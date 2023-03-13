@@ -41,6 +41,9 @@ module.exports = {
 		circles: {
 			import: "./js/circles.js"
 		},
+		contact: {
+			import: "./js/contact.js"
+		},
 		panoramic: {
 			import: "./js/panoramic.js"
 		},
@@ -93,6 +96,16 @@ module.exports = {
 					collapseWhitespace: isProd
 				},
 				chunks: ["panoramic"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./contact.html",
+				template: "./contact.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "contact"]
 			}
 		),
 		new HTMLWebpackPlugin(

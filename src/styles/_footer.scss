@@ -1,9 +1,3 @@
-$mainColor: #04070F;
-$japanese-indigo: #163D4F;
-$cyan: #17fffb;
-$white: #ffffff;
-$creamy: #D2D4D7;
-$transparent: rgba(0, 0, 0, 0);
 $md1: 1440px;
 
 .footer {
@@ -12,7 +6,7 @@ $md1: 1440px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: $mainColor;
+	background-color: var(--main-color);
 	padding: 0 calc($md1 / 10) 0 calc($md1 / 10);
 
 	ul {
@@ -27,15 +21,15 @@ $md1: 1440px;
 			font-size: calc(var(--index) * .6);
 
 			a {
-				color: $creamy;
+				color: var(--creamy);
 				display: inline-flex;
 				align-items: center;
 
 				img {
 					display: inline-block !important;
 					filter: invert(1);
-					background-color: $transparent !important;
-					color: $transparent !important;
+					background-color: var(--transparent) !important;
+					color: var(--transparent) !important;
 					width: calc(var(--index) * 3);
 				}
 			}

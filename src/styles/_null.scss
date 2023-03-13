@@ -10,6 +10,16 @@
 	--gallery-gap: calc(var(--index) * 5);
 	--color-text: #D2D4D7;
 	--font-size: 16px;
+	--main-color: #04070F;
+	--japanese-indigo: #163D4F;
+	--cyan: #17fffb;
+	--white: #ffffff;
+	--creamy: #D2D4D7;
+	--fuchsia: #ff0081;
+	--transparent: rgba(0, 0, 0, 0);
+	--vertical-line-color: #9fa3a77d;
+	--transition-duration: .3s;
+	--base-duration: .25s;
 }
 
 *::before,
@@ -91,4 +101,9 @@ ul li {
 
 img {
 	vertical-align: top;
+}
+
+.wrapper {
+	max-width: 1440px;
+	margin: 0 auto;
 }

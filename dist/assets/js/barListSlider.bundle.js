@@ -108,7 +108,6 @@ opentBtnSpirits.onclick = function () {
 		jquery__WEBPACK_IMPORTED_MODULE_1__(".product__spirits-btn").addClass("close-btn");
 		jquery__WEBPACK_IMPORTED_MODULE_1__(".product-slider__content.bar-list__spirits").addClass("description-hide");
 		jquery__WEBPACK_IMPORTED_MODULE_1__(".product-slider__cover").addClass("description-hide");
-		jquery__WEBPACK_IMPORTED_MODULE_1__(".product-inf").addClass("description-hide");
 		jquery__WEBPACK_IMPORTED_MODULE_1__(".product-img__item.active").addClass("description-hide");
 		gsap_dist_gsap__WEBPACK_IMPORTED_MODULE_2___default().fromTo(".product-slider", { width: "75%" }, { duration: .5, ease: "back.out(1.4)", width: "92%" });
 
@@ -119,7 +118,6 @@ opentBtnSpirits.onclick = function () {
 			jquery__WEBPACK_IMPORTED_MODULE_1__(".product__spirits-btn.close-btn").click(function () {
 				jquery__WEBPACK_IMPORTED_MODULE_1__(".product__spirits-btn.close-btn").removeClass("close-btn");
 				jquery__WEBPACK_IMPORTED_MODULE_1__(".product__spirits-btn").addClass("open-btn");
-				jquery__WEBPACK_IMPORTED_MODULE_1__(".product-inf").removeClass("description-hide");
 				jquery__WEBPACK_IMPORTED_MODULE_1__(".product-slider__content.bar-list__spirits").removeClass("description-hide");
 				jquery__WEBPACK_IMPORTED_MODULE_1__(".product-slider__cover").removeClass("description-hide");
 				jquery__WEBPACK_IMPORTED_MODULE_1__(".product-img__item.active").removeClass("description-hide");
@@ -130,7 +128,26 @@ opentBtnSpirits.onclick = function () {
 	});
 };
 
-
+if (true) {
+	jquery__WEBPACK_IMPORTED_MODULE_1__(".next").on("click", function () {
+		jquery__WEBPACK_IMPORTED_MODULE_1__(".product-slider__aperitif-menu").addClass("hidden");
+	});
+};
+if (true) {
+	jquery__WEBPACK_IMPORTED_MODULE_1__(".prev").on("click", function () {
+		jquery__WEBPACK_IMPORTED_MODULE_1__(".product-slider__aperitif-menu").removeClass("hidden");
+	});
+};
+if (true) {
+	jquery__WEBPACK_IMPORTED_MODULE_1__(".prev").on("click", function () {
+		jquery__WEBPACK_IMPORTED_MODULE_1__(".product-slider__spirits-menu").addClass("hidden");
+	});
+};
+if (true) {
+	jquery__WEBPACK_IMPORTED_MODULE_1__(".next").on("click", function () {
+		jquery__WEBPACK_IMPORTED_MODULE_1__(".product-slider__spirits-menu").removeClass("hidden");
+	});
+};
 // ==========================================================
 // Menu-list open btn animation
 // ==========================================================
@@ -177,7 +194,7 @@ function modalEvent(button) {
 		const trigger = button.getAttribute("data-modal-trigger");
 		console.log("trigger", trigger)
 		const modal = document.querySelector(`[data-modal=${trigger}]`);
-		console.log("modal", modal)
+		console.log("modal-aperitif", modal)
 		const componentWrapper = modal.querySelector(".component-wrapper");
 		const close = modal.querySelector(".close");
 

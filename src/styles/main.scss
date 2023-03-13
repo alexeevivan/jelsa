@@ -1,30 +1,24 @@
-$mainColor: #04070F;
-$japanese-indigo: #163D4F;
-$cyan: #17fffb;
-$white: #ffffff;
-$creamy: #D2D4D7;
-$transparent: rgba(0, 0, 0, 0);
 $md1: 1440px;
 
 body {
-	background-color: $mainColor;
+	background-color: var(--main-color);
 	background-size: 50px;
 	color: var(--color-text);
 	font-family: "Raleway";
 
 	&::-webkit-scrollbar {
-		background-color: $mainColor;
+		background-color: var(--main-color);
 		width: 10px;
 	}
 
 	&::-webkit-scrollbar-track {
-		-webkit-box-shadow: inset 0 0 0px $creamy;
+		-webkit-box-shadow: inset 0 0 0px var(--creamy);
 		border-radius: 10px;
 	}
 
 	&::-webkit-scrollbar-thumb {
 		border-radius: 10px;
-		-webkit-box-shadow: inset 0px 0px 1px 1px $creamy;
+		-webkit-box-shadow: inset 0px 0px 1px 1px var(--creamy);
 	}
 }
 
@@ -68,13 +62,13 @@ body {
 						.main-title__name {
 							font-size: calc(var(--index) * 4);
 							margin: 0;
-							color: $creamy;
+							color: var(--creamy);
 						}
 
 						.main-title__description {
 							font-size: calc(var(--index) * .75);
 							margin: 2vh 0 0 0;
-							color: $creamy;
+							color: var(--creamy);
 						}
 					}
 				}
@@ -105,7 +99,7 @@ body {
 							&.gallery__description {
 								width: 564px;
 								height: calc(var(--index) * 20);
-								border: 1px solid $japanese-indigo;
+								border: 1px solid var(--japanese-indigo);
 								border-radius: 8px;
 								display: flex;
 								flex-direction: column;
@@ -166,7 +160,7 @@ body {
 									padding: 5px;
 									border-radius: 8px;
 									text-transform: none;
-									color: $creamy;
+									color: var(--creamy);
 									font-size: calc(var(--index) * .65);
 
 									span {
@@ -186,7 +180,7 @@ body {
 							&.gallery-slider {
 								width: 564px;
 								height: calc(var(--index) * 20);
-								background: $transparent;
+								background: var(--transparent);
 
 								.gallery-container {
 									width: 100%;
@@ -200,7 +194,7 @@ body {
 											height: calc(var(--index) * 20);
 											display: flex;
 											align-items: center;
-											background-color: $transparent;
+											background-color: var(--transparent);
 										}
 									}
 								}
@@ -238,7 +232,7 @@ body {
 									position: relative;
 
 									p {
-										color: $creamy;
+										color: var(--creamy);
 										font-family: "Imprint MT Shadow";
 										font-size: calc(var(--index) * 1.25);
 										text-transform: uppercase;
@@ -308,7 +302,7 @@ body {
 							justify-content: center;
 							margin: 0;
 							border-radius: unset;
-							background-color: transparent;
+							background-color: var(--transparent);
 							width: auto;
 							height: auto;
 						}
@@ -359,14 +353,14 @@ body {
 						a {
 							font-size: calc(var(--index) * .55);
 							display: inline-flex;
-							color: $creamy;
+							color: var(--creamy);
 							font-family: sans-serif;
 							align-items: center;
 							justify-content: center;
 							height: calc(var(--index) * .8);
 							border-radius: 2px;
 							// background: #cfcbf7;
-							background: linear-gradient(-45deg, $mainColor, #171169, $mainColor);
+							background: linear-gradient(-45deg, var(--main-color), #171169, var(--main-color));
 							background-size: 400% 400%;
 							animation: gradient 10s ease infinite;
 							border: .5px solid #cfcbf7;
@@ -488,7 +482,7 @@ body {
 
 						li {
 							font-size: calc(var(--index) * .85);
-							color: $creamy;
+							color: var(--creamy);
 						}
 					}
 
@@ -498,8 +492,8 @@ body {
 						text-transform: uppercase;
 						background-image: linear-gradient(to right,
 								#cfcbf7,
-								$japanese-indigo 50%,
-								$creamy 50%);
+								var(--japanese-indigo) 50%,
+								var(--creamy) 50%);
 						background-size: 200% 100%;
 						background-position: -100%;
 						display: inline-block;
@@ -507,13 +501,13 @@ body {
 						position: relative;
 						background-clip: text;
 						-webkit-background-clip: text;
-						-webkit-text-fill-color: transparent;
+						-webkit-text-fill-color: var(--transparent);
 						transition: all 0.3s ease-in-out;
 
 						&::before,
 						&::after {
 							content: '';
-							background: linear-gradient(to right, $transparent, #231E71, $cyan, #231E71, $transparent);
+							background: linear-gradient(to right, var(--transparent), #231E71, var(--cyan), #231E71, var(--transparent));
 							display: block;
 							position: absolute;
 							left: 0;
@@ -599,7 +593,7 @@ body {
 	}
 
 	79% {
-		color: $japanese-indigo;
+		color: var(--japanese-indigo);
 	}
 
 	80% {
@@ -612,7 +606,7 @@ body {
 	}
 
 	82% {
-		color: $japanese-indigo;
+		color: var(--japanese-indigo);
 		transform: skewY(20deg) translateY(35%);
 	}
 
@@ -622,9 +616,9 @@ body {
 	}
 
 	92% {
-		color: $japanese-indigo;
+		color: var(--japanese-indigo);
 		transform: skewY(20deg);
-		text-shadow: 2px 2px 2px $japanese-indigo;
+		text-shadow: 2px 2px 2px var(--japanese-indigo);
 	}
 
 	93% {

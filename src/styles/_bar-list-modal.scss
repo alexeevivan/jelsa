@@ -1,8 +1,4 @@
-$base-duration: 0.25s;
-
-
 // Colors
-$mainColor: #04070F;
 $primary: slategray;
 $accent: tomato;
 $white: whitesmoke;
@@ -12,8 +8,6 @@ $wine-spectator: #8D1205;
 $robert-parker: #179B3B;
 $james-suckling: #B11A12;
 $wine-enthusiast: #617D8B;
-$creamy: #D2D4D7;
-$japanese-indigo: #163D4F;
 
 // Breakpoints
 $sm: 20rem;
@@ -21,7 +15,7 @@ $med: 48rem;
 $lg: 64rem;
 
 
-.modal,
+.modal-aperitif,
 .modal-spirits {
 	position: fixed;
 	top: 0;
@@ -32,7 +26,7 @@ $lg: 64rem;
 	height: 0vh;
 	background-color: transparent;
 	overflow: hidden;
-	transition: background-color $base-duration ease;
+	transition: background-color var(--base-duration) ease;
 	z-index: 9999;
 
 	&.modal-show,
@@ -41,15 +35,17 @@ $lg: 64rem;
 		width: 100%;
 		height: 100%;
 		background-color: #04070f82;
-		transition: background-color $base-duration;
+		transition: background-color var(--base-duration);
 
 		>.component-wrapper,
 		>.component-wrapper-spirits {
 			transform: scale(1.0);
+			transition: var(--base-duration) linear;
 		}
 	}
 
-	.component-wrapper {
+	.component-wrapper,
+	.component-wrapper-spirits {
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -60,10 +56,10 @@ $lg: 64rem;
 		margin: 0 0 6% 0;
 		padding: 2.5rem;
 		background-color: #D2D4D7;
-		border-radius: 30px;
+		border-radius: 8px;
 		box-shadow: 0 0 2.5rem rgb(0 0 0 / 50%);
 		transform: scale(0);
-		transition: transform 0.25s;
+		transition: transform var(--base-duration);
 		transition-delay: 0.15s;
 
 		.close {
@@ -78,7 +74,7 @@ $lg: 64rem;
 			border: none;
 			background-color: transparent;
 			font-size: 1.5rem;
-			transition: $base-duration linear;
+			transition: var(--base-duration) linear;
 
 			&:before,
 			&:after {
@@ -118,7 +114,7 @@ $lg: 64rem;
 			padding: 0 0 1.25rem;
 
 			h2 {
-				color: $japanese-indigo;
+				color: var(--japanese-indigo);
 				font-size: calc(var(--index) * 1.2);
 				font-weight: bold;
 			}
@@ -157,7 +153,7 @@ $lg: 64rem;
 						color: $primary;
 
 						span {
-							color: $mainColor;
+							color: var(--main-color);
 							margin: 0 5px 0 0;
 							font-family: "SF Pro Display";
 							font-weight: 300;

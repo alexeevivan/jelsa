@@ -72,7 +72,7 @@ openBtn.onclick = function () {
 		if (".description-hide") {
 			$(".product-slider__aperitif-menu").removeClass("menu-hide");
 		} else {
-			$(".product-slider__aperitif-menu").addClass("menu-hide")
+			$(".product-slider__aperitif-menu").addClass("menu-hide");
 		};
 		if ("product__menu-btn.close-btn") {
 			$(".product__menu-btn.close-btn").click(function () {
@@ -94,7 +94,6 @@ opentBtnSpirits.onclick = function () {
 		$(".product__spirits-btn").addClass("close-btn");
 		$(".product-slider__content.bar-list__spirits").addClass("description-hide");
 		$(".product-slider__cover").addClass("description-hide");
-		$(".product-inf").addClass("description-hide");
 		$(".product-img__item.active").addClass("description-hide");
 		gsap.fromTo(".product-slider", { width: "75%" }, { duration: .5, ease: "back.out(1.4)", width: "92%" });
 
@@ -107,7 +106,6 @@ opentBtnSpirits.onclick = function () {
 			$(".product__spirits-btn.close-btn").click(function () {
 				$(".product__spirits-btn.close-btn").removeClass("close-btn");
 				$(".product__spirits-btn").addClass("open-btn");
-				$(".product-inf").removeClass("description-hide");
 				$(".product-slider__content.bar-list__spirits").removeClass("description-hide");
 				$(".product-slider__cover").removeClass("description-hide");
 				$(".product-img__item.active").removeClass("description-hide");
@@ -118,7 +116,26 @@ opentBtnSpirits.onclick = function () {
 	});
 };
 
-
+if (".aperitif-menu.swiper-slide-active") {
+	$(".next").on("click", function () {
+		$(".product-slider__aperitif-menu").addClass("hidden");
+	});
+};
+if (".aperitif-menu.swiper-slide-prev") {
+	$(".prev").on("click", function () {
+		$(".product-slider__aperitif-menu").removeClass("hidden");
+	});
+};
+if (".spirits-menu.swiper-slide-active") {
+	$(".prev").on("click", function () {
+		$(".product-slider__spirits-menu").addClass("hidden");
+	});
+};
+if (".spirits-menu.swiper-slide-next") {
+	$(".next").on("click", function () {
+		$(".product-slider__spirits-menu").removeClass("hidden");
+	});
+};
 // ==========================================================
 // Menu-list open btn animation
 // ==========================================================
@@ -165,7 +182,7 @@ function modalEvent(button) {
 		const trigger = button.getAttribute("data-modal-trigger");
 		console.log("trigger", trigger)
 		const modal = document.querySelector(`[data-modal=${trigger}]`);
-		console.log("modal", modal)
+		console.log("modal-aperitif", modal)
 		const componentWrapper = modal.querySelector(".component-wrapper");
 		const close = modal.querySelector(".close");
 

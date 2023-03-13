@@ -72,7 +72,7 @@ img {
 .bg-shape {
   height: 100%;
   box-shadow: 0px 30px 139px 0px rgba(10, 22, 31, 0.26);
-  border-radius: 30px;
+  border-radius: 8px;
   border: 2px solid #163D4F;
   padding: 45px 40px;
   width: 50%;
@@ -202,7 +202,7 @@ img {
 .product-slider {
   width: 75%;
   height: 85%;
-  border-radius: 30px;
+  border-radius: 8px;
   box-shadow: 0 28px 79px 0 rgba(10, 22, 31, 0.35);
   position: relative;
   top: 0;
@@ -310,6 +310,21 @@ img {
 .product-slider__item.swiper-slide-active .product-slider__content > *:nth-child(15) {
   transition-delay: 2.8s;
 }
+.product-slider__item.swiper-slide-active .product-slider__content.description-hide {
+  transition: var(--transition-duration) linear;
+}
+.product-slider__item.swiper-slide-active .product-slider__content.description-hide .product-slider__title, .product-slider__item.swiper-slide-active .product-slider__content.description-hide .product-slider__price {
+  transition: var(--transition-duration) linear;
+  opacity: 0;
+  visibility: hidden;
+}
+.product-slider__item.swiper-slide-active .product-slider__content.description-hide .product-ctr .product-labels,
+.product-slider__item.swiper-slide-active .product-slider__content.description-hide .product-ctr .product-inf {
+  transition-delay: 0s;
+  transition: var(--transition-duration) linear;
+  opacity: 0;
+  visibility: hidden;
+}
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu {
@@ -319,7 +334,7 @@ img {
   left: 0;
   width: calc(var(--index) * 40 * 0.75);
   height: 100%;
-  transition: 1s linear;
+  transition: var(--transition-duration) linear;
   opacity: 1;
   display: grid;
   grid-template-columns: 1fr 2px 1fr;
@@ -327,11 +342,16 @@ img {
   column-gap: var(--index);
   padding: calc(var(--index) * 0.5) calc(var(--index) * 1);
 }
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu.hidden,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu.hidden, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu.hidden,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu.hidden {
+  display: none;
+}
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .vertical-line,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .vertical-line, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .vertical-line,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .vertical-line {
   width: 2px;
-  background: #D2D4D7;
+  background: var(--creamy);
   flex-shrink: 0;
   opacity: 0.5;
   grid-column: 2;
@@ -355,6 +375,15 @@ img {
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
 }
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__spirits-list, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__wine-list,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu .product-slider__spirits-list,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list,
+.product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list {
+  transition: 0.1s linear;
+}
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__spirits-list tr td,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu .product-slider__wine-list tr td,
@@ -367,7 +396,7 @@ img {
   font-weight: 500;
   font-size: calc(var(--index) * 0.5);
   user-select: none;
-  color: #D2D4D7;
+  color: var(--creamy);
   -webkit-user-select: none;
   -moz-user-select: none;
 }
@@ -396,8 +425,8 @@ img {
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list tr td .trigger-spirits,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger-spirits {
-  color: #D2D4D7;
-  background-color: rgba(0, 0, 0, 0);
+  color: var(--creamy);
+  background-color: var(--transparent);
   font-family: "Raleway", sans-serif;
   font-weight: 300;
   font-size: calc(var(--index) * 0.5);
@@ -417,7 +446,7 @@ img {
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__wine-list tr td .trigger-spirits .rose,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger .rose,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu .product-slider__spirits-list tr td .trigger-spirits .rose {
-  color: #ff0081;
+  color: var(--fuchsia);
 }
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger:hover,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu .product-slider__wine-list tr td .trigger-spirits:hover,
@@ -529,39 +558,13 @@ img {
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu.menu-hide {
   z-index: -1;
   opacity: 0;
-  transition: 1s linear;
+  transition: var(--transition-duration) linear;
 }
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu.menu-hide__wine-list, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__aperitif-menu.menu-hide__spirits-list,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu.menu-hide__wine-list,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif .product-slider__spirits-menu.menu-hide__spirits-list, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu.menu-hide__wine-list, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__aperitif-menu.menu-hide__spirits-list,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu.menu-hide__wine-list,
 .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits .product-slider__spirits-menu.menu-hide__spirits-list {
-  display: none;
-}
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide {
-  transition: 1s linear;
-}
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider__title, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider__price, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider__title, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider__price {
-  transition: 0.3s linear;
-  opacity: 0;
-  visibility: hidden;
-}
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider .product-ctr .product-labels, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider .product-ctr .product-labels {
-  transition: 0.5s linear;
-  border-right: 1px solid rgba(0, 0, 0, 0);
-}
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider .product-ctr .product-labels__title, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider .product-ctr .product-labels__title {
-  transition: 0.5s linear;
-  opacity: 0;
-  visibility: hidden;
-}
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider .product-ctr .product-inf, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider .product-ctr .product-inf {
-  transition: 0.5s linear;
-  border-right: 1px solid rgba(0, 0, 0, 0);
-}
-.product-slider__item.swiper-slide-active .product-slider__content.bar-list__aperitif.description-hide .product-slider .product-ctr .product-inf .product-inf__percent, .product-slider__item.swiper-slide-active .product-slider__content.bar-list__spirits.description-hide .product-slider .product-ctr .product-inf .product-inf__percent {
-  transition: 0.5s linear;
-  opacity: 0;
   visibility: hidden;
 }
 .product-slider__card {
@@ -569,10 +572,9 @@ img {
   display: flex;
   align-items: center;
   width: 100%;
-  transition: all 0.5s;
   overflow: hidden;
   position: relative;
-  border-radius: 30px;
+  border-radius: 8px;
   transition: all 1s ease;
   transform-style: preserve-3d;
   background: repeating-linear-gradient(45deg, #04070f, #163c4d, #04070f 2px);
@@ -591,7 +593,7 @@ img {
   filter: opacity(0.4) blur(6px) hue-rotate(145deg);
 }
 .product-slider__cover {
-  border-radius: 30px;
+  border-radius: 8px;
   position: absolute;
   top: 0;
   left: 0;
@@ -599,9 +601,10 @@ img {
   height: 100%;
   display: block;
   object-fit: cover;
-  transition: 0.1s linear;
+  transition: 0.3s linear;
 }
 .product-slider__cover.description-hide {
+  transition: 0.3s linear;
   opacity: 0;
 }
 @media screen and (max-width: 767px) {
@@ -715,7 +718,7 @@ img {
   }
 }
 .product-labels {
-  border-right: 1px solid rgba(159, 163, 167, 0.4901960784);
+  border-right: 1px solid var(--vertical-line-color);
 }
 @media screen and (max-width: 767px) {
   .product-labels {
@@ -735,7 +738,7 @@ img {
   letter-spacing: 3px;
   font-size: calc(var(--index) * 0.65);
   margin-bottom: 10px;
-  color: #D2D4D7;
+  color: var(--creamy);
 }
 .product-labels__group {
   display: flex;
@@ -763,7 +766,7 @@ img {
   padding: 10px 20px;
   padding-left: 0;
   border-radius: 50px;
-  transition: all 0.3s;
+  transition: all var(--transition-duration);
   letter-spacing: 2px;
 }
 @keyframes progress {
@@ -773,11 +776,11 @@ img {
 }
 .product-inf {
   height: 100%;
-  border-right: 1px solid rgba(159, 163, 167, 0.4901960784);
+  border-right: 1px solid var(--vertical-line-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s linear;
+  transition: var(--transition-duration) linear;
 }
 @media screen and (max-width: 767px) {
   .product-inf {
@@ -797,7 +800,7 @@ img {
   font-family: "SF Pro Display";
   letter-spacing: 3px;
   font-weight: 300;
-  color: #D2D4D7;
+  color: var(--creamy);
   font-size: calc(var(--index) * 0.5);
   text-transform: uppercase;
 }
@@ -841,12 +844,12 @@ img {
   font-size: calc(var(--index) * 0.5);
   -webkit-appearance: none;
   appearance: none;
-  background-color: rgba(159, 163, 167, 0.4901960784);
-  color: #D2D4D7;
+  background-color: var(--vertical-line-color);
+  color: var(--creamy);
   border-radius: 4px;
   border: none;
   position: relative;
-  transition: 0.3s linear;
+  transition: var(--transition-duration) linear;
   width: calc(var(--index) * 3);
   height: calc(var(--index) * 1);
 }
@@ -871,7 +874,7 @@ img {
 .product-overlay .product__spirits-btn:before {
   display: none;
   top: -75%;
-  background-image: radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, transparent 20%, #17fffb 20%, transparent 30%), radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, transparent 10%, #17fffb 15%, transparent 20%), radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, #17fffb 20%, transparent 20%), radial-gradient(circle, #17fffb 20%, transparent 20%);
+  background-image: radial-gradient(circle, var(--cyan) 20%, transparent 20%), radial-gradient(circle, transparent 20%, var(--cyan) 20%, transparent 30%), radial-gradient(circle, var(--cyan) 20%, transparent 20%), radial-gradient(circle, var(--cyan) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--cyan) 15%, transparent 20%), radial-gradient(circle, var(--cyan) 20%, transparent 20%), radial-gradient(circle, var(--cyan) 20%, transparent 20%), radial-gradient(circle, var(--cyan) 20%, transparent 20%), radial-gradient(circle, var(--cyan) 20%, transparent 20%);
   background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
   background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
 }
@@ -879,7 +882,7 @@ img {
 .product-overlay .product__spirits-btn:after {
   display: none;
   bottom: -75%;
-  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-image: radial-gradient(circle, var(--fuchsia) 20%, transparent 20%), radial-gradient(circle, var(--fuchsia) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--fuchsia) 15%, transparent 20%), radial-gradient(circle, var(--fuchsia) 20%, transparent 20%), radial-gradient(circle, var(--fuchsia) 20%, transparent 20%), radial-gradient(circle, var(--fuchsia) 20%, transparent 20%), radial-gradient(circle, var(--fuchsia) 20%, transparent 20%);
   background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
   background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
 }
@@ -889,9 +892,9 @@ img {
 }
 .product-overlay .product__menu-btn:hover,
 .product-overlay .product__spirits-btn:hover {
-  transition: 0.3s linear;
-  color: #04070F;
-  background-color: #D2D4D7;
+  transition: var(--transition-duration) linear;
+  color: var(--main-color);
+  background-color: var(--creamy);
 }
 .product-overlay .product__menu-btn.animate-btn:before,
 .product-overlay .product__spirits-btn.animate-btn:before {
@@ -954,19 +957,19 @@ img {
   right: 0;
   transform: translateY(-50%) translateX(-130px);
   opacity: 0;
-  transition: all 0.3s;
+  transition: all var(--transition-duration);
   width: 100%;
 }
 .product-img__item.active {
   opacity: 1;
   transform: translateY(-50%) translateX(0);
-  transition-delay: 0.3s;
+  transition-delay: var(--transition-duration);
   transition: 1s linear;
 }
 .product-img__item.active.description-hide {
   opacity: 0;
   visibility: hidden;
-  transition: 0.3s linear;
+  transition: var(--transition-duration) linear;
 }
 .product-img__item img {
   object-fit: contain;
@@ -1006,7 +1009,7 @@ img {
 /*!************************************************************************************************************************!*\
   !*** css ../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./styles/_bar-list-modal.scss ***!
   \************************************************************************************************************************/
-.modal,
+.modal-aperitif,
 .modal-spirits {
   position: fixed;
   top: 0;
@@ -1017,29 +1020,32 @@ img {
   height: 0vh;
   background-color: transparent;
   overflow: hidden;
-  transition: background-color 0.25s ease;
+  transition: background-color var(--base-duration) ease;
   z-index: 9999;
 }
-.modal.modal-show, .modal.modal-show-spirits,
+.modal-aperitif.modal-show, .modal-aperitif.modal-show-spirits,
 .modal-spirits.modal-show,
 .modal-spirits.modal-show-spirits {
   position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba(4, 7, 15, 0.5098039216);
-  transition: background-color 0.25s;
+  transition: background-color var(--base-duration);
 }
-.modal.modal-show > .component-wrapper,
-.modal.modal-show > .component-wrapper-spirits, .modal.modal-show-spirits > .component-wrapper,
-.modal.modal-show-spirits > .component-wrapper-spirits,
+.modal-aperitif.modal-show > .component-wrapper,
+.modal-aperitif.modal-show > .component-wrapper-spirits, .modal-aperitif.modal-show-spirits > .component-wrapper,
+.modal-aperitif.modal-show-spirits > .component-wrapper-spirits,
 .modal-spirits.modal-show > .component-wrapper,
 .modal-spirits.modal-show > .component-wrapper-spirits,
 .modal-spirits.modal-show-spirits > .component-wrapper,
 .modal-spirits.modal-show-spirits > .component-wrapper-spirits {
   transform: scale(1);
+  transition: var(--base-duration) linear;
 }
-.modal .component-wrapper,
-.modal-spirits .component-wrapper {
+.modal-aperitif .component-wrapper,
+.modal-aperitif .component-wrapper-spirits,
+.modal-spirits .component-wrapper,
+.modal-spirits .component-wrapper-spirits {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1050,14 +1056,16 @@ img {
   margin: 0 0 6% 0;
   padding: 2.5rem;
   background-color: #D2D4D7;
-  border-radius: 30px;
+  border-radius: 8px;
   box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5);
   transform: scale(0);
-  transition: transform 0.25s;
+  transition: transform var(--base-duration);
   transition-delay: 0.15s;
 }
-.modal .component-wrapper .close,
-.modal-spirits .component-wrapper .close {
+.modal-aperitif .component-wrapper .close,
+.modal-aperitif .component-wrapper-spirits .close,
+.modal-spirits .component-wrapper .close,
+.modal-spirits .component-wrapper-spirits .close {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -1069,36 +1077,52 @@ img {
   border: none;
   background-color: transparent;
   font-size: 1.5rem;
-  transition: 0.25s linear;
+  transition: var(--base-duration) linear;
 }
-.modal .component-wrapper .close:before, .modal .component-wrapper .close:after,
+.modal-aperitif .component-wrapper .close:before, .modal-aperitif .component-wrapper .close:after,
+.modal-aperitif .component-wrapper-spirits .close:before,
+.modal-aperitif .component-wrapper-spirits .close:after,
 .modal-spirits .component-wrapper .close:before,
-.modal-spirits .component-wrapper .close:after {
+.modal-spirits .component-wrapper .close:after,
+.modal-spirits .component-wrapper-spirits .close:before,
+.modal-spirits .component-wrapper-spirits .close:after {
   position: absolute;
   content: "";
   width: 1.25rem;
   height: 0.125rem;
   background-color: black;
 }
-.modal .component-wrapper .close:before,
-.modal-spirits .component-wrapper .close:before {
+.modal-aperitif .component-wrapper .close:before,
+.modal-aperitif .component-wrapper-spirits .close:before,
+.modal-spirits .component-wrapper .close:before,
+.modal-spirits .component-wrapper-spirits .close:before {
   transform: rotate(-45deg);
 }
-.modal .component-wrapper .close:after,
-.modal-spirits .component-wrapper .close:after {
+.modal-aperitif .component-wrapper .close:after,
+.modal-aperitif .component-wrapper-spirits .close:after,
+.modal-spirits .component-wrapper .close:after,
+.modal-spirits .component-wrapper-spirits .close:after {
   transform: rotate(45deg);
 }
-.modal .component-wrapper .close:hover,
-.modal-spirits .component-wrapper .close:hover {
+.modal-aperitif .component-wrapper .close:hover,
+.modal-aperitif .component-wrapper-spirits .close:hover,
+.modal-spirits .component-wrapper .close:hover,
+.modal-spirits .component-wrapper-spirits .close:hover {
   transform: rotate(360deg);
 }
-.modal .component-wrapper .close:hover:before, .modal .component-wrapper .close:hover:after,
+.modal-aperitif .component-wrapper .close:hover:before, .modal-aperitif .component-wrapper .close:hover:after,
+.modal-aperitif .component-wrapper-spirits .close:hover:before,
+.modal-aperitif .component-wrapper-spirits .close:hover:after,
 .modal-spirits .component-wrapper .close:hover:before,
-.modal-spirits .component-wrapper .close:hover:after {
+.modal-spirits .component-wrapper .close:hover:after,
+.modal-spirits .component-wrapper-spirits .close:hover:before,
+.modal-spirits .component-wrapper-spirits .close:hover:after {
   background-color: tomato;
 }
-.modal .component-wrapper .modal-header,
-.modal-spirits .component-wrapper .modal-header {
+.modal-aperitif .component-wrapper .modal-header,
+.modal-aperitif .component-wrapper-spirits .modal-header,
+.modal-spirits .component-wrapper .modal-header,
+.modal-spirits .component-wrapper-spirits .modal-header {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -1108,20 +1132,26 @@ img {
   margin: 0;
   padding: 0 0 1.25rem;
 }
-.modal .component-wrapper .modal-header h2,
-.modal-spirits .component-wrapper .modal-header h2 {
-  color: #163D4F;
+.modal-aperitif .component-wrapper .modal-header h2,
+.modal-aperitif .component-wrapper-spirits .modal-header h2,
+.modal-spirits .component-wrapper .modal-header h2,
+.modal-spirits .component-wrapper-spirits .modal-header h2 {
+  color: var(--japanese-indigo);
   font-size: calc(var(--index) * 1.2);
   font-weight: bold;
 }
-.modal .component-wrapper .component,
-.modal-spirits .component-wrapper .component {
+.modal-aperitif .component-wrapper .component,
+.modal-aperitif .component-wrapper-spirits .component,
+.modal-spirits .component-wrapper .component,
+.modal-spirits .component-wrapper-spirits .component {
   position: relative;
   display: flex;
   flex-direction: column;
 }
-.modal .component-wrapper .component__description,
-.modal-spirits .component-wrapper .component__description {
+.modal-aperitif .component-wrapper .component__description,
+.modal-aperitif .component-wrapper-spirits .component__description,
+.modal-spirits .component-wrapper .component__description,
+.modal-spirits .component-wrapper-spirits .component__description {
   font-size: calc(var(--index) * 0.6);
   line-height: 1.75;
   text-align: justify;
@@ -1129,19 +1159,25 @@ img {
   font-weight: 300;
   color: slategray;
 }
-.modal .component-wrapper .component__info,
-.modal-spirits .component-wrapper .component__info {
+.modal-aperitif .component-wrapper .component__info,
+.modal-aperitif .component-wrapper-spirits .component__info,
+.modal-spirits .component-wrapper .component__info,
+.modal-spirits .component-wrapper-spirits .component__info {
   margin: var(--index) 0 0 0;
 }
-.modal .component-wrapper .component__info ul,
-.modal-spirits .component-wrapper .component__info ul {
+.modal-aperitif .component-wrapper .component__info ul,
+.modal-aperitif .component-wrapper-spirits .component__info ul,
+.modal-spirits .component-wrapper .component__info ul,
+.modal-spirits .component-wrapper-spirits .component__info ul {
   display: inline-flex;
   width: 100%;
   justify-content: space-between;
   font-family: "SF Pro Display Thin";
 }
-.modal .component-wrapper .component__info ul li,
-.modal-spirits .component-wrapper .component__info ul li {
+.modal-aperitif .component-wrapper .component__info ul li,
+.modal-aperitif .component-wrapper-spirits .component__info ul li,
+.modal-spirits .component-wrapper .component__info ul li,
+.modal-spirits .component-wrapper-spirits .component__info ul li {
   width: 30%;
   display: inline-grid;
   grid-template-columns: auto 1fr;
@@ -1150,34 +1186,50 @@ img {
   list-style: none;
   color: slategray;
 }
-.modal .component-wrapper .component__info ul li span,
-.modal-spirits .component-wrapper .component__info ul li span {
-  color: #04070F;
+.modal-aperitif .component-wrapper .component__info ul li span,
+.modal-aperitif .component-wrapper-spirits .component__info ul li span,
+.modal-spirits .component-wrapper .component__info ul li span,
+.modal-spirits .component-wrapper-spirits .component__info ul li span {
+  color: var(--main-color);
   margin: 0 5px 0 0;
   font-family: "SF Pro Display";
   font-weight: 300;
 }
-.modal .component-wrapper .component__info ul li:nth-of-type(1), .modal .component-wrapper .component__info ul li:nth-of-type(4),
+.modal-aperitif .component-wrapper .component__info ul li:nth-of-type(1), .modal-aperitif .component-wrapper .component__info ul li:nth-of-type(4),
+.modal-aperitif .component-wrapper-spirits .component__info ul li:nth-of-type(1),
+.modal-aperitif .component-wrapper-spirits .component__info ul li:nth-of-type(4),
 .modal-spirits .component-wrapper .component__info ul li:nth-of-type(1),
-.modal-spirits .component-wrapper .component__info ul li:nth-of-type(4) {
+.modal-spirits .component-wrapper .component__info ul li:nth-of-type(4),
+.modal-spirits .component-wrapper-spirits .component__info ul li:nth-of-type(1),
+.modal-spirits .component-wrapper-spirits .component__info ul li:nth-of-type(4) {
   width: 15%;
 }
-.modal .component-wrapper .component__ratings,
-.modal-spirits .component-wrapper .component__ratings {
+.modal-aperitif .component-wrapper .component__ratings,
+.modal-aperitif .component-wrapper-spirits .component__ratings,
+.modal-spirits .component-wrapper .component__ratings,
+.modal-spirits .component-wrapper-spirits .component__ratings {
   display: flex;
   width: 25%;
   margin: calc(var(--index) * 1.5) 0 0 0;
   align-items: center;
   justify-content: space-between;
 }
-.modal .component-wrapper .component__ratings .component__wine-spectator,
-.modal .component-wrapper .component__ratings .component__robert-parker,
-.modal .component-wrapper .component__ratings .component__james-suckling,
-.modal .component-wrapper .component__ratings .component__wine-enthusiast,
+.modal-aperitif .component-wrapper .component__ratings .component__wine-spectator,
+.modal-aperitif .component-wrapper .component__ratings .component__robert-parker,
+.modal-aperitif .component-wrapper .component__ratings .component__james-suckling,
+.modal-aperitif .component-wrapper .component__ratings .component__wine-enthusiast,
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__wine-spectator,
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__robert-parker,
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__james-suckling,
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__wine-enthusiast,
 .modal-spirits .component-wrapper .component__ratings .component__wine-spectator,
 .modal-spirits .component-wrapper .component__ratings .component__robert-parker,
 .modal-spirits .component-wrapper .component__ratings .component__james-suckling,
-.modal-spirits .component-wrapper .component__ratings .component__wine-enthusiast {
+.modal-spirits .component-wrapper .component__ratings .component__wine-enthusiast,
+.modal-spirits .component-wrapper-spirits .component__ratings .component__wine-spectator,
+.modal-spirits .component-wrapper-spirits .component__ratings .component__robert-parker,
+.modal-spirits .component-wrapper-spirits .component__ratings .component__james-suckling,
+.modal-spirits .component-wrapper-spirits .component__ratings .component__wine-enthusiast {
   padding: calc(var(--index) * 0.4);
   border: 0.5px solid;
   font-size: calc(var(--index) * 0.5);
@@ -1187,23 +1239,31 @@ img {
   border-radius: 8px;
   cursor: pointer;
 }
-.modal .component-wrapper .component__ratings .component__wine-spectator,
-.modal-spirits .component-wrapper .component__ratings .component__wine-spectator {
+.modal-aperitif .component-wrapper .component__ratings .component__wine-spectator,
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__wine-spectator,
+.modal-spirits .component-wrapper .component__ratings .component__wine-spectator,
+.modal-spirits .component-wrapper-spirits .component__ratings .component__wine-spectator {
   color: #8D1205;
   border-color: #8D1205;
 }
-.modal .component-wrapper .component__ratings .component__robert-parker,
-.modal-spirits .component-wrapper .component__ratings .component__robert-parker {
+.modal-aperitif .component-wrapper .component__ratings .component__robert-parker,
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__robert-parker,
+.modal-spirits .component-wrapper .component__ratings .component__robert-parker,
+.modal-spirits .component-wrapper-spirits .component__ratings .component__robert-parker {
   color: #179B3B;
   border-color: #179B3B;
 }
-.modal .component-wrapper .component__ratings .component__james-suckling,
-.modal-spirits .component-wrapper .component__ratings .component__james-suckling {
+.modal-aperitif .component-wrapper .component__ratings .component__james-suckling,
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__james-suckling,
+.modal-spirits .component-wrapper .component__ratings .component__james-suckling,
+.modal-spirits .component-wrapper-spirits .component__ratings .component__james-suckling {
   color: #B11A12;
   border-color: #B11A12;
 }
-.modal .component-wrapper .component__ratings .component__wine-enthusiast,
-.modal-spirits .component-wrapper .component__ratings .component__wine-enthusiast {
+.modal-aperitif .component-wrapper .component__ratings .component__wine-enthusiast,
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__wine-enthusiast,
+.modal-spirits .component-wrapper .component__ratings .component__wine-enthusiast,
+.modal-spirits .component-wrapper-spirits .component__ratings .component__wine-enthusiast {
   color: #617D8B;
   border-color: #617D8B;
 }
