@@ -99,7 +99,7 @@ $md1: 1440px;
 			align-items: center;
 			justify-content: end;
 
-			a {
+			.header__call {
 				display: inline-flex;
 				height: calc(var(--index) * 1.8);
 				padding: 0 var(--index);
@@ -111,6 +111,8 @@ $md1: 1440px;
 				color: var(--creamy);
 				margin: 0 calc(var(--index) * 1) 0 0;
 				font-size: calc(var(--index) * .65);
+				font-family: "SF Pro Display";
+				font-weight: 300;
 			}
 
 			button {

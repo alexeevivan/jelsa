@@ -44,6 +44,9 @@ module.exports = {
 		contact: {
 			import: "./js/contact.js"
 		},
+		restaurant: {
+			import: "./js/restaurant.js"
+		},
 		panoramic: {
 			import: "./js/panoramic.js"
 		},
@@ -106,6 +109,16 @@ module.exports = {
 					collapseWhitespace: isProd
 				},
 				chunks: ["main", "contact"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./restaurant.html",
+				template: "./restaurant.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "restaurant"]
 			}
 		),
 		new HTMLWebpackPlugin(

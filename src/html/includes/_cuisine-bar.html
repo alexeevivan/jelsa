@@ -1,0 +1,73 @@
+<div class="modal-cuisine" data-modal="trigger-1">
+	<article class="component-wrapper">
+		<button class="close"></button>
+		<header class="modal-header">
+			<h2>
+				Dom Perignon. Millésime
+			</h2>
+		</header>
+		<div class="component">
+			<p class="component__description">
+				Dom Perignon, 2012 &mdash; роскошный винтаж, создание которого, по
+				словам мастера
+				подвала Венсана Шаперона, &laquo;сочетало в себе
+				мастерство и скромность&raquo;. Он отмечает, что, несмотря на сложный и суровый
+				год,
+				заставивший буквально воевать за урожай,
+				шампанское стало &laquo;триумфом истории невзгод&raquo; и заставило освоить
+				новые границы,
+				поэтому получилось не совсем
+				классическим, но захватывающим, глубоким и вдохновляющим.
+			</p>
+			<div class="component__info">
+				<ul>
+					<li>
+						<span>регион:</span>франция. шампань
+					</li>
+					<li>
+						<span>виноград:</span>пино нуар &mdash; 46%, шардоне &mdash; 54%
+					</li>
+					<li>
+						<span>аромат:</span>нектарин, абрикос, мята, гуава, белый перец
+					</li>
+					<li>
+						<span>крепость:</span>12.5%
+					</li>
+				</ul>
+			</div>
+			<p class="component__ratings">
+				<span class="component__wine-spectator" title="Рейтинг Wine Spectator">
+					ws 96
+				</span>
+				<span class="component__robert-parker" title="Рейтинг Robert Parker">
+					rp 96
+				</span>
+				<span class="component__james-suckling" title="Рейтинг James Suckling">
+					js 97
+				</span>
+			</p>
+		</div>
+	</article>
+</div>
+<section class="restaurant">
+	<button class="restaurant__cuisine" href="index.html" data-modal-trigger="trigger-1">
+		<h2>
+			Меню <br> <span>à la carte</span>
+		</h2>
+	</button>
+	<button class="restaurant__bar" href="index.html" data-modal-trigger="trigger-2">
+		<h2>
+			Специальное предложение
+		</h2>
+	</button>
+	<svg width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+		<defs>
+			<filter id="triangle">
+				<feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+					result="triangle" />
+				<feComposite in="SourceGraphic" in2="triangle" operator="atop" />
+			</filter>
+		</defs>
+	</svg>
+</section>
