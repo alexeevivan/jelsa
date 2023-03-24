@@ -1212,7 +1212,6 @@ img {
   width: 25%;
   margin: calc(var(--index) * 1.5) 0 0 0;
   align-items: center;
-  justify-content: space-between;
 }
 .modal-aperitif .component-wrapper .component__ratings .component__wine-spectator,
 .modal-aperitif .component-wrapper .component__ratings .component__robert-parker,
@@ -1238,6 +1237,25 @@ img {
   text-transform: uppercase;
   border-radius: 8px;
   cursor: pointer;
+  margin: 0 0 0 15px;
+}
+.modal-aperitif .component-wrapper .component__ratings .component__wine-spectator:nth-of-type(1),
+.modal-aperitif .component-wrapper .component__ratings .component__robert-parker:nth-of-type(1),
+.modal-aperitif .component-wrapper .component__ratings .component__james-suckling:nth-of-type(1),
+.modal-aperitif .component-wrapper .component__ratings .component__wine-enthusiast:nth-of-type(1),
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__wine-spectator:nth-of-type(1),
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__robert-parker:nth-of-type(1),
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__james-suckling:nth-of-type(1),
+.modal-aperitif .component-wrapper-spirits .component__ratings .component__wine-enthusiast:nth-of-type(1),
+.modal-spirits .component-wrapper .component__ratings .component__wine-spectator:nth-of-type(1),
+.modal-spirits .component-wrapper .component__ratings .component__robert-parker:nth-of-type(1),
+.modal-spirits .component-wrapper .component__ratings .component__james-suckling:nth-of-type(1),
+.modal-spirits .component-wrapper .component__ratings .component__wine-enthusiast:nth-of-type(1),
+.modal-spirits .component-wrapper-spirits .component__ratings .component__wine-spectator:nth-of-type(1),
+.modal-spirits .component-wrapper-spirits .component__ratings .component__robert-parker:nth-of-type(1),
+.modal-spirits .component-wrapper-spirits .component__ratings .component__james-suckling:nth-of-type(1),
+.modal-spirits .component-wrapper-spirits .component__ratings .component__wine-enthusiast:nth-of-type(1) {
+  margin: 0;
 }
 .modal-aperitif .component-wrapper .component__ratings .component__wine-spectator,
 .modal-aperitif .component-wrapper-spirits .component__ratings .component__wine-spectator,
