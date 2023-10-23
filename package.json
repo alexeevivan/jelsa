@@ -46,6 +46,7 @@
 		"webpack-dev-server": "^4.11.1"
 	},
 	"dependencies": {
+		"animejs": "^3.2.1",
 		"jquery": "^3.6.3",
 		"lodash": "^4.17.21",
 		"normalize.css": "^8.0.1",

@@ -1,6 +1,148 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
 
+:root {
+	--card-height: calc(var(--index) * 20);
+	--card-width: calc(var(--card-height) / 1.5);
+}
+
 .wrapper {
+	// .content {
+	// 	.restaurant {
+	// 		width: 100vw;
+	// 		height: calc(100vh - 170px);
+	// 		margin: 85px 0 0 0;
+	// 		position: relative;
+	// 		display: flex;
+	// 		justify-content: center;
+	// 		align-items: center;
+
+	// 		.restaurant__cuisine,
+	// 		.restaurant__bar {
+	// 			display: inline-block;
+	// 			position: absolute;
+	// 			z-index: 2;
+	// 			width: 70%;
+	// 			height: 70%;
+	// 			filter: url("#triangle");
+
+	// 			&::before {
+	// 				background-size: cover;
+	// 				background-attachment: fixed;
+	// 			}
+
+	// 			h2 {
+	// 				position: absolute;
+	// 				z-index: 4;
+	// 				font-size: calc(var(--index) * 1.5);
+	// 				font-family: "SF Pro Display Ultra-Light", sans-serif;
+
+	// 				span {
+	// 					font-family: "Shelley Andante Script";
+	// 					color: goldenrod;
+	// 					font-size: calc(var(--index) * 1.25);
+	// 				}
+	// 			}
+	// 		}
+
+	// 		.restaurant__cuisine {
+	// 			top: 14%;
+	// 			left: 14%;
+	// 			clip-path: polygon(0 0, 0% 100%, 100% 0);
+	// 			// animation: fullClipRestaurant 1s linear;
+
+	// 			&::before {
+	// 				content: "";
+	// 				display: block;
+	// 				position: absolute;
+	// 				top: 0;
+	// 				left: 0;
+	// 				width: 100%;
+	// 				height: 100%;
+	// 				// background: url("../assets/content/1.jpg");
+	// 				background-color: var(--japanese-indigo);
+	// 				clip-path: polygon(0 0, 0% 100%, 100% 0);
+	// 				box-shadow: 1px 1px 15px 0px var(--main-color) inset;
+	// 				// animation: fullClipRestaurant 1s linear;
+	// 			}
+
+	// 			// &:hover {
+	// 			// 	animation: fullClipRestaurantHover 2s linear;
+	// 			// 	z-index: 3;
+	// 			// 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+	// 			// 	&::before {
+	// 			// 		z-index: 3;
+	// 			// 		// animation: fullClipRestaurantHover 2s linear;
+	// 			// 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	// 			// 	}
+	// 			// }
+
+	// 			h2 {
+	// 				color: var(--creamy);
+	// 				top: var(--index);
+	// 				left: var(--index);
+	// 			}
+
+	// 			&:hover {
+	// 				h2 {
+	// 					animation: glowLight 2500ms linear infinite;
+	// 				}
+	// 			}
+	// 		}
+
+	// 		.restaurant__bar {
+	// 			bottom: 14%;
+	// 			right: 14%;
+	// 			clip-path: polygon(0 100%, 100% 100%, 100% 0);
+	// 			// animation: fullClipBar 1s linear;
+
+	// 			&::before {
+	// 				content: "";
+	// 				display: block;
+	// 				position: absolute;
+	// 				top: 0;
+	// 				left: 0;
+	// 				width: 100%;
+	// 				height: 100%;
+	// 				background-color: var(--creamy);
+	// 				// background: url("../assets/content/jelsa-vokals-1.jpg");
+	// 				clip-path: polygon(0 100%, 100% 100%, 100% 0);
+	// 				box-shadow: 1px 1px 15px 0px var(--main-color) inset;
+	// 				// animation: fullClipBar 1s linear;
+	// 			}
+
+	// 			// &:hover {
+	// 			// 	animation: fullClipBarHover 2s linear;
+	// 			// 	z-index: 3;
+	// 			// 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+	// 			// 	&::before {
+	// 			// 		z-index: 3;
+	// 			// 		animation: fullClipBarHover 2s linear;
+	// 			// 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	// 			// 	}
+	// 			// }
+
+	// 			h2 {
+	// 				color: var(--japanese-indigo);
+	// 				bottom: var(--index);
+	// 				right: var(--index);
+	// 			}
+
+	// 			&:hover {
+	// 				h2 {
+	// 					animation: glowDark 2500ms linear infinite;
+	// 				}
+	// 			}
+	// 		}
+
+	// 		svg {
+	// 			visibility: hidden;
+	// 			position: absolute;
+	// 		}
+	// 	}
+	// }
+
 	.content {
 		.restaurant {
 			width: 100vw;
@@ -11,129 +153,102 @@
 			justify-content: center;
 			align-items: center;
 
-			.restaurant__cuisine,
-			.restaurant__bar {
-				display: inline-block;
-				position: absolute;
-				z-index: 2;
-				width: 70%;
-				height: 70%;
-				filter: url("#triangle");
-
-				&::before {
-					background-size: cover;
-					background-attachment: fixed;
-				}
-
-				h2 {
-					position: absolute;
-					z-index: 4;
-					font-size: calc(var(--index) * 1.5);
-					font-family: "SF Pro Display Ultra-Light", sans-serif;
-
-					span {
-						font-family: "Shelley Andante Script";
-						color: goldenrod;
-						font-size: calc(var(--index) * 1.25);
-					}
-				}
+			a {
+				margin: 0px 50px;
 			}
 
-			.restaurant__cuisine {
-				top: 14%;
-				left: 14%;
-				clip-path: polygon(0 0, 0% 100%, 100% 0);
-				// animation: fullClipRestaurant 1s linear;
+			.card {
+				width: var(--card-width);
+				height: var(--card-height);
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+				padding: 0 36px;
+				perspective: 2500px;
+				margin: 0px;
 
-				&::before {
-					content: "";
-					display: block;
+				.card__content {
+					transition: all 0.5s;
 					position: absolute;
-					top: 0;
-					left: 0;
 					width: 100%;
-					height: 100%;
-					// background: url("../assets/content/1.jpg");
-					background-color: var(--japanese-indigo);
-					clip-path: polygon(0 0, 0% 100%, 100% 0);
-					box-shadow: 1px 1px 15px 0px var(--main-color) inset;
-					// animation: fullClipRestaurant 1s linear;
+					z-index: -1;
+
+					.cover-image {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+
+					&::before,
+					&::after {
+						content: "";
+						opacity: 0;
+						width: 100%;
+						height: 80px;
+						transition: all 0.5s;
+						position: absolute;
+						left: 0;
+					}
+
+					&::before {
+						top: 0;
+						height: 100%;
+						background-image: linear-gradient(to top,
+								transparent 46%,
+								rgba(12, 13, 19, 0.5) 68%,
+								rgba(12, 13, 19) 97%);
+					}
+
+					&::after {
+						bottom: 0;
+						opacity: 1;
+						background-image: linear-gradient(to bottom,
+								transparent 46%,
+								rgba(12, 13, 19, 0.5) 68%,
+								rgba(12, 13, 19) 97%);
+					}
 				}
 
-				// &:hover {
-				// 	animation: fullClipRestaurantHover 2s linear;
-				// 	z-index: 3;
-				// 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-
-				// 	&::before {
-				// 		z-index: 3;
-				// 		// animation: fullClipRestaurantHover 2s linear;
-				// 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-				// 	}
-				// }
-
-				h2 {
-					color: var(--creamy);
-					top: var(--index);
-					left: var(--index);
+				.character {
+					width: 100%;
+					opacity: 0;
+					transition: all 0.5s;
+					position: absolute;
+					z-index: -1;
 				}
 
 				&:hover {
-					h2 {
-						animation: glowLight 2500ms linear infinite;
+					.card__content {
+						transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+						box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+						-webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+						-moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
 					}
 				}
 			}
 
-			.restaurant__bar {
-				bottom: 14%;
-				right: 14%;
-				clip-path: polygon(0 100%, 100% 100%, 100% 0);
-				// animation: fullClipBar 1s linear;
-
-				&::before {
-					content: "";
-					display: block;
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					background-color: var(--creamy);
-					// background: url("../assets/content/jelsa-vokals-1.jpg");
-					clip-path: polygon(0 100%, 100% 100%, 100% 0);
-					box-shadow: 1px 1px 15px 0px var(--main-color) inset;
-					// animation: fullClipBar 1s linear;
-				}
-
-				// &:hover {
-				// 	animation: fullClipBarHover 2s linear;
-				// 	z-index: 3;
-				// 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-
-				// 	&::before {
-				// 		z-index: 3;
-				// 		animation: fullClipBarHover 2s linear;
-				// 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-				// 	}
-				// }
-
-				h2 {
-					color: var(--japanese-indigo);
-					bottom: var(--index);
-					right: var(--index);
-				}
-
-				&:hover {
-					h2 {
-						animation: glowDark 2500ms linear infinite;
-					}
-				}
+			.card:hover .card__content::before,
+			.card__content::after {
+				opacity: 1;
 			}
 
-			svg {
-				visibility: hidden;
-				position: absolute;
+			.card:hover .card__content::after {
+				height: 120px;
+			}
+
+			.title {
+				width: 100%;
+				transition: transform 0.5s;
+			}
+
+			.card:hover .title {
+				transform: translate3d(0%, -50px, 100px);
+			}
+
+			.card:hover .character {
+				opacity: 1;
+				transform: translate3d(0%, -30%, 100px);
 			}
 		}
 	}
@@ -180,15 +295,15 @@ $lg: 64rem;
 		background-color: #04070f82;
 		transition: background-color var(--base-duration);
 
-		>.component-wrapper,
-		>.component-wrapper-spirits {
+		>.component-card__content,
+		>.component-card__content-spirits {
 			transform: scale(1.0);
 			transition: var(--base-duration) linear;
 		}
 	}
 
-	.component-wrapper,
-	.component-wrapper-spirits {
+	.component-card__content,
+	.component-card__content-spirits {
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -490,84 +605,84 @@ $lg: 64rem;
 // 	}
 // }
 
-.frame {
-	position: relative;
-	perspective: 40em;
-	display: grid;
-	transform-style: preserve-3d;
-}
+// .frame {
+// 	position: relative;
+// 	perspective: 40em;
+// 	display: grid;
+// 	transform-style: preserve-3d;
+// }
 
-.card {
-	grid-area: 1 / 1;
-	height: 200px;
-	width: 400px;
-	transform: translateX(10px) rotateY(25deg) rotateX(10deg);
-	background: rgba(249, 198, 26, 0.88);
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	padding: 30px;
-	color: var(--main-color);
-	text-transform: uppercase;
-	font-size: 60px;
-	font-weight: 900;
-	backface-visibility: hidden;
-	box-shadow: 0 10px 30px -3px rgba(0, 0, 0, .1);
-}
+// .card {
+// 	grid-area: 1 / 1;
+// 	height: 200px;
+// 	width: 400px;
+// 	transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+// 	background: rgba(249, 198, 26, 0.88);
+// 	display: flex;
+// 	justify-content: flex-start;
+// 	align-items: center;
+// 	padding: 30px;
+// 	color: var(--main-color);
+// 	text-transform: uppercase;
+// 	font-size: 60px;
+// 	font-weight: 900;
+// 	backface-visibility: hidden;
+// 	box-shadow: 0 10px 30px -3px rgba(0, 0, 0, .1);
+// }
 
-h1 {
-	font-size: 60px;
-	font-weight: 900;
-}
+// h1 {
+// 	font-size: 60px;
+// 	font-weight: 900;
+// }
 
-.card .enclosed {
-	background: var(--main-color);
-	line-height: 1;
-	color: rgba(249, 198, 26, 1);
-	padding: 0 5px;
-	display: inline-block;
-	transform: translate(-1px, 1px) scale(0.75);
-	transform-origin: right center;
-}
+// .card .enclosed {
+// 	background: var(--main-color);
+// 	line-height: 1;
+// 	color: rgba(249, 198, 26, 1);
+// 	padding: 0 5px;
+// 	display: inline-block;
+// 	transform: translate(-1px, 1px) scale(0.75);
+// 	transform-origin: right center;
+// }
 
-.frame:before {
-	--bw: 9px;
-	grid-area: 1 / 1;
-	content: "";
-	backface-visibility: hidden;
-	height: 100%;
-	width: 100%;
-	margin-top: calc(-1 * var(--bw));
-	margin-left: calc(-1 * var(--bw));
-	background: transparent;
-	transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
-	pointer-events: none;
-	border: var(--bw) solid var(--creamy);
-	border-radius: 8px;
-	box-sizing: content-box;
-}
-
-
-.frame:hover>div,
-.frame:hover:before {
-	transform: none;
-}
+// .frame:before {
+// 	--bw: 9px;
+// 	grid-area: 1 / 1;
+// 	content: "";
+// 	backface-visibility: hidden;
+// 	height: 100%;
+// 	width: 100%;
+// 	margin-top: calc(-1 * var(--bw));
+// 	margin-left: calc(-1 * var(--bw));
+// 	background: transparent;
+// 	transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+// 	pointer-events: none;
+// 	border: var(--bw) solid var(--creamy);
+// 	border-radius: 8px;
+// 	box-sizing: content-box;
+// }
 
 
-.frame>div,
-.frame:before {
-	will-change: transform;
-	transition: .3s transform cubic-bezier(.25, .46, .45, 1);
-}
+// .frame:hover>div,
+// .frame:hover:before {
+// 	transform: none;
+// }
 
-@keyframes glowLight {
-	40% {
-		text-shadow: 0 0 8px var(--creamy);
-	}
-}
 
-@keyframes glowDark {
-	40% {
-		text-shadow: 0 0 8px var(--japanese-indigo);
-	}
-}
+// .frame>div,
+// .frame:before {
+// 	will-change: transform;
+// 	transition: .3s transform cubic-bezier(.25, .46, .45, 1);
+// }
+
+// @keyframes glowLight {
+// 	40% {
+// 		text-shadow: 0 0 8px var(--creamy);
+// 	}
+// }
+
+// @keyframes glowDark {
+// 	40% {
+// 		text-shadow: 0 0 8px var(--japanese-indigo);
+// 	}
+// }

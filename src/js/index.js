@@ -1,4 +1,5 @@
 import * as $ from "jquery";
+import anime from "./_vendors/anime.min.js";
 import "@styles/main.scss";
 import "@styles/_header.scss";
 import "@styles/_footer.scss";
@@ -81,3 +82,49 @@ $(function () {
 		lazySizes.init(); // lazySizes применяется при обработке изображений, находящихся на странице.
 	}
 })();
+
+// ==========================================================
+// Index page new-year modal animation
+// ==========================================================
+window.onload = function () {
+	$(".modal-ny").addClass("modal-ny__active");
+	$(".header").addClass("hidden");
+	document.body.style.position = "fixed";
+};
+
+$(".modal-ny__close-btn").click(function () {
+	$(".modal-ny").removeClass("modal-ny__active");
+	$(".modal-ny").addClass("hidden");
+	document.body.style.position = "unset";
+});
+
+var design = anime({
+	targets: "#newyear2020 #happy",
+	strokeDashoffset: [anime.setDashoffset, 0],
+	easing: "easeInOutSine",
+	duration: 2500,
+	delay: function (el, i) { return i * 250 },
+	direction: "alternate",
+	loop: true
+});
+
+var design = anime({
+	targets: "#newyear2020 #NEWYEAR",
+	strokeDashoffset: [anime.setDashoffset, 0],
+	easing: "easeInOutSine",
+	duration: 2500,
+	delay: function (el, i) { return i * 250 },
+	direction: "alternate",
+	loop: true
+});
+
+var design = anime({
+	targets: "#newyear2020 #Vector_43,#Vector_210,#Vector_207,#Vector_42,#Vector_45",
+	strokeDashoffset: [anime.setDashoffset, 0],
+	translateY: -10,
+	easing: "easeInOutSine",
+	duration: 250,
+	delay: function (el, i) { return i * 250 },
+	direction: "alternate",
+	loop: true
+});

@@ -29,8 +29,443 @@ body {
 	will-change: transform;
 }
 
+@keyframes spin {
+
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 .wrapper {
+
 	.content {
+		.modal-ny {
+			display: flex;
+			width: 100vw;
+			height: 100vh;
+			position: absolute;
+			z-index: 100;
+			background-color: var(--main-color);
+			justify-content: center;
+			align-items: center;
+
+			&.hidden {
+				display: none;
+			}
+
+			.modal-ny__card {
+				position: relative;
+				width: calc(100% - 288px);
+				height: calc(var(--index) * 20);
+				display: flex;
+				flex-direction: row;
+				border-radius: calc(var(--index) * .5);
+				padding: 1px;
+
+				&::before {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					z-index: -1;
+					background-color: var(--main-color);
+					background-image: linear-gradient(45deg, var(--main-color) 0%, #B1655E 24%, var(--cyan) 49%, var(--japanese-indigo) 75%, var(--creamy) 100%);
+					background-size: 400% 400%;
+					animation: gradientborders 8s ease infinite;
+					border-radius: calc(var(--index) * .5);
+				}
+
+				.modal-ny__wallpaper {
+					width: 65%;
+					height: 100%;
+					border-radius: calc(var(--index) * .5) 0 0 calc(var(--index) * .5);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background-color: #1B2033;
+
+					.modal-ny__call {
+						width: calc(var(--index) * 28);
+						border-radius: var(--index) 0 0 var(--index);
+
+						.modal-ny__main-frame {
+
+							.mauto {
+								margin: auto;
+							}
+
+							#under-circle1 {
+								-webkit-animation: rotate-center 2s linear infinite both;
+								animation: rotate-center 2s linear infinite both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#under-cirlce2 {
+								-webkit-animation: rotate-center 3s linear infinite both;
+								animation: rotate-center 3s linear infinite both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+
+
+							#Vector_35 {
+								-webkit-animation: rotate-center 3s linear infinite both;
+								animation: rotate-center 3s linear infinite both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Vector_30 {
+								-webkit-animation: rotate-center 2s linear infinite both;
+								animation: rotate-center 2s linear infinite both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#circle1 {
+								-webkit-animation: rotate-center 1s linear infinite both;
+								animation: rotate-center 1s linear infinite both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_15 {
+								-webkit-animation: rotate-center 1s linear infinite both;
+								animation: rotate-center 1s linear infinite both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_16 {
+								-webkit-animation: rotate-center 3s linear infinite both;
+								animation: rotate-center 3s linear infinite both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#small-cicle1 {
+								-webkit-animation: rotate-center 3s linear infinite both;
+								animation: rotate-center 3s linear infinite both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#circle2 {
+								-webkit-animation: rotate-center 2.4s linear infinite both;
+								animation: rotate-center 2.4s linear infinite both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_17 {
+								-webkit-animation: rotate-center 2.4s linear infinite both;
+								animation: rotate-center 2.4s linear infinite both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Vector_191 {
+								-webkit-animation: flip-vertical-left 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate both;
+								animation: flip-vertical-left 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Vector_24 {
+								-webkit-animation: flip-vertical-left 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate both;
+								animation: flip-vertical-left 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#giftbox1 {
+
+								transform-origin: top;
+								transform-box: fill-box;
+							}
+
+							#jhalar1 {
+								animation: swing ease-in-out 1s infinite alternate;
+								transform-origin: top;
+								transform-box: fill-box;
+							}
+
+							#jhalar2 {
+								animation: swing ease-in-out 1.3s infinite alternate;
+								transform-origin: top;
+								transform-box: fill-box;
+							}
+
+							#jhalar3 {
+								animation: swing ease-in-out 1.5s infinite alternate;
+								transform-origin: top;
+								transform-box: fill-box;
+							}
+
+							#jharlar3 {
+								animation: swing ease-in-out 1.5s infinite alternate;
+								transform-origin: top;
+								transform-box: fill-box;
+							}
+
+							#jhalar5 {
+								animation: swing ease-in-out 1.3s infinite alternate;
+								transform-origin: top;
+								transform-box: fill-box;
+							}
+
+							#jhalar6 {
+								animation: swing ease-in-out 1s infinite alternate;
+								transform-origin: top;
+								transform-box: fill-box;
+							}
+
+							#Group_23 {
+								-webkit-animation: scale-in-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_11 {
+								-webkit-animation: scale-in-center 2.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 2.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_10 {
+								-webkit-animation: scale-in-center 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_9 {
+								-webkit-animation: scale-in-center 1.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 1.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_28 {
+								-webkit-animation: scale-in-center 1.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 1.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_24 {
+								-webkit-animation: scale-in-center 1.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 1.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_25 {
+								-webkit-animation: scale-in-center 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_26 {
+								-webkit-animation: scale-in-center 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_27 {
+								-webkit-animation: scale-in-center 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_14 {
+								-webkit-animation: scale-in-center 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_13 {
+								-webkit-animation: scale-in-center 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 1.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#Group_12 {
+								-webkit-animation: scale-in-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: scale-in-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								transform-box: fill-box;
+								transform-origin: center;
+							}
+
+							#year {
+								-webkit-animation: focus-in-expand-fwd 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+								animation: focus-in-expand-fwd 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+							}
+
+							/*************anime css*****************/
+							#newyear2020 #happy {
+								stroke: #EFC87E;
+								stroke-width: 1px;
+								fill: #1B2033;
+							}
+
+							#newyear2020 #NEWYEAR {
+								stroke: #EFC87E;
+								stroke-width: 1px;
+								fill: #1B2033;
+							}
+
+							#newyear2020 #Group path {
+								stroke: #EFC87E;
+								stroke-width: 1px;
+								fill: #1b2033;
+							}
+						}
+					}
+				}
+
+				.modal-ny__info {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 35%;
+					background-color: #1B2033;
+					border-radius: 0 calc(var(--index) * .5) calc(var(--index) * .5) 0;
+
+					.modal-ny__proposal {
+						display: flex;
+						flex-direction: column;
+						width: 75%;
+						height: 100%;
+						justify-content: space-evenly;
+						align-items: center;
+
+						h2 {
+							font-family: "Imprint MT Shadow";
+							text-transform: uppercase;
+							font-size: calc(var(--index) * 2);
+							text-align: center;
+							color: #EFC87E;
+						}
+
+						ul {
+							display: inline-block;
+							text-align: center;
+
+							li {
+								font-size: calc(var(--index) * .75);
+								margin: calc(var(--index) * .7);
+
+								&:nth-child(1) {
+									margin: 0;
+								}
+							}
+						}
+
+						a {
+							display: inline-flex;
+							width: 60%;
+							padding: calc(var(--index) * .5);
+							border: 1px solid #B2655E;
+							border-radius: calc(var(--index) * .4);
+							justify-content: center;
+							align-items: center;
+							text-transform: capitalize;
+							color: var(--creamy);
+							transition: .5s;
+							font-size: calc(var(--index) * .7);
+
+							&:hover {
+								border: 1px solid #EFC87E;
+								color: #EFC87E;
+							}
+
+						}
+					}
+
+					.modal-ny__outer {
+						position: relative;
+						margin: auto;
+						width: calc(var(--index) * 2);
+						cursor: pointer;
+
+						&:hover {
+							.modal-ny__inner {
+
+								&::before,
+								&::after {
+									transform: rotate(0);
+								}
+
+								&::before {
+									top: 0;
+								}
+
+								&::after {
+									bottom: 0;
+								}
+
+								.modal-ny__close-btn {
+									opacity: 1;
+								}
+							}
+						}
+
+						.modal-ny__inner {
+							width: inherit;
+							text-align: center;
+
+							&::after,
+							&::before {
+								position: absolute;
+								content: '';
+								height: 1px;
+								width: inherit;
+								background: #EFC87E;
+								left: 0;
+								transition: all .3s ease-in;
+							}
+
+							&::before {
+								top: 50%;
+								transform: rotate(45deg);
+							}
+
+							&::after {
+								bottom: 50%;
+								transform: rotate(-45deg);
+							}
+
+							a {
+								font-size: calc(var(--index) * .4);
+								line-height: 4em;
+								text-transform: uppercase;
+								color: #fff;
+								transition: all .3s ease-in;
+								opacity: 0;
+								cursor: pointer;
+							}
+						}
+					}
+				}
+			}
+		}
+
 		.hero-section {
 			height: 100vh;
 
@@ -43,6 +478,21 @@ body {
 
 			.container {
 				padding: 0 6vw;
+
+				.space {
+					position: absolute;
+					width: 100%;
+					height: 200vh;
+					top: 0;
+					left: 0;
+					margin-top: -50vh;
+					margin-left: 0vh;
+					animation: spin 240s linear infinite;
+					background-size: calc(var(--index) * 10);
+					backface-visibility: visible;
+					background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0MCAyNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0MCAyNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxyZWN0IHg9IjEwNiIgeT0iOTAiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiLz48cmVjdCB4PSI3NCIgeT0iNjMiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIyMyIgeT0iNjYiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSI1MCIgeT0iMTEwIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iNjMiIHk9IjEyOCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjQ1IiB5PSIxNDkiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSI5MiIgeT0iMTUxIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iNTgiIHk9IjgiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNDciIHk9IjMzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIi8+PHJlY3QgeD0iOTEiIHk9IjQzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMTY5IiB5PSIyOSIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjE4MiIgeT0iMTkiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNjEiIHk9IjU5IiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMTM4IiB5PSI5NSIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjE5OSIgeT0iNzEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIzIiBoZWlnaHQ9IjMiLz48cmVjdCB4PSIyMTMiIHk9IjE1MyIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjIiIGhlaWdodD0iMiIvPjxyZWN0IHg9IjEyOCIgeT0iMTYzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMjA1IiB5PSIxNzQiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNTIiIHk9IjIwMCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjUyIiB5PSIyMTEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiLz48cmVjdCB5PSIxOTEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxMTAiIHk9IjE4NCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjwvc3ZnPg==);
+					filter: opacity(0.5);
+				}
 
 				.main-header {
 					height: 100vh;
@@ -359,14 +809,33 @@ body {
 							justify-content: center;
 							height: calc(var(--index) * .8);
 							border-radius: 2px;
-							// background: #cfcbf7;
 							background: linear-gradient(-45deg, var(--main-color), #171169, var(--main-color));
 							background-size: 400% 400%;
 							animation: gradient 10s ease infinite;
 							border: .5px solid #cfcbf7;
 							box-sizing: border-box;
 							position: absolute;
+							z-index: 0;
 							cursor: pointer;
+							transition: .5s;
+
+							&:hover {
+								color: var(--main-color);
+								transition: .5s;
+								border: .5px solid var(--main-color);
+
+								&::before {
+									content: "";
+									position: absolute;
+									width: calc(100% + .5px);
+									height: calc(100% + .5px);
+									border-radius: 2px;
+									z-index: -1;
+									background-image: linear-gradient(60deg, var(--japanese-indigo), #D2D0F7, var(--japanese-indigo));
+									background-size: 300%;
+									animation: animate_bg 5s infinite;
+								}
+							}
 
 							&.hall__scene {
 								margin: calc(var(--index) * 7.35) 0 0 calc(var(--index) * 7.85);
@@ -483,12 +952,24 @@ body {
 						li {
 							font-size: calc(var(--index) * .85);
 							color: var(--creamy);
+							margin: var(--index) 0 0 0;
+							font-family: "Raleway";
+							font-weight: 300;
+
+							&:first-child {
+								margin: 0;
+							}
+
+							span {
+								font-family: "Imprint MT Shadow";
+								text-transform: uppercase;
+							}
 						}
 					}
 
 					.hall__reserve-h {
 						margin: 60px 0 0 0;
-						font-size: calc(var(--index) * .8);
+						font-size: calc(var(--index) * .6);
 						text-transform: uppercase;
 						background-image: linear-gradient(to right,
 								#cfcbf7,
@@ -497,7 +978,7 @@ body {
 						background-size: 200% 100%;
 						background-position: -100%;
 						display: inline-block;
-						padding: 5px 0;
+						padding: var(--index) 0;
 						position: relative;
 						background-clip: text;
 						-webkit-background-clip: text;
@@ -651,5 +1132,291 @@ body {
 
 	100% {
 		opacity: 0;
+	}
+}
+
+@keyframes animate_bg {
+
+	0%,
+	100% {
+		background-position: 0%, 50%;
+	}
+
+	50% {
+		background-position: 100%, 50%;
+	}
+}
+
+@keyframes gradientborders {
+	0% {
+		background-position: 0% 25%
+	}
+
+	50% {
+		background-position: 100% 76%
+	}
+
+	100% {
+		background-position: 0% 25%
+	}
+}
+
+/***************2020************/
+
+@-webkit-keyframes focus-in-expand-fwd {
+	0% {
+		letter-spacing: -0.5em;
+		-webkit-transform: translateZ(-800px);
+		transform: translateZ(-800px);
+		-webkit-filter: blur(12px);
+		filter: blur(12px);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		-webkit-filter: blur(0);
+		filter: blur(0);
+		opacity: 1;
+	}
+}
+
+@keyframes focus-in-expand-fwd {
+	0% {
+		letter-spacing: -0.5em;
+		-webkit-transform: translateZ(-800px);
+		transform: translateZ(-800px);
+		-webkit-filter: blur(12px);
+		filter: blur(12px);
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		-webkit-filter: blur(0);
+		filter: blur(0);
+		opacity: 1;
+	}
+}
+
+
+/**************top to bottom********/
+
+@-webkit-keyframes bounce-in-top {
+	0% {
+		-webkit-transform: translateY(-500px);
+		transform: translateY(-500px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+		opacity: 0;
+	}
+
+	38% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+		opacity: 1;
+	}
+
+	55% {
+		-webkit-transform: translateY(-65px);
+		transform: translateY(-65px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+	72% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+	81% {
+		-webkit-transform: translateY(-28px);
+		transform: translateY(-28px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+	90% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+	95% {
+		-webkit-transform: translateY(-8px);
+		transform: translateY(-8px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+}
+
+@keyframes bounce-in-top {
+	0% {
+		-webkit-transform: translateY(-500px);
+		transform: translateY(-500px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+		opacity: 0;
+	}
+
+	38% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+		opacity: 1;
+	}
+
+	55% {
+		-webkit-transform: translateY(-65px);
+		transform: translateY(-65px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+	72% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+	81% {
+		-webkit-transform: translateY(-28px);
+		transform: translateY(-28px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+	90% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+
+	95% {
+		-webkit-transform: translateY(-8px);
+		transform: translateY(-8px);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+	}
+
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+}
+
+/***********star pop up********/
+
+@-webkit-keyframes scale-in-center {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		opacity: 1;
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes scale-in-center {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		opacity: 1;
+	}
+
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+/****************giftbox*****************/
+
+
+/*************swing************/
+@keyframes swing {
+	0% {
+		transform: rotate(3deg);
+	}
+
+	100% {
+		transform: rotate(-3deg);
+	}
+}
+
+/**********flip***************/
+
+@-webkit-keyframes flip-vertical-left {
+	0% {
+		-webkit-transform: rotateY(0);
+		transform: rotateY(0);
+	}
+
+	100% {
+		-webkit-transform: rotateY(-180deg);
+		transform: rotateY(-180deg);
+	}
+}
+
+@keyframes flip-vertical-left {
+	0% {
+		-webkit-transform: rotateY(0);
+		transform: rotateY(0);
+	}
+
+	100% {
+		-webkit-transform: rotateY(-180deg);
+		transform: rotateY(-180deg);
+	}
+}
+
+
+/***********rotate***************/
+
+@-webkit-keyframes rotate-center {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotate-center {
+	0% {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
 	}
 }

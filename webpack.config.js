@@ -33,7 +33,7 @@ module.exports = {
 	mode: "development",
 	entry: {
 		main: {
-			import: "./js/index.js"
+			import: "./js/index.js",
 		},
 		expanded: {
 			import: "./js/expanded.js"
@@ -47,6 +47,13 @@ module.exports = {
 		restaurant: {
 			import: "./js/restaurant.js"
 		},
+		photo_report: {
+			import: "./js/photo_report.js"
+		},
+		faq: {
+			import: "./js/faq.js"
+		}
+		,
 		panoramic: {
 			import: "./js/panoramic.js"
 		},
@@ -119,6 +126,26 @@ module.exports = {
 					collapseWhitespace: isProd
 				},
 				chunks: ["main", "restaurant"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./photo_report.html",
+				template: "./photo_report.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "photo_report"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./faq.html",
+				template: "./faq.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "faq"]
 			}
 		),
 		new HTMLWebpackPlugin(

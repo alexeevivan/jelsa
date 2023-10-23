@@ -1,4 +1,8 @@
 $md1: 1440px;
+$color: #5533ff;
+$color2: #38e2ee;
+$deeper: darken($color, 5%);
+$lighter: lighten($color2, 10%);
 
 .header {
 	position: fixed;
@@ -11,6 +15,7 @@ $md1: 1440px;
 	width: calc(100% - 10px);
 	background-color: #04070f74;
 	transition: all ease-out 1.5s;
+
 
 	&.active {
 		background-color: var(--main-color);
@@ -113,6 +118,50 @@ $md1: 1440px;
 				font-size: calc(var(--index) * .65);
 				font-family: "SF Pro Display";
 				font-weight: 300;
+				will-change: transform;
+
+				&.header__call-btn {
+					color: var(--creamy);
+					border-radius: .3rem;
+					transition: .6s ease-in-out;
+					transition-delay: 0s;
+					overflow: hidden;
+
+					&::before {
+						content: '';
+						display: block;
+						background: var(--creamy);
+						position: absolute;
+						width: 200%;
+						height: 500%;
+						border-radius: 100%;
+						transition: .6s cubic-bezier(0.4, 0.0, 1, 1);
+					}
+
+					&:hover .inner {
+						color: var(--main-color);
+						z-index: 2;
+						transition: .6s ease-in-out;
+					}
+
+					&:hover {
+						color: transparent;
+					}
+				}
+
+				&.btn--5 {
+					&::before {
+						transform: translate(-120%, -50%) translateZ(0);
+					}
+
+					&:hover {
+						border: 1px solid var(--main-color);
+					}
+
+					&:hover::before {
+						transform: translate(0%, -34%) translateZ(0);
+					}
+				}
 			}
 
 			button {
