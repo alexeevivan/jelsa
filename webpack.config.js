@@ -35,6 +35,9 @@ module.exports = {
 		main: {
 			import: "./js/index.js",
 		},
+		gallery: {
+			import: "./js/gallery.js"
+		},
 		expanded: {
 			import: "./js/expanded.js"
 		},
@@ -95,6 +98,18 @@ module.exports = {
 				},
 				include: /\/includes/,
 				chunks: ["main", "expanded", "circles"],
+				cache: false,
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./gallery.html",
+				template: "./gallery.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				include: /\/includes/,
+				chunks: ["main", "gallery"],
 				cache: false,
 			}
 		),
