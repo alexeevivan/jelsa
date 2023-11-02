@@ -12,7 +12,7 @@ $lighter: lighten($color2, 10%);
 	top: 0;
 	padding: 0;
 	height: 85px;
-	width: calc(100% - 10px);
+	width: 100%;
 	background-color: #04070f74;
 	transition: all ease-out 1.5s;
 
@@ -28,7 +28,7 @@ $lighter: lighten($color2, 10%);
 		height: 100%;
 		margin-inline: auto;
 		justify-content: space-between;
-		padding: 0 calc($md1 / 10) 0 calc($md1 / 10);
+		padding: 0 calc($md1 / 10);
 
 		.header__links {
 			height: 100%;
