@@ -1067,6 +1067,22 @@ body {
 	}
 }
 
+@keyframes opacityBtnDown {
+	0% {
+		opacity: 0;
+		transform: translateY(0px);
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+}
+
 @keyframes blinkLoader {
 
 	78% {

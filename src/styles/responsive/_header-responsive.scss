@@ -1,0 +1,1958 @@
+$xs-small-min: 320px;
+$xs-small-max: 379.98px;
+$x-small-min: 380px;
+$x-small-max: 479.98px;
+$small-min: 480px;
+$small-max: 575.98px;
+$medium-min: 576px;
+$medium-max: 767.98px;
+$large-min: 768px;
+$large-max: 991.98px;
+$x-large-min: 992px;
+$x-large-max: 1199.98px;
+$xl-large-min: 1200px;
+$xl-large-max: 1439.98px;
+
+@media only screen and (min-width:$xs-small-min) and (max-width:$xs-small-max) and (orientation: portrait) {
+	.header {
+		.header__container {
+			display: none;
+		}
+	}
+
+	.navigation {
+		display: block;
+
+		.toggle-menu {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			outline: none;
+			padding: 0;
+			pointer-events: initial;
+			position: relative;
+			vertical-align: middle;
+			z-index: 110;
+			margin: 0 0 0 calc(100vw - 50px - 2em);
+
+			span {
+				background-color: var(--cyan);
+				content: "";
+				display: block;
+				height: 2px;
+				left: calc(50% - 13px);
+				position: absolute;
+				top: calc(50% - 1px);
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+
+				&:before,
+				&:after {
+					background-color: var(--creamy);
+					content: "";
+					display: block;
+					height: 2px;
+					position: absolute;
+					transform-origin: 50% 50%;
+					transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+					width: 26px;
+				}
+
+				&:before {
+					top: 7px;
+				}
+
+				&:after {
+					top: -7px;
+				}
+			}
+
+			&.active {
+				span {
+					background-color: transparent;
+					transition: background 0.2s ease-out;
+
+					&:before,
+					&:after {
+						transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate3d(0, 0, 1, -45deg);
+					}
+
+					&:after {
+						top: 0;
+						transform: rotate3d(0, 0, 1, 45deg);
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		display: block;
+		background: var(--main-color);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				animation-duration: 1.0s;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+		}
+
+		ul {
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				-webkit-transform: translateZ(0);
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-nav {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: var(--creamy);
+				display: block;
+				font-size: calc(var(--index) * 1.5);
+				padding: 1rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				animation: glow 3s infinite;
+
+				&:first {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$xs-small-min) and (max-width:$xs-small-max) and (orientation: landscape) {
+	.header {
+		.header__container {
+			display: none;
+		}
+	}
+
+	.navigation {
+		display: block;
+
+		.toggle-menu {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			outline: none;
+			padding: 0;
+			pointer-events: initial;
+			position: relative;
+			vertical-align: middle;
+			z-index: 110;
+			margin: 0 0 0 calc(100vw - 50px - 2em);
+
+			span {
+				background-color: var(--cyan);
+				content: "";
+				display: block;
+				height: 2px;
+				left: calc(50% - 13px);
+				position: absolute;
+				top: calc(50% - 1px);
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+
+				&:before,
+				&:after {
+					background-color: var(--creamy);
+					content: "";
+					display: block;
+					height: 2px;
+					position: absolute;
+					transform-origin: 50% 50%;
+					transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+					width: 26px;
+				}
+
+				&:before {
+					top: 7px;
+				}
+
+				&:after {
+					top: -7px;
+				}
+			}
+
+			&.active {
+				span {
+					background-color: transparent;
+					transition: background 0.2s ease-out;
+
+					&:before,
+					&:after {
+						transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate3d(0, 0, 1, -45deg);
+					}
+
+					&:after {
+						top: 0;
+						transform: rotate3d(0, 0, 1, 45deg);
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		display: block;
+		background: var(--main-color);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				animation-duration: 1.0s;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+		}
+
+		ul {
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				-webkit-transform: translateZ(0);
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-nav {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: var(--creamy);
+				display: block;
+				font-size: calc(var(--index) * 1.5);
+				padding: 1rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				animation: glow 3s infinite;
+
+				&:first {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$x-small-min) and (max-width:$x-small-max) and (orientation: portrait) {
+	.header {
+		.header__container {
+			display: none;
+		}
+	}
+
+	.navigation {
+		display: block;
+
+		.toggle-menu {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			outline: none;
+			padding: 0;
+			pointer-events: initial;
+			position: relative;
+			vertical-align: middle;
+			z-index: 110;
+			margin: 0 0 0 calc(100vw - 50px - 2em);
+
+			span {
+				background-color: var(--cyan);
+				content: "";
+				display: block;
+				height: 2px;
+				left: calc(50% - 13px);
+				position: absolute;
+				top: calc(50% - 1px);
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+
+				&:before,
+				&:after {
+					background-color: var(--creamy);
+					content: "";
+					display: block;
+					height: 2px;
+					position: absolute;
+					transform-origin: 50% 50%;
+					transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+					width: 26px;
+				}
+
+				&:before {
+					top: 7px;
+				}
+
+				&:after {
+					top: -7px;
+				}
+			}
+
+			&.active {
+				span {
+					background-color: transparent;
+					transition: background 0.2s ease-out;
+
+					&:before,
+					&:after {
+						transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate3d(0, 0, 1, -45deg);
+					}
+
+					&:after {
+						top: 0;
+						transform: rotate3d(0, 0, 1, 45deg);
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		display: block;
+		background: var(--main-color);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				animation-duration: 1.0s;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+		}
+
+		ul {
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				-webkit-transform: translateZ(0);
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-nav {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: var(--creamy);
+				display: block;
+				font-size: calc(var(--index) * 2);
+				padding: 1rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				animation: glow 3s infinite;
+
+				&:first {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$x-small-min) and (max-width:$x-small-max) and (orientation: landscape) {
+	.header {
+		.header__container {
+			display: none;
+		}
+	}
+
+	.navigation {
+		display: block;
+
+		.toggle-menu {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			outline: none;
+			padding: 0;
+			pointer-events: initial;
+			position: relative;
+			vertical-align: middle;
+			z-index: 110;
+			margin: 0 0 0 calc(100vw - 50px - 2em);
+
+			span {
+				background-color: var(--cyan);
+				content: "";
+				display: block;
+				height: 2px;
+				left: calc(50% - 13px);
+				position: absolute;
+				top: calc(50% - 1px);
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+
+				&:before,
+				&:after {
+					background-color: var(--creamy);
+					content: "";
+					display: block;
+					height: 2px;
+					position: absolute;
+					transform-origin: 50% 50%;
+					transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+					width: 26px;
+				}
+
+				&:before {
+					top: 7px;
+				}
+
+				&:after {
+					top: -7px;
+				}
+			}
+
+			&.active {
+				span {
+					background-color: transparent;
+					transition: background 0.2s ease-out;
+
+					&:before,
+					&:after {
+						transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate3d(0, 0, 1, -45deg);
+					}
+
+					&:after {
+						top: 0;
+						transform: rotate3d(0, 0, 1, 45deg);
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		display: block;
+		background: var(--main-color);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				animation-duration: 1.0s;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+		}
+
+		ul {
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				-webkit-transform: translateZ(0);
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-nav {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: var(--creamy);
+				display: block;
+				font-size: calc(var(--index) * 2);
+				padding: 1rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				animation: glow 3s infinite;
+
+				&:first {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$small-min) and (max-width:$small-max) and (orientation: portrait) {
+	.header {
+		.header__container {
+			display: none;
+		}
+	}
+
+	.navigation {
+		display: block;
+
+		.toggle-menu {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			outline: none;
+			padding: 0;
+			pointer-events: initial;
+			position: relative;
+			vertical-align: middle;
+			z-index: 110;
+			margin: 0 0 0 calc(100vw - 50px - 2em);
+
+			span {
+				background-color: var(--cyan);
+				content: "";
+				display: block;
+				height: 2px;
+				left: calc(50% - 13px);
+				position: absolute;
+				top: calc(50% - 1px);
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+
+				&:before,
+				&:after {
+					background-color: var(--creamy);
+					content: "";
+					display: block;
+					height: 2px;
+					position: absolute;
+					transform-origin: 50% 50%;
+					transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+					width: 26px;
+				}
+
+				&:before {
+					top: 7px;
+				}
+
+				&:after {
+					top: -7px;
+				}
+			}
+
+			&.active {
+				span {
+					background-color: transparent;
+					transition: background 0.2s ease-out;
+
+					&:before,
+					&:after {
+						transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate3d(0, 0, 1, -45deg);
+					}
+
+					&:after {
+						top: 0;
+						transform: rotate3d(0, 0, 1, 45deg);
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		display: block;
+		background: var(--main-color);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				animation-duration: 1.0s;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+		}
+
+		ul {
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				-webkit-transform: translateZ(0);
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-nav {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: var(--creamy);
+				display: block;
+				font-size: calc(var(--index) * 2);
+				padding: 1rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				animation: glow 3s infinite;
+
+				&:first {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$small-min) and (max-width:$small-max) and (orientation: landscape) {
+	.header {
+		.header__container {
+			display: none;
+		}
+	}
+
+	.navigation {
+		display: block;
+
+		.toggle-menu {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			outline: none;
+			padding: 0;
+			pointer-events: initial;
+			position: relative;
+			vertical-align: middle;
+			z-index: 110;
+			margin: 0 0 0 calc(100vw - 50px - 2em);
+
+			span {
+				background-color: var(--cyan);
+				content: "";
+				display: block;
+				height: 2px;
+				left: calc(50% - 13px);
+				position: absolute;
+				top: calc(50% - 1px);
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+
+				&:before,
+				&:after {
+					background-color: var(--creamy);
+					content: "";
+					display: block;
+					height: 2px;
+					position: absolute;
+					transform-origin: 50% 50%;
+					transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+					width: 26px;
+				}
+
+				&:before {
+					top: 7px;
+				}
+
+				&:after {
+					top: -7px;
+				}
+			}
+
+			&.active {
+				span {
+					background-color: transparent;
+					transition: background 0.2s ease-out;
+
+					&:before,
+					&:after {
+						transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate3d(0, 0, 1, -45deg);
+					}
+
+					&:after {
+						top: 0;
+						transform: rotate3d(0, 0, 1, 45deg);
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		display: block;
+		background: var(--main-color);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				animation-duration: 1.0s;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+		}
+
+		ul {
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				-webkit-transform: translateZ(0);
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-nav {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: var(--creamy);
+				display: block;
+				font-size: calc(var(--index) * 2);
+				padding: 1rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				animation: glow 3s infinite;
+
+				&:first {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$medium-min) and (max-width:$medium-max) and (orientation: portrait) {
+	.header {
+		.header__container {
+			display: none;
+		}
+	}
+
+	.navigation {
+		display: block;
+
+		.toggle-menu {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			outline: none;
+			padding: 0;
+			pointer-events: initial;
+			position: relative;
+			vertical-align: middle;
+			z-index: 110;
+			margin: 0 0 0 calc(100vw - 50px - 2em);
+
+			span {
+				background-color: var(--cyan);
+				content: "";
+				display: block;
+				height: 2px;
+				left: calc(50% - 13px);
+				position: absolute;
+				top: calc(50% - 1px);
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+
+				&:before,
+				&:after {
+					background-color: var(--creamy);
+					content: "";
+					display: block;
+					height: 2px;
+					position: absolute;
+					transform-origin: 50% 50%;
+					transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+					width: 26px;
+				}
+
+				&:before {
+					top: 7px;
+				}
+
+				&:after {
+					top: -7px;
+				}
+			}
+
+			&.active {
+				span {
+					background-color: transparent;
+					transition: background 0.2s ease-out;
+
+					&:before,
+					&:after {
+						transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate3d(0, 0, 1, -45deg);
+					}
+
+					&:after {
+						top: 0;
+						transform: rotate3d(0, 0, 1, 45deg);
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		display: block;
+		background: var(--main-color);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				animation-duration: 1.0s;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+		}
+
+		ul {
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				-webkit-transform: translateZ(0);
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-nav {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: var(--creamy);
+				display: block;
+				font-size: calc(var(--index) * 2);
+				padding: 1rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				animation: glow 3s infinite;
+
+				&:first {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$medium-min) and (max-width:$medium-max) and (orientation: landscape) {
+	.header {
+		.header__container {
+			display: none;
+		}
+	}
+
+	.navigation {
+		display: block;
+
+		.toggle-menu {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			outline: none;
+			padding: 0;
+			pointer-events: initial;
+			position: relative;
+			vertical-align: middle;
+			z-index: 110;
+			margin: 0 0 0 calc(100vw - 50px - 2em);
+
+			span {
+				background-color: var(--cyan);
+				content: "";
+				display: block;
+				height: 2px;
+				left: calc(50% - 13px);
+				position: absolute;
+				top: calc(50% - 1px);
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+
+				&:before,
+				&:after {
+					background-color: var(--creamy);
+					content: "";
+					display: block;
+					height: 2px;
+					position: absolute;
+					transform-origin: 50% 50%;
+					transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+					width: 26px;
+				}
+
+				&:before {
+					top: 7px;
+				}
+
+				&:after {
+					top: -7px;
+				}
+			}
+
+			&.active {
+				span {
+					background-color: transparent;
+					transition: background 0.2s ease-out;
+
+					&:before,
+					&:after {
+						transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate3d(0, 0, 1, -45deg);
+					}
+
+					&:after {
+						top: 0;
+						transform: rotate3d(0, 0, 1, 45deg);
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		display: block;
+		background: var(--main-color);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				animation-duration: 1.0s;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+		}
+
+		ul {
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				-webkit-transform: translateZ(0);
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-nav {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: var(--creamy);
+				display: block;
+				font-size: calc(var(--index) * 2);
+				padding: 1rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				animation: glow 3s infinite;
+
+				&:first {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$large-min) and (max-width:$large-max) and (orientation: portrait) {
+	.header {
+
+		.header__container {
+			padding: 0 calc($large-max / 14);
+
+			.header__links {
+				width: 70%;
+			}
+
+			.header__contact {
+				width: 30%;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$large-min) and (max-width:$large-max) and (orientation: landscape) {
+	.header {
+
+		.header__container {
+			padding: 0 calc($large-max / 14);
+
+			.header__links {
+				width: 70%;
+			}
+
+			.header__contact {
+				width: 30%;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$x-large-min) and (max-width:$x-large-max) and (orientation: portrait) {
+	.header {
+
+		.header__container {
+			padding: 0 calc($x-large-max / 14);
+
+			.header__links {
+				width: 75%;
+			}
+
+			.header__contact {
+				width: 25%;
+
+				.header__call {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$x-large-min) and (max-width:$x-large-max) and (orientation: landscape) {
+	.header {
+
+		.header__container {
+			padding: 0 calc($large-max / 14);
+
+			.header__links {
+				width: 75%;
+			}
+
+			.header__contact {
+				width: 25%;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$xl-large-min) and (max-width:$xl-large-max) and (orientation: portrait) {
+	.header {
+
+		.header__container {
+			padding: 0 calc($xl-large-max / 14);
+
+			.header__links {
+				width: 75%;
+			}
+
+			.header__contact {
+				width: 25%;
+
+				.header__call {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1440px) and (max-width:1919.98px) and (orientation: portrait) {
+	.header {
+
+		.header__container {
+			padding: 0 calc($xl-large-max / 14);
+
+			.header__links {
+				width: 75%;
+			}
+
+			.header__contact {
+				width: 25%;
+
+				.header__call {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1920px) {
+	.header {
+		.header__container {
+			.header__links {
+				width: 75%;
+			}
+
+			.header__contact {
+				width: 25%;
+			}
+		}
+	}
+}
+
+// iPhone 6 Plus / iPhone 6s Plus / iPhone 7 Plus / iPhone 8 Plus
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {}
+
+// iPhone 12 / iPhone 12 Pro / iPhone 13 / iPhone 13 Pro / iPhone 14
+@media only screen and (device-width: 390px) and (device-width: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+	.header {
+		.header__container {
+			display: none;
+		}
+	}
+
+	.navigation {
+		display: block;
+
+		.toggle-menu {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			outline: none;
+			padding: 0;
+			pointer-events: initial;
+			position: relative;
+			vertical-align: middle;
+			z-index: 110;
+			margin: 0 0 0 calc(100vw - 50px - 2em);
+
+			span {
+				background-color: var(--cyan);
+				content: "";
+				display: block;
+				height: 2px;
+				left: calc(50% - 13px);
+				position: absolute;
+				top: calc(50% - 1px);
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+
+				&:before,
+				&:after {
+					background-color: var(--creamy);
+					content: "";
+					display: block;
+					height: 2px;
+					position: absolute;
+					transform-origin: 50% 50%;
+					transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+					width: 26px;
+				}
+
+				&:before {
+					top: 7px;
+				}
+
+				&:after {
+					top: -7px;
+				}
+			}
+
+			&.active {
+				span {
+					background-color: transparent;
+					transition: background 0.2s ease-out;
+
+					&:before,
+					&:after {
+						transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate3d(0, 0, 1, -45deg);
+					}
+
+					&:after {
+						top: 0;
+						transform: rotate3d(0, 0, 1, 45deg);
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		display: block;
+		background: var(--main-color);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				animation-duration: 1.0s;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+		}
+
+		ul {
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				-webkit-transform: translateZ(0);
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-nav {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: var(--creamy);
+				display: block;
+				font-size: calc(var(--index) * 1.25);
+				padding: 1rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				animation: glow 3s infinite;
+
+				&:first {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-device-width: 390px) and (max-device-width: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+	.header {
+		.header__container {
+			display: none;
+		}
+	}
+
+	.navigation {
+		display: block;
+
+		.toggle-menu {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			outline: none;
+			padding: 0;
+			pointer-events: initial;
+			position: relative;
+			vertical-align: middle;
+			z-index: 110;
+			margin: 0 0 0 calc(100vw - 50px - 2em);
+
+			span {
+				background-color: var(--cyan);
+				content: "";
+				display: block;
+				height: 2px;
+				left: calc(50% - 13px);
+				position: absolute;
+				top: calc(50% - 1px);
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+
+				&:before,
+				&:after {
+					background-color: var(--creamy);
+					content: "";
+					display: block;
+					height: 2px;
+					position: absolute;
+					transform-origin: 50% 50%;
+					transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+					width: 26px;
+				}
+
+				&:before {
+					top: 7px;
+				}
+
+				&:after {
+					top: -7px;
+				}
+			}
+
+			&.active {
+				span {
+					background-color: transparent;
+					transition: background 0.2s ease-out;
+
+					&:before,
+					&:after {
+						transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate3d(0, 0, 1, -45deg);
+					}
+
+					&:after {
+						top: 0;
+						transform: rotate3d(0, 0, 1, 45deg);
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		display: block;
+		background: var(--main-color);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				animation-duration: 1.0s;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+		}
+
+		ul {
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				-webkit-transform: translateZ(0);
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-nav {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: var(--creamy);
+				display: block;
+				font-size: calc(var(--index) * 1.25);
+				padding: 1rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				animation: glow 3s infinite;
+
+				&:first {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+// iPhone 12 Pro Max / iPhone 13 Pro Max / iPhone 14 Plus
+@media only screen and (device-width: 428px) and (device-width: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {}
+
+@media only screen and (device-width: 428px) and (device-width: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {}
+
+// iPhone 14 Pro
+@media only screen and (device-width: 393px) and (device-width: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {}
+
+@media only screen and (device-width: 393px) and (device-width: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {}
+
+// iPhone 14 Pro Max
+@media only screen and (device-width: 430px) and (device-width: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {}
+
+@media only screen and (device-width: 430px) and (device-width: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {}
+
+// 4.7" iPhone SE / iPhone 6 / iPhone 6s / iPhone 7 / iPhone 8
+@media only screen and (device-width: 375px) and (device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {}
+
+@media only screen and (device-width: 375px) and (device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {}
+
+// iPhone XR / iPhone 11
+@media only screen and (device-width: 414px) and (device-width: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {}
+
+@media only screen and (device-width: 414px) and (device-width: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {}
+
+// iPhone XS Max / iPhone 11 Pro Max 
+@media only screen and (device-width: 414px) and (device-width: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {}
+
+@media only screen and (device-width: 414px) and (device-width: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {}
+
+// iPhone X / iPhone XS / iPhone 11 Pro / iPhone 12 mini / iPhone 13 mini
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+	.header {
+		.header__container {
+			display: none;
+		}
+	}
+
+	.navigation {
+		display: block;
+
+		.toggle-menu {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			outline: none;
+			padding: 0;
+			pointer-events: initial;
+			position: relative;
+			vertical-align: middle;
+			z-index: 110;
+			margin: 0 0 0 calc(100vw - 50px - 2em);
+
+			span {
+				background-color: var(--cyan);
+				content: "";
+				display: block;
+				height: 2px;
+				left: calc(50% - 13px);
+				position: absolute;
+				top: calc(50% - 1px);
+				transform-origin: 50% 50%;
+				transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+				width: 26px;
+
+				&:before,
+				&:after {
+					background-color: var(--creamy);
+					content: "";
+					display: block;
+					height: 2px;
+					position: absolute;
+					transform-origin: 50% 50%;
+					transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+					width: 26px;
+				}
+
+				&:before {
+					top: 7px;
+				}
+
+				&:after {
+					top: -7px;
+				}
+			}
+
+			&.active {
+				span {
+					background-color: transparent;
+					transition: background 0.2s ease-out;
+
+					&:before,
+					&:after {
+						transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+					}
+
+					&:before {
+						top: 0;
+						transform: rotate3d(0, 0, 1, -45deg);
+					}
+
+					&:after {
+						top: 0;
+						transform: rotate3d(0, 0, 1, 45deg);
+					}
+				}
+			}
+		}
+	}
+
+	#menu {
+		display: block;
+		background: var(--main-color);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		overflow: hidden;
+		position: fixed;
+		text-align: center;
+		top: 0;
+		transition: all 0.7s ease-in-out;
+		// For some sweet fadez
+		visibility: hidden;
+		width: 100%;
+		z-index: 100;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+
+			@for $i from 1 through 10 {
+				li:nth-child(#{$i}) {
+					animation-delay: $i*0.1s;
+				}
+			}
+
+			li {
+				animation-duration: 1.0s;
+				animation-fill-mode: both;
+				animation-name: fadeInUp;
+			}
+		}
+
+		ul {
+			&:hover {
+				a {
+					opacity: 0.5;
+				}
+			}
+
+			a {
+				-webkit-transform: translateZ(0);
+				transition: opacity 0.3s ease-in-out;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+
+		.main-nav {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				color: var(--creamy);
+				display: block;
+				font-size: calc(var(--index) * 1.25);
+				padding: 1rem 1rem;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 300;
+				animation: glow 3s infinite;
+
+				&:first {
+					padding-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@keyframes glow {
+	40% {
+		text-shadow: 0 0 8px var(--creamy);
+	}
+}

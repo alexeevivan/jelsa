@@ -4,6 +4,14 @@ $color2: #38e2ee;
 $deeper: darken($color, 5%);
 $lighter: lighten($color2, 10%);
 
+.navigation {
+	display: none;
+}
+
+.header__menu {
+	display: none;
+}
+
 .header {
 	position: fixed;
 	z-index: 4;

@@ -64,6 +64,7 @@ module.exports = {
 			import: "./js/bar-list.js"
 		},
 		barListSlider: "./js/components/bar-list-slider.js",
+		galleryImgLightbox: "./js/components/gallery-img-lightbox.js",
 	},
 	output: {
 		filename: "assets/js/[name].bundle.js",
@@ -109,7 +110,7 @@ module.exports = {
 					collapseWhitespace: isProd
 				},
 				include: /\/includes/,
-				chunks: ["main", "gallery"],
+				chunks: ["main", "gallery", "galleryImgLightbox"],
 				cache: false,
 			}
 		),

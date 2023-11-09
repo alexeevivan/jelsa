@@ -230,103 +230,6 @@
 // }
 $color: #D2D4D7;
 
-/*
- * ===== VARIABLES =====
- *
- * Change these variables to match your preferences. For a more detailed
- * description of what each variable do, visit https://github.com/alexerlandsson/css-fadeshow
- */
-
-$max-slides: 5;
-$prefix: true;
-$responsive: true;
-$breakpoint-small: 500px;
-$fade-time: 1;
-$prev-next-fontfamily: sans-serif;
-$prev-next-icon-size: 3vw;
-$prev-next-icon-color: rgba(255, 255, 255, 0.5);
-$prev-next-bg: rgba(255, 255, 255, 0);
-$prev-next-bg-hover: rgba(255, 255, 255, 0.1);
-$prev-icon: '❮';
-$next-icon: '❯';
-$autohide-next-prev: true;
-$quick-nav-color: rgba(255, 255, 255, 0.8);
-$quick-nav-active-color: coral;
-$fade-color: #fff;
-$autoplay: true;
-$autoplay-duration: 5;
-
-
-/*
- * ===== MIXINS =====
- *
- * This section contains mixin used
- * Do not change anything here unless you know what you are doing.
- */
-
-/* Mixins to handle prefixes */
-
-@mixin fadeshow-transition($value...) {
-	@if length($value) < 1 {
-		$value: all 150ms linear;
-	}
-
-	@if $prefix ==true {
-		-webkit-transition: $value;
-	}
-
-	transition: $value;
-}
-
-@mixin fadeshow-transform($value...) {
-	@if length($value) < 1 {
-		$value: all 150ms linear;
-	}
-
-	@if $prefix ==true {
-		-webkit-transform: $value;
-		-ms-transform: $value;
-	}
-
-	transform: $value;
-}
-
-@mixin fadeshow-animation($value...) {
-	@if $prefix ==true {
-		-webkit-animation: $value;
-	}
-
-	animation: $value;
-}
-
-@mixin fadeshow-animation-delay($value) {
-	@if $prefix ==true {
-		-webkit-animation-delay: $value;
-	}
-
-	animation-delay: $value;
-}
-
-@mixin fadeshow-unselectable() {
-	@if $prefix ==true {
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-	}
-
-	user-select: none;
-}
-
-/* Mixins to handle Quick Navigation Button states */
-
-@mixin quickNavBtnActive() {
-	background-color: $quick-nav-active-color;
-}
-
-@mixin quickNavBtnInactive() {
-	background-color: $quick-nav-color;
-}
-
 header {
 	position: fixed;
 	display: flex;
@@ -389,7 +292,8 @@ header {
 
 .first,
 .second,
-.third {
+.third,
+.fourth {
 	height: 100%;
 	width: 100%;
 	top: 0;
@@ -417,22 +321,122 @@ header {
 				top: 0;
 				z-index: 2;
 
-				h2 {
-					font-family: "SF Pro Display Ultra-Light";
-					font-size: clamp(1rem, 5vw, 5rem);
-					text-align: center;
-					letter-spacing: 0.1em;
-					text-transform: capitalize;
-					z-index: 2;
-					animation-duration: 1.5s;
+				.drop-shadow {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-evenly;
+					align-items: center;
+					height: 100%;
+					width: 100%;
 
-					&.luminous {
-						background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, var(--creamy), transparent, transparent);
-						-webkit-background-clip: text;
-						background-clip: text;
-						color: transparent;
-						animation: reveal 3000ms ease-in-out forwards 200ms,
-							glow 2500ms linear infinite 2000ms;
+
+					.section__text-block {
+						width: 100%;
+						height: 100%;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+
+						.section-heading {
+							font-family: "SF Pro Display Ultra-Light";
+							font-size: clamp(1rem, 5vw, 5rem);
+							text-align: center;
+							letter-spacing: 0.1em;
+							text-transform: capitalize;
+							z-index: 2;
+							animation-duration: 1.5s;
+
+							&.luminous {
+								background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, var(--creamy), transparent, transparent);
+								-webkit-background-clip: text;
+								background-clip: text;
+								color: transparent;
+								animation: reveal 3000ms ease-in-out forwards 200ms,
+									glow 2500ms linear infinite 2000ms;
+							}
+						}
+
+						span {
+							position: absolute;
+							width: 1px;
+							height: 100%;
+							top: 0;
+							left: 50%;
+							overflow: hidden;
+
+							&::after {
+								content: '';
+								display: block;
+								position: absolute;
+								height: 15vh;
+								width: 100%;
+								top: -50%;
+								left: 0;
+								background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+								animation: drop 3s 0s infinite;
+								animation-fill-mode: forwards;
+								animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+							}
+						}
+
+						.section__annotation {
+							font-family: "Raleway";
+							font-weight: 300;
+							display: inline-block;
+							margin: 20px 0 0 0;
+							color: var(--vertical-line-color);
+						}
+					}
+
+					.section__img-block {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						margin: 10px;
+						overflow: hidden;
+						transform: skew(2deg);
+						width: 80%;
+						height: 100%;
+
+						.card {
+							flex: 1;
+							transition: all 1s ease-in-out;
+							height: 55vmin;
+							position: relative;
+
+							&:hover {
+								flex-grow: 10;
+
+								img {
+									filter: grayscale(0);
+								}
+							}
+
+							img {
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+								transition: all 1s ease-in-out;
+								filter: grayscale(100%);
+							}
+
+							&:not(:nth-child(5)) {
+								margin-right: 1em;
+							}
+
+							&:nth-child(1) {
+								img {
+									border-radius: 16px 0 0 16px;
+								}
+							}
+
+							&:nth-child(5) {
+								img {
+									border-radius: 0 16px 16px 0;
+								}
+							}
+						}
 					}
 				}
 			}
@@ -447,20 +451,26 @@ header {
 				background-image: linear-gradient(180deg,
 						rgba(0, 0, 0, 0.6) 0%,
 						rgba(0, 0, 0, 0.3) 100%),
-					url("../assets/content/bg_cover.jpg");
+					url("../assets/content/bg_cover2.jpg");
 			}
 		}
 	}
 }
 
-.second {
+.second,
+.fourth {
 	.outer {
 		.inner {
 			.section__name {
-				background-image: linear-gradient(180deg,
-						rgba(0, 0, 0, 0.6) 0%,
-						rgba(0, 0, 0, 0.3) 100%),
-					url("../assets/content/bg_cover.jpg");
+				background-color: var(--main-color);
+
+				.drop-shadow {
+					justify-content: unset;
+
+					.section__text-block {
+						width: 10%;
+					}
+				}
 			}
 		}
 	}
@@ -479,6 +489,118 @@ header {
 	}
 }
 
+.lightbox {
+	align-items: center;
+	background: rgba(0, 0, 0, 0.85);
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	opacity: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	position: fixed;
+	top: 0;
+	transition: opacity 0.3s, visibility 0s 0.3s, z-index 0s 0.3s;
+	visibility: hidden;
+	width: 100%;
+	z-index: -1;
+
+	@media all and (min-width: 768px) {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+
+	.js-lightbox-loading &,
+	.js-lightbox-active & {
+		opacity: 1;
+		transition: z-index 0s 0s, opacity 0.3s, visibility 0s 0s;
+		visibility: visible;
+		z-index: 10;
+	}
+
+	.lightbox-overlay {
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+
+		&::after {
+			color: #fff;
+			content: '×';
+			cursor: pointer;
+			font-size: 3.2rem;
+			line-height: 18px;
+			position: absolute;
+			right: 9px;
+			top: 8px;
+			width: 18px;
+		}
+	}
+
+	.lightbox-loader {
+		animation: spinner 1s linear infinite;
+		border: 4px solid var(--creamy);
+		border-radius: 50%;
+		border-top: 4px solid var(--japanese-indigo);
+		display: none;
+		height: 40px;
+		left: 50%;
+		margin-top: -20px;
+		margin-left: -20px;
+		position: absolute;
+		top: 50%;
+		width: 40px;
+		z-index: 1;
+
+		.js-lightbox-loading & {
+			display: block;
+		}
+	}
+
+	.lightbox-content {
+		border: 2px solid var(--japanese-indigo);
+		min-height: 80px;
+		min-width: 80px;
+		opacity: 0;
+		transform: translateY(-80px);
+		transition: opacity 0s, transform 0s ease-out;
+
+		.js-lightbox-active & {
+			opacity: 1;
+			transform: translateY(0);
+			transition: opacity 0.3s, transform 0.3s ease-out;
+		}
+
+		.js-lightbox-first & {
+			transform: translateX(40px);
+			transition: transform 0.15s linear;
+		}
+
+		.js-lightbox-last & {
+			transform: translateX(-40px);
+			transition: transform 0.15s linear;
+		}
+
+		img {
+			max-height: calc(var(--index) * 20);
+			height: 100%;
+			min-width: 60px;
+		}
+	}
+}
+
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
 
 @keyframes reveal {
 	80% {
@@ -545,5 +667,17 @@ header {
 			0 0 0 4px rgba($color, 0.3),
 			0 0 0 12px rgba($color, 0),
 			0 0 0 24px rgba($color, 0);
+	}
+}
+
+@keyframes drop {
+	0% {
+		top: 50%;
+		filter: opacity(0);
+	}
+
+	100% {
+		top: 110%;
+		filter: opacity(1);
 	}
 }
