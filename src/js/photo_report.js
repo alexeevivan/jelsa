@@ -1,5 +1,6 @@
 import "@styles/main.scss";
 import "@styles/photo_report.scss";
+import "@styles/responsive/photo_report-responsive.scss";
 import "@styles/_header.scss";
 import "@styles/_footer.scss";
 import "@styles/_null.scss";

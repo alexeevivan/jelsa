@@ -101,8 +101,6 @@ $xxl-large-max: 1919.98px;
 	}
 }
 
-@media only screen and (min-width:$xs-small-min) and (max-width:$xs-small-max) and (orientation: landscape) {}
-
 // 380 - 479.98
 @media only screen and (min-width:$x-small-min) and (max-width:$x-small-max) and (orientation: portrait) {
 	.wrapper {
@@ -160,8 +158,6 @@ $xxl-large-max: 1919.98px;
 		}
 	}
 }
-
-@media only screen and (min-width:$x-small-min) and (max-width:$x-small-max) and (orientation: landscape) {}
 
 // 480 - 575.98
 @media only screen and (min-width:$small-min) and (max-width:$small-max) and (orientation: portrait) {
@@ -222,7 +218,65 @@ $xxl-large-max: 1919.98px;
 	}
 }
 
-@media only screen and (min-width:$small-min) and (max-width:$small-max) and (orientation: landscape) {}
+@media only screen and (min-width:$small-min) and (max-width:$small-max) and (orientation: landscape) {
+	.wrapper {
+		.content {
+			.modal-ny {
+				align-items: center;
+
+				.modal-ny__card {
+					width: calc(100% - calc($small-max / 7));
+					height: calc(var(--index) * 24);
+					top: 0;
+
+					.modal-ny__info,
+					.modal-ny__wallpaper {
+						width: 100%;
+					}
+
+					.modal-ny__info {
+						min-height: calc(var(--index) * 16);
+						border-radius: 0 calc(var(--index) * 0.5) calc(var(--index) * 0.5) 0;
+						flex-direction: column-reverse;
+						justify-content: space-evenly;
+						align-items: unset;
+
+						.modal-ny__proposal {
+							margin: 0 auto;
+							min-height: calc(var(--index) * 12);
+
+							ul {
+								display: inline-flex;
+								width: 100%;
+								justify-content: space-around;
+								margin: calc(var(--index) * 1.5) 0;
+
+								li {
+									margin: 0;
+								}
+							}
+
+							a {
+								padding: calc(var(--index) * .75);
+							}
+						}
+
+						.modal-ny__outer {
+							margin: 0;
+							position: absolute;
+							right: var(--index);
+							top: var(--index);
+						}
+					}
+
+					.modal-ny__wallpaper {
+						border-radius: calc(var(--index) * 0.5) 0 0 calc(var(--index) * 0.5);
+					}
+				}
+			}
+		}
+	}
+}
 
 // 576 - 767.98
 @media only screen and (min-width:$medium-min) and (max-width:$medium-max) and (orientation: portrait) {
@@ -289,7 +343,65 @@ $xxl-large-max: 1919.98px;
 	}
 }
 
-@media only screen and (min-width:$medium-min) and (max-width:$medium-max) and (orientation: landscape) {}
+@media only screen and (min-width:$medium-min) and (max-width:$medium-max) and (orientation: landscape) {
+	.wrapper {
+		.content {
+			.modal-ny {
+				align-items: center;
+
+				.modal-ny__card {
+					width: calc(100% - calc($medium-max / 7));
+					height: calc(var(--index) * 24);
+					top: 0;
+
+					.modal-ny__info,
+					.modal-ny__wallpaper {
+						width: 100%;
+					}
+
+					.modal-ny__info {
+						min-height: calc(var(--index) * 16);
+						border-radius: 0 calc(var(--index) * 0.5) calc(var(--index) * 0.5) 0;
+						flex-direction: column-reverse;
+						justify-content: space-evenly;
+						align-items: unset;
+
+						.modal-ny__proposal {
+							margin: 0 auto;
+							min-height: calc(var(--index) * 12);
+
+							ul {
+								display: inline-flex;
+								width: 100%;
+								justify-content: space-around;
+								margin: calc(var(--index) * 1.5) 0;
+
+								li {
+									margin: 0;
+								}
+							}
+
+							a {
+								padding: calc(var(--index) * .75);
+							}
+						}
+
+						.modal-ny__outer {
+							margin: 0;
+							position: absolute;
+							right: var(--index);
+							top: var(--index);
+						}
+					}
+
+					.modal-ny__wallpaper {
+						border-radius: calc(var(--index) * 0.5) 0 0 calc(var(--index) * 0.5);
+					}
+				}
+			}
+		}
+	}
+}
 
 // 768 - 991.98
 @media only screen and (min-width:$large-min) and (max-width:$large-max) and (orientation: portrait) {
@@ -563,6 +675,17 @@ $xxl-large-max: 1919.98px;
 				.modal-ny__card {
 					width: calc(100% - calc($xxl-large-max / 7));
 				}
+			}
+		}
+	}
+}
+
+// width > 1920
+@media only screen and (min-width: 1920px) and (min-height: 1080px) and (orientation: landscape) {
+	.wrapper {
+		.content {
+			.modal-ny {
+				width: 100%;
 			}
 		}
 	}

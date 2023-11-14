@@ -1,4 +1,5 @@
 import "@styles/_gallery.scss";
+import "@styles/responsive/_gallery-responsive.scss";
 import * as $ from "jquery";
 import gsap from "./_vendors/gsap.min.js";
 import ScrollTrigger from "./_vendors/ScrollTrigger.min.js";

@@ -8,6 +8,7 @@ import "@styles/_fonts.scss";
 import "@styles/_vendor.scss";
 import "@styles/responsive/_header-responsive.scss";
 import "@styles/responsive/main-responsive.scss";
+import "@styles/responsive/_footer-responsive.scss";
 
 
 // ==========================================================
