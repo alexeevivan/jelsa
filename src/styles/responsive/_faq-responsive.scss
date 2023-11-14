@@ -1,0 +1,254 @@
+$xs-small-min: 320px;
+$xs-small-max: 379.98px;
+$x-small-min: 380px;
+$x-small-max: 479.98px;
+$small-min: 480px;
+$small-max: 575.98px;
+$medium-min: 576px;
+$medium-max: 767.98px;
+$large-min: 768px;
+$large-max: 991.98px;
+$x-large-min: 992px;
+$x-large-max: 1199.98px;
+$xl-large-min: 1200px;
+$xl-large-max: 1439.98px;
+$xxl-large-min: 1440px;
+$xxl-large-max: 1919.98px;
+
+@media only screen and (min-width:$xs-small-min) and (max-width:$xs-small-max) and (orientation: portrait) {
+	.faq-container {
+		min-height: calc(100vh - 170px);
+		margin: 85px 0 0 0;
+
+		.accordion {
+			li {
+				width: 75%;
+
+				.accordion__toggle {
+					text-align: justify;
+					font-size: calc(var(--index) * 0.75);
+					padding: var(--index);
+				}
+
+				.accordion__inner {
+					font-size: calc(var(--index) * 0.75);
+					margin: 1em 0 0 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$xs-small-min) and (max-width:$xs-small-max) and (min-height: $xs-small-min) and (max-height: 378.98px) and (orientation: landscape) {
+	.faq-container {
+		min-height: calc(100vh - 170px);
+		margin: 85px 0 0 0;
+
+		.accordion {
+			li {
+				width: 75%;
+
+				.accordion__toggle {
+					text-align: justify;
+					font-size: calc(var(--index) * 0.75);
+					padding: var(--index);
+				}
+
+				.accordion__inner {
+					font-size: calc(var(--index) * 0.75);
+					margin: 1em 0 0 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$x-small-min) and (max-width:$x-small-max) and (orientation: portrait) {
+	.faq-container {
+		min-height: calc(100vh - 170px);
+		margin: 85px 0 0 0;
+
+		.accordion {
+			li {
+				width: 75%;
+
+				.accordion__toggle {
+					text-align: justify;
+					font-size: calc(var(--index) * 0.75);
+					padding: var(--index);
+				}
+
+				.accordion__inner {
+					font-size: calc(var(--index) * 0.75);
+					margin: 1em 0 0 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$x-small-min) and (max-width:$x-small-max) and (min-height: $xs-small-min) and (max-height: 478.98px) and (orientation: landscape) {
+	.faq-container {
+		min-height: calc(100vh - 170px);
+		margin: 85px 0 0 0;
+
+		.accordion {
+			li {
+				width: 75%;
+
+				.accordion__toggle {
+					text-align: justify;
+					font-size: calc(var(--index) * 0.75);
+					padding: var(--index);
+				}
+
+				.accordion__inner {
+					font-size: calc(var(--index) * 0.75);
+					margin: 1em 0 0 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$small-min) and (max-width:$small-max) and (orientation: portrait) {
+	.faq-container {
+		min-height: calc(100vh - 170px);
+		margin: 85px 0 0 0;
+
+		.accordion {
+			li {
+				width: 75%;
+
+				.accordion__toggle {
+					text-align: justify;
+					font-size: calc(var(--index) * 0.75);
+					padding: var(--index);
+				}
+
+				.accordion__inner {
+					font-size: calc(var(--index) * 0.75);
+					margin: 1em 0 0 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$small-min) and (max-width:$small-max) and (min-height: $xs-small-min) and (max-height: 574.98px) and (orientation: landscape) {
+	.faq-container {
+		min-height: calc(100vh - 170px);
+		margin: 85px 0 0 0;
+
+		.accordion {
+			li {
+				width: 75%;
+
+				.accordion__toggle {
+					text-align: justify;
+					font-size: calc(var(--index) * 0.75);
+					padding: var(--index);
+				}
+
+				.accordion__inner {
+					font-size: calc(var(--index) * 0.75);
+					margin: 1em 0 0 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$medium-min) and (max-width:$medium-max) and (orientation: portrait) {
+	.faq-container {
+		min-height: calc(100vh - 170px);
+		margin: 85px 0 0 0;
+
+		.accordion {
+			li {
+				width: 75%;
+
+				.accordion__toggle {
+					text-align: justify;
+					font-size: calc(var(--index) * 0.75);
+					padding: var(--index);
+				}
+
+				.accordion__inner {
+					font-size: calc(var(--index) * 0.75);
+					margin: 1em 0 0 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$medium-min) and (max-width:$medium-max) and (min-height: $xs-small-min) and (max-height: 766.98px) and (orientation: landscape) {
+	.faq-container {
+		min-height: calc(100vh - 170px);
+		margin: 85px 0 0 0;
+
+		.accordion {
+			li {
+				width: 75%;
+
+				.accordion__toggle {
+					text-align: justify;
+					font-size: calc(var(--index) * 0.75);
+					padding: var(--index);
+				}
+
+				.accordion__inner {
+					font-size: calc(var(--index) * 0.75);
+					margin: 1em 0 0 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$large-min) and (max-width:$large-max) and (orientation: portrait) {
+	.faq-container {
+		.accordion {
+			li {
+				width: 75%;
+
+				.accordion__toggle {
+					text-align: justify;
+					font-size: calc(var(--index) * 0.75);
+					padding: var(--index);
+				}
+
+				.accordion__inner {
+					font-size: calc(var(--index) * 0.75);
+					margin: 1em 0 0 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$large-min) and (max-width:$large-max) and (min-height: $xs-small-min) and (max-height: $medium-max) and (orientation: landscape) {
+	.faq-container {
+		min-height: calc(100vh - 170px);
+		margin: 85px 0 0 0;
+
+		.accordion {
+			margin: 50px 0;
+
+			li {
+
+				.accordion__toggle {
+					text-align: justify;
+					font-size: calc(var(--index) * 0.75);
+					padding: var(--index);
+				}
+
+				.accordion__inner {
+					font-size: calc(var(--index) * 0.75);
+					margin: 1em 0 0 0;
+				}
+			}
+		}
+	}
+}

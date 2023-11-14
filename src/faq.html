@@ -17,8 +17,12 @@
 
 <body>
 	<%= require("html-loader!./html/includes/_header.html").default %>
-		<%= require("html-loader!./html/includes/_faq.html").default %>
-			<%= require("html-loader!./html/includes/_footer.html").default %>
+		<div class="wrapper">
+			<div class="content">
+				<%= require("html-loader!./html/includes/_faq.html").default %>
+					<%= require("html-loader!./html/includes/_footer.html").default %>
+			</div>
+		</div>
 </body>
 
 </html>

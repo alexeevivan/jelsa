@@ -503,28 +503,6 @@ $xxl-large-max: 1919.98px;
 	}
 }
 
-@media only screen and (min-width:$large-min) and (max-width:$large-max) and (min-height: 430px) and (max-height: 479.98px) and (orientation: landscape) {
-	.wrapper {
-		.content {
-			.modal-ny {
-				align-items: unset;
-
-				.modal-ny__card {
-					width: calc(100% - calc($large-max / 7));
-					top: 85px;
-					height: calc(var(--index) * 24);
-
-					.modal-ny__wallpaper {
-						.modal-ny__call {
-							width: calc(var(--index) * 26);
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
 @media only screen and (min-width:$large-min) and (max-width:$large-max) and (min-height: $small-min) and (max-height: 529.98px) and (orientation: landscape) {
 	.wrapper {
 		.content {
