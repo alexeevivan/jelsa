@@ -63,6 +63,9 @@ module.exports = {
 		barList: {
 			import: "./js/bar-list.js"
 		},
+		partyPage: {
+			import: "./js/party-page.js"
+		},
 		barListSlider: "./js/components/bar-list-slider.js",
 		galleryImgLightbox: "./js/components/gallery-img-lightbox.js",
 	},
@@ -146,12 +149,32 @@ module.exports = {
 		),
 		new HTMLWebpackPlugin(
 			{
-				filename: "./photo_report.html",
-				template: "./photo_report.html",
+				filename: "./photo-report.html",
+				template: "./photo-report.html",
 				minify: {
 					collapseWhitespace: isProd
 				},
 				chunks: ["main", "photo_report"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./photo-report/party-ussr.html",
+				template: "./photo-report/party-ussr.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "partyPage"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./photo-report/party-matrix.html",
+				template: "./photo-report/party-matrix.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "partyPage"]
 			}
 		),
 		new HTMLWebpackPlugin(

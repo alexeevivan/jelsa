@@ -2,6 +2,10 @@ import "@styles/main.scss";
 import "@styles/bar-list.scss";
 import "@styles/_bar-list-slider.scss";
 import "@styles/_bar-list-modal.scss";
+import "@styles/responsive/_header-responsive.scss";
+import "@styles/responsive/_bar-list-slider-responsive.scss";
+import "@styles/responsive/_bar-list-modal-responsive.scss";
+import "@styles/responsive/_footer-responsive.scss";
 import "@styles/_header.scss";
 import "@styles/_footer.scss";
 import "@styles/_null.scss";
@@ -16,9 +20,15 @@ $(function () {
 		if ($(window).scrollTop() > 200) {
 			$(".header").addClass("active");
 		} else {
+			//remove the background property so it comes transparent again (defined in your css)
 			$(".header").removeClass("active");
 		}
 	});
+});
+
+$(".toggle-menu").click(function () {
+	$(this).toggleClass("active");
+	$("#menu").toggleClass("open");
 });
 
 // ==========================================================
@@ -118,3 +128,48 @@ function animateSpirits(i) {
 animate();
 setInterval(animate, delay * textArray.length);
 setInterval(animateSpirits, delay * textArraySpirits.length);
+
+// ==========================================================
+// Spirit Slide Title animation (mobile-view only)
+// ==========================================================
+
+let typed = "";
+const element = document.querySelector(".spirit");
+
+function startType(pun, index) {
+	if (index < pun.length) {
+		typed += pun.charAt(index);
+		element.innerHTML = typed;
+		index++;
+		setTimeout(function () {
+			startType(pun, index);
+		}, 100);
+	} else {
+		setTimeout(function () {
+			element.classList.add("highlight");
+		}, 1000);
+
+		setTimeout(function () {
+			element.classList.remove("highlight");
+			typed = "";
+			element.innerHTML = typed;
+			startType(getRandomPun(), 0);
+		}, 2000);
+	}
+}
+
+function getRandomPun() {
+	const puns = [
+		"Ром",
+		"Текила",
+		"Виски",
+		"Коньяк",
+		"Джин",
+		"Водка",
+	];
+	const index = Math.floor(Math.random() * puns.length);
+
+	return puns[index];
+}
+
+startType(getRandomPun(), 0);

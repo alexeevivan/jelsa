@@ -64,6 +64,9 @@ openBtn.onclick = function () {
 	$(".product__menu-btn.open-btn").click(function () {
 		$(".product__menu-btn.open-btn").removeClass("open-btn");
 		$(".product__menu-btn").addClass("close-btn");
+		$(".product-slider").addClass("expanded");
+		$(".prev").addClass("hidden");
+		$(".next").addClass("hidden");
 		$(".product-slider__content.bar-list__aperitif").addClass("description-hide");
 		$(".product-slider__cover").addClass("description-hide");
 		$(".product-img__item.active").addClass("description-hide");
@@ -78,6 +81,9 @@ openBtn.onclick = function () {
 			$(".product__menu-btn.close-btn").click(function () {
 				$(".product__menu-btn.close-btn").removeClass("close-btn");
 				$(".product__menu-btn").addClass("open-btn");
+				$(".product-slider").removeClass("expanded");
+				$(".prev").removeClass("hidden");
+				$(".next").removeClass("hidden");
 				$(".product-slider__content.bar-list__aperitif").removeClass("description-hide");
 				$(".product-slider__cover").removeClass("description-hide");
 				$(".product-img__item.active").removeClass("description-hide");
@@ -92,6 +98,9 @@ opentBtnSpirits.onclick = function () {
 	$(".product__spirits-btn.open-btn").click(function () {
 		$(".product__spirits-btn.open-btn").removeClass("open-btn");
 		$(".product__spirits-btn").addClass("close-btn");
+		$(".product-slider").addClass("expanded");
+		$(".prev").addClass("hidden");
+		$(".next").addClass("hidden");
 		$(".product-slider__content.bar-list__spirits").addClass("description-hide");
 		$(".product-slider__cover").addClass("description-hide");
 		$(".product-img__item.active").addClass("description-hide");
@@ -106,6 +115,9 @@ opentBtnSpirits.onclick = function () {
 			$(".product__spirits-btn.close-btn").click(function () {
 				$(".product__spirits-btn.close-btn").removeClass("close-btn");
 				$(".product__spirits-btn").addClass("open-btn");
+				$(".product-slider").removeClass("expanded");
+				$(".prev").removeClass("hidden");
+				$(".next").removeClass("hidden");
 				$(".product-slider__content.bar-list__spirits").removeClass("description-hide");
 				$(".product-slider__cover").removeClass("description-hide");
 				$(".product-img__item.active").removeClass("description-hide");

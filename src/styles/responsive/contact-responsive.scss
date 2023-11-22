@@ -20,10 +20,10 @@ $xxl-large-max: 1919.98px;
 		.content {
 			.contact {
 				flex-direction: column;
-				height: calc((100vh - 170px) * 2);
+				height: calc((100vh - 170px) * 1.8);
 
 				.contact__map {
-					height: 60%;
+					height: calc((100vh - 170px) * 1);
 					width: 100%;
 
 					iframe {
@@ -67,6 +67,56 @@ $xxl-large-max: 1919.98px;
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$large-min) and (max-width:$large-max) and (min-height: $xs-small-min) and (max-height: $medium-max) and (orientation: landscape) {
+	.wrapper {
+		.content {
+			.contact {
+				margin: 85px 0 0 0;
+
+				.contact__map {
+					width: 60%;
+
+					iframe {
+						max-width: 80%;
+					}
+				}
+
+				.contact__description {
+					width: 40%;
+
+					.contact__info {
+						align-items: center;
+
+						ul {
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$large-min) and (max-width:$large-max) and (min-height: $xs-small-min) and (max-height: 439.98px) and (orientation: landscape) {
+	.wrapper {
+		.content {
+			.contact {
+				height: calc(100vh - 85px);
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$large-min) and (max-width:$large-max) and (min-height: 440px) and (max-height: $medium-max) and (orientation: landscape) {
+	.wrapper {
+		.content {
+			.contact {
+				height: calc(100vh - 170px);
 			}
 		}
 	}

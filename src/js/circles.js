@@ -10,8 +10,8 @@ const H = canvas.height = document.getElementById("circles").clientHeight;
 const circleNbr = 18;
 
 // Gradient
-const bgColor1 = 'rgba(4, 7, 15, 1)';
-const bgColor2 = 'rgba(4, 7, 15, 1)';
+const bgColor1 = "rgba(4, 7, 15, 1)";
+const bgColor2 = "rgba(4, 7, 15, 1)";
 
 //Create an array of circles
 let circles = [];

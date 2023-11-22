@@ -6,9 +6,10 @@ import * as $ from "jquery";
 import swiper, { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper";
 swiper.use([Navigation, Pagination, Autoplay, EffectCoverflow]);
 import gsap from "./_vendors/gsap.min.js";
+import MotionPathPlugin from "./_vendors/MotionPathPlugin.min.js";
 import ScrollTrigger from "./_vendors/ScrollTrigger.min.js";
 import ScrollSmoother from "./_vendors/ScrollSmoother.min.js";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, MotionPathPlugin);
 
 
 if (ScrollSmoother.isTouch !== 1) {
@@ -77,6 +78,20 @@ const karaokeSlider = new swiper(".gallery-container", {
 	centeredSlides: true,
 });
 
+const mobileKaraokeSlider = new swiper(".mp-gallery__container", {
+
+	slidesPerView: "1",
+	loop: true,
+	speed: 2000,
+	allowTouchMove: true,
+	autoplay: {
+		delay: 500,
+	},
+	effect: "coverflow",
+	grabCursor: false,
+	centeredSlides: true,
+});
+
 
 // ==========================================================
 // Cocktails list animation
@@ -101,6 +116,7 @@ const textArray = [
 ];
 
 const callsign = document.querySelector("#callsign");
+const mpcallsign = document.querySelector("#mp-gallery__callsign");
 let delay = 2500;
 let animateInDuration = 500;
 let animateOutDuration = 500;
@@ -108,6 +124,7 @@ let animateOutDuration = 500;
 function replaceText(i) {
 	setTimeout(function () {
 		callsign.innerText = textArray[i];
+		mpcallsign.innerText = textArray[i];
 		console.log(textArray[i]);
 	}, delay * i)
 };
@@ -115,10 +132,12 @@ function replaceText(i) {
 function animateIn(i) {
 	setTimeout(function () {
 		callsign.className = "js-animate-in";
+		mpcallsign.className = "js-animate-in";
 	}, delay * i);
 	if (i != 0) {
 		setTimeout(function () {
 			callsign.className = "";
+			mpcallsign.className = "";
 		}, delay * i - (delay - animateInDuration));
 	}
 };
@@ -126,6 +145,7 @@ function animateIn(i) {
 function animateOut(i) {
 	setTimeout(function () {
 		callsign.className = "js-animate-out";
+		mpcallsign.className = "js-animate-out";
 	}, delay * i + (delay - animateOutDuration))
 };
 
@@ -140,3 +160,30 @@ function animate(i) {
 
 animate();
 setInterval(animate, delay * textArray.length);
+
+// ==========================================================
+// Reveal
+// ==========================================================
+
+function reveal() {
+	let reveals = document.querySelectorAll(".reveal");
+
+	for (let i = 0; i < reveals.length; i++) {
+		let windowHeight = window.innerHeight;
+		let elementTop = reveals[i].getBoundingClientRect().top;
+		let elementVisible = 10;
+
+		if (elementTop < windowHeight - elementVisible) {
+			reveals[i].classList.add("active");
+		} else {
+			reveals[i].classList.remove("active");
+		}
+	}
+}
+
+window.addEventListener("scroll", reveal);
+window.addEventListener("scroll", () => {
+	document.body.style.setProperty("--scroll", window.pageYOffset - window.innerHeight);
+},
+	false
+);
