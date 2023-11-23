@@ -107,6 +107,10 @@ img {
 		overflow: hidden;
 		margin: 0 auto;
 
+		&.expanded {
+			height: 110%;
+		}
+
 		&__wrp {
 			height: 100%;
 		}
@@ -171,13 +175,13 @@ img {
 							z-index: 1;
 							top: 0;
 							left: 0;
-							width: calc(var(--index) * 40 * .75);
+							width: calc(var(--index) * 40 * .8);
 							height: 100%;
 							transition: var(--transition-duration) linear;
 							opacity: 1;
 							display: grid;
-							grid-template-columns: 1fr 2px 1fr;
-							grid-template-rows: repeat(3, 1fr);
+							grid-template-columns: 1fr 2px 1.1fr 1.1fr;
+							grid-template-rows: repeat(6, 1fr);
 							column-gap: var(--index);
 							padding: calc(var(--index) * 0.5) calc(var(--index) * 1);
 
@@ -237,6 +241,10 @@ img {
 											font-weight: 300;
 											font-size: calc(var(--index) * .5);
 
+											br {
+												display: none;
+											}
+
 											.rose {
 												color: var(--fuchsia);
 											}
@@ -248,38 +256,111 @@ img {
 									}
 								}
 
-								&.champagne,
+								&.light,
+								&.red {
+									display: flex;
+								}
+
 								&.whiskey {
 									grid-column: 1;
 								}
 
-								&.spumante,
 								&.cognac {
 									grid-column: 3;
 								}
 
-								&.light,
 								&.vodka {
 									grid-column: 1;
 									grid-row: 2;
 								}
 
-								&.red,
 								&.rum {
 									grid-column: 3;
 									grid-row: 2;
 								}
 
-								&.rose,
 								&.tequila {
 									grid-column: 1;
 									grid-row: 3;
 								}
 
+								&.champagne,
+								&.spumante,
+								&.light,
+								&.red,
+								&.rose,
 								&.vermouth {
+									display: flex;
+									width: 100%;
+									height: 100%;
+
+									tbody {
+										display: flex;
+										flex-direction: column;
+										height: 100%;
+										justify-content: space-around;
+										width: 100%;
+
+										tr {
+											display: inline-flex;
+											flex-direction: row;
+											align-items: center;
+											justify-content: space-between;
+											width: 100%;
+										}
+									}
+								}
+
+								&.red {
 									grid-column: 3;
 									grid-row: 3;
+
+									tbody {
+										height: 75%;
+									}
 								}
+
+								&.light {
+									grid-column: 3;
+									grid-row-start: 1;
+									grid-row-end: 7;
+
+									tbody {
+										height: 84%;
+									}
+								}
+
+								&.red {
+									grid-column: 4;
+									grid-row-start: 1;
+									grid-row-end: 7;
+								}
+
+								&.champagne {
+									grid-column: 1;
+									grid-row-start: 1;
+									grid-row-end: 3;
+									display: flex;
+								}
+
+								&.spumante {
+									grid-column: 1;
+									grid-row-start: 3;
+									grid-row-end: 5;
+								}
+
+								&.vermouth {
+									grid-column: 1;
+									grid-row-start: 5;
+									grid-row-end: 8;
+								}
+
+								&.rose {
+									grid-column-start: 3;
+									grid-row-start: 7;
+									grid-column-end: 5;
+								}
+
 							}
 
 							&.menu-hide {
@@ -290,6 +371,24 @@ img {
 								&__wine-list,
 								&__spirits-list {
 									visibility: hidden;
+								}
+							}
+						}
+
+						.product-slider__aperitif-menu {
+							.vertical-line {
+								&:nth-of-type(1) {
+									grid-row-start: 1;
+									grid-row-end: 8;
+									border-top-left-radius: 50%;
+									border-top-right-radius: 50%;
+									border-bottom-left-radius: 50%;
+									border-bottom-right-radius: 50%;
+								}
+
+								&:nth-of-type(2),
+								&:nth-of-type(3) {
+									display: none;
 								}
 							}
 						}
@@ -606,6 +705,11 @@ img {
 					display: block;
 					animation: bottomBubbles ease-in-out 0.75s forwards;
 				}
+			}
+
+			&.close-btn {
+				position: absolute;
+				right: calc(var(--index) * 0.5);
 			}
 		}
 

@@ -273,6 +273,10 @@ $xxl-large-max: 1919.98px;
 																				font-size: 8px;
 																				word-break: break-word;
 																				text-align: left;
+
+																				br {
+																					display: block;
+																				}
 																			}
 
 																			&:nth-child(1) {
@@ -287,9 +291,23 @@ $xxl-large-max: 1919.98px;
 																}
 															}
 
+															&.light,
+															&.red {
+																tbody {
+																	height: 100%;
+																	justify-content: space-around;
+																}
+															}
+
+															&.rose {
+																tbody {
+																	justify-content: center;
+																}
+															}
+
 															&.champagne,
 															&.spumante,
-															&.red,
+															&.vermouth,
 															&.rose,
 															&.whiskey,
 															&.cognac,
