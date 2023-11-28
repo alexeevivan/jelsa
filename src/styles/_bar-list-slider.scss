@@ -179,11 +179,8 @@ img {
 							height: 100%;
 							transition: var(--transition-duration) linear;
 							opacity: 1;
-							display: grid;
-							grid-template-columns: 1fr 2px 1.1fr 1.1fr;
-							grid-template-rows: repeat(6, 1fr);
-							column-gap: var(--index);
-							padding: calc(var(--index) * 0.5) calc(var(--index) * 1);
+							display: flex;
+							padding: calc(var(--index) * 1.2) calc(var(--index) * 1);
 
 							&.hidden {
 								display: none;
@@ -194,173 +191,174 @@ img {
 								background: var(--creamy);
 								flex-shrink: 0;
 								opacity: .5;
-								grid-column: 2;
 
 								&:nth-of-type(1) {
-									grid-row: 1;
 									border-top-left-radius: 50%;
 									border-top-right-radius: 50%;
-								}
-
-								&:nth-of-type(2) {
-									grid-row: 2;
-								}
-
-								&:nth-of-type(3) {
-									grid-row: 3;
 									border-bottom-left-radius: 50%;
 									border-bottom-right-radius: 50%;
 								}
+
+								&:nth-of-type(2),
+								&:nth-of-type(3) {
+									display: none;
+								}
 							}
 
-							.product-slider__wine-list,
-							.product-slider__spirits-list {
-								transition: .1s linear;
+							.product-slider__left-side,
+							.product-slider__right-side {
+								display: flex;
+								flex-direction: column;
+								height: 100%;
+								justify-content: space-between;
 
-								tr {
-									td {
-										text-align: left;
-										font-family: "Raleway", sans-serif;
-										font-weight: 500;
-										font-size: calc(var(--index) * .5);
-										user-select: none;
-										color: var(--creamy);
-										-webkit-user-select: none;
-										-moz-user-select: none;
-
-										&:nth-of-type(even) {
-											text-align: right;
-											font-family: sans-serif;
-										}
-
-										.trigger,
-										.trigger-spirits {
-											color: var(--creamy);
-											background-color: var(--transparent);
-											font-family: "Raleway", sans-serif;
-											font-weight: 300;
-											font-size: calc(var(--index) * .5);
-
-											br {
-												display: none;
-											}
-
-											.rose {
-												color: var(--fuchsia);
-											}
-
-											&:hover {
-												font-weight: 500;
-											}
-										}
-									}
-								}
-
-								&.light,
-								&.red {
-									display: flex;
-								}
-
-								&.whiskey {
-									grid-column: 1;
-								}
-
-								&.cognac {
-									grid-column: 3;
-								}
-
-								&.vodka {
-									grid-column: 1;
-									grid-row: 2;
-								}
-
-								&.rum {
-									grid-column: 3;
-									grid-row: 2;
-								}
-
-								&.tequila {
-									grid-column: 1;
-									grid-row: 3;
-								}
-
-								&.champagne,
-								&.spumante,
-								&.light,
-								&.red,
-								&.rose,
-								&.vermouth {
-									display: flex;
-									width: 100%;
+								.product-slider__aperitif-list,
+								.product-slider__spirits-list {
+									transition: .1s linear;
 									height: 100%;
+									display: flex;
 
 									tbody {
 										display: flex;
 										flex-direction: column;
+										justify-content: space-between;
 										height: 100%;
-										justify-content: space-around;
-										width: 100%;
 
 										tr {
-											display: inline-flex;
-											flex-direction: row;
-											align-items: center;
+											display: flex;
 											justify-content: space-between;
-											width: 100%;
+											align-items: center;
+
+											td {
+												text-align: left;
+												font-family: "Raleway", sans-serif;
+												font-weight: 500;
+												font-size: calc(var(--index) * .5);
+												user-select: none;
+												color: var(--creamy);
+												position: relative;
+												-webkit-user-select: none;
+												-moz-user-select: none;
+
+												&:nth-of-type(even) {
+													text-align: right;
+													font-family: sans-serif;
+												}
+
+												.trigger,
+												.trigger-spirits {
+													color: var(--creamy);
+													background-color: var(--transparent);
+													font-family: "Raleway", sans-serif;
+													font-weight: 300;
+													font-size: calc(var(--index) * .5);
+
+													br {
+														display: none;
+													}
+
+													&::after {
+														content: "";
+														position: absolute;
+														height: 2px;
+														border-radius: 2px;
+														width: 100%;
+														bottom: -3px;
+														display: block;
+														transform: scaleX(0);
+														transition: 0.3s ease-out;
+														background: linear-gradient(to right, transparent, var(--creamy));
+													}
+
+
+													&:hover {
+														font-weight: 500;
+
+														&::after {
+															transform: scaleX(1);
+														}
+													}
+												}
+											}
 										}
 									}
 								}
+							}
 
-								&.red {
-									grid-column: 3;
-									grid-row: 3;
+							.product-slider__left-side {
+								min-width: 35%;
 
+								.product-slider__aperitif-list,
+								.product-slider__spirits-list {
 									tbody {
-										height: 75%;
+										width: 100%;
+										padding: 0 calc(var(--index) * .8) 0 0;
 									}
 								}
+							}
 
-								&.light {
-									grid-column: 3;
-									grid-row-start: 1;
-									grid-row-end: 7;
+							.product-slider__right-side {
+								min-width: 65%;
+
+								.product-slider__aperitif-list,
+								.product-slider__spirits-list {
+									display: grid;
+									grid-template-columns: 1fr 1fr;
+									grid-template-rows: repeat(40, 1fr);
 
 									tbody {
-										height: 84%;
+										&:nth-child(odd) {
+											padding: 0 0 0 calc(var(--index) * .8);
+										}
+									}
+
+									.product-slider__red,
+									.product-slider__whiskey {
+										grid-column: 1;
+										grid-row-start: 1;
+										padding: 0 calc(var(--index) * .8) 0 0;
+									}
+
+									.product-slider__light,
+									.product-slider__cognac {
+										grid-column: 2;
+										grid-row-start: 1;
+										padding: 0 0 0 calc(var(--index) * .8);
+									}
+
+									.product-slider__rose {
+										grid-row: 35;
+										grid-column-start: 1;
+										grid-column-end: 3;
+									}
+
+									.product-slider__red {
+										grid-row-end: 28;
+									}
+
+									.product-slider__whiskey {
+										grid-row-end: 35;
+									}
+
+									.product-slider__light {
+										grid-row-end: 31;
+									}
+
+									.product-slider__cognac {
+										grid-row-end: 19;
+									}
+
+									.product-slider__tequila {
+										grid-column-start: 1;
+										grid-column-end: 3;
+										grid-row-start: 37;
+										grid-row-end: 41;
 									}
 								}
+							}
 
-								&.red {
-									grid-column: 4;
-									grid-row-start: 1;
-									grid-row-end: 7;
-								}
-
-								&.champagne {
-									grid-column: 1;
-									grid-row-start: 1;
-									grid-row-end: 3;
-									display: flex;
-								}
-
-								&.spumante {
-									grid-column: 1;
-									grid-row-start: 3;
-									grid-row-end: 5;
-								}
-
-								&.vermouth {
-									grid-column: 1;
-									grid-row-start: 5;
-									grid-row-end: 8;
-								}
-
-								&.rose {
-									grid-column-start: 3;
-									grid-row-start: 7;
-									grid-column-end: 5;
-								}
-
+							.mv-product-slider {
+								display: none;
 							}
 
 							&.menu-hide {
@@ -371,24 +369,6 @@ img {
 								&__wine-list,
 								&__spirits-list {
 									visibility: hidden;
-								}
-							}
-						}
-
-						.product-slider__aperitif-menu {
-							.vertical-line {
-								&:nth-of-type(1) {
-									grid-row-start: 1;
-									grid-row-end: 8;
-									border-top-left-radius: 50%;
-									border-top-right-radius: 50%;
-									border-bottom-left-radius: 50%;
-									border-bottom-right-radius: 50%;
-								}
-
-								&:nth-of-type(2),
-								&:nth-of-type(3) {
-									display: none;
 								}
 							}
 						}
@@ -435,7 +415,7 @@ img {
 		}
 
 		&__content {
-			color: #fff;
+			color: var(--creamy);
 			padding-top: 1px;
 			position: relative;
 			z-index: 2;

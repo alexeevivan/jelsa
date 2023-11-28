@@ -1,0 +1,41 @@
+$xs-small-min: 320px;
+$xs-small-max: 379.98px;
+$x-small-min: 380px;
+$x-small-max: 479.98px;
+$small-min: 480px;
+$small-max: 575.98px;
+$medium-min: 576px;
+$medium-max: 767.98px;
+$large-min: 768px;
+$large-max: 991.98px;
+$x-large-min: 992px;
+$x-large-max: 1199.98px;
+$xl-large-min: 1200px;
+$xl-large-max: 1439.98px;
+$xxl-large-min: 1440px;
+$xxl-large-max: 1919.98px;
+
+@media only screen and (min-width:$xs-small-min) and (max-width:$medium-max) and (orientation: portrait) {
+	.wrapper {
+		.content {
+			.bar-list {
+				.contents {
+
+					.modal-aperitif,
+					.modal-spirits {
+						&.modal-show {
+							.component-wrapper {
+								.component {
+									.component__description {
+										font-size: calc(var(--index) * 0.75);
+										color: var(--japanese-indigo);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
