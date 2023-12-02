@@ -25,10 +25,41 @@ $xxl-large-max: 1919.98px;
 					.modal-spirits {
 						&.modal-show {
 							.component-wrapper {
+								.close {
+
+									&::before,
+									&::after {
+										width: calc(var(--index) * 2.5);
+										height: calc(var(--index) * 0.45);
+										border-radius: 40%;
+										background-color: var(--japanese-indigo);
+									}
+
+									&:hover {
+
+										&::before,
+										&::after {
+											background-color: var(--fuchsia);
+										}
+									}
+								}
+
 								.component {
 									.component__description {
 										font-size: calc(var(--index) * 0.75);
 										color: var(--japanese-indigo);
+									}
+
+									.component__info {
+										ul {
+											height: auto;
+											flex-wrap: wrap;
+
+											li {
+												width: 100%;
+												margin: 0 0 calc(var(--index) * .25) 0;
+											}
+										}
 									}
 								}
 							}

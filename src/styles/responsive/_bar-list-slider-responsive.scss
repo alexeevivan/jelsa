@@ -212,6 +212,7 @@ $xxl-large-max: 1919.98px;
 																				}
 
 																				.trigger {
+																					color: var(--main-color);
 																					text-align: left;
 																					word-break: break-word;
 																					font-size: calc(var(--index) * .7);
@@ -378,6 +379,10 @@ $xxl-large-max: 1919.98px;
 						width: calc(var(--index) * 5);
 						height: calc(var(--index) * 5);
 						font-size: calc(var(--index) * 1.5);
+
+						span {
+							color: var(--main-color);
+						}
 
 						&.hidden {
 							visibility: hidden;

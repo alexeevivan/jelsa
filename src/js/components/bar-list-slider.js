@@ -12,6 +12,7 @@ const swiper = new Swiper(".product-slider", {
 	effect: "fade",
 	loop: false,
 	speed: 1000,
+	simulateTouch: false,
 	navigation: {
 		nextEl: ".next",
 		prevEl: ".prev"
