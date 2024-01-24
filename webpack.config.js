@@ -51,7 +51,7 @@ module.exports = {
 			import: "./js/restaurant.js"
 		},
 		photo_report: {
-			import: "./js/photo_report.js"
+			import: "./js/photo-report.js"
 		},
 		faq: {
 			import: "./js/faq.js"
@@ -65,6 +65,9 @@ module.exports = {
 		},
 		partyPage: {
 			import: "./js/party-page.js"
+		},
+		specialOffer: {
+			import: "./js/special-offer-page.js"
 		},
 		barListSlider: "./js/components/bar-list-slider.js",
 		galleryImgLightbox: "./js/components/gallery-img-lightbox.js",
@@ -175,6 +178,36 @@ module.exports = {
 					collapseWhitespace: isProd
 				},
 				chunks: ["main", "partyPage"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./photo-report/party-money-heist.html",
+				template: "./photo-report/party-money-heist.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "partyPage"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./photo-report/party-theatrical.html",
+				template: "./photo-report/party-theatrical.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "partyPage"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./restaurant/special-offer.html",
+				template: "./restaurant/special-offer.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "specialOffer"]
 			}
 		),
 		new HTMLWebpackPlugin(

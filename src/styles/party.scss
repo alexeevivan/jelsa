@@ -1,0 +1,31 @@
+$md1: 1440px;
+
+.wrapper {
+	.content {
+		.gallery {
+			margin: 85px 0 0 0;
+
+			.gallery__container {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				padding: 0 calc($md1 / 10);
+				width: 100%;
+				min-height: calc(100vh - 85px);
+
+				.gallery__space {
+					width: 100%;
+					height: calc((var(--index) * 2));
+				}
+
+				.gallery__item {
+					width: calc(var(--index) * 12);
+					height: calc(var(--index) * 8);
+					margin: 0 0 calc((var(--index) * 2)) 0;
+					border: 1px solid var(--japanese-indigo);
+					border-radius: 0.3rem;
+				}
+			}
+		}
+	}
+}
