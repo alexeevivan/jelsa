@@ -1,5 +1,5 @@
+---
 deployment:
   tasks:
-    - export REPOPATH=/home/jelsaby/repositories/jelsa/*
-    - export SITEPATH=/home/jelsaby/repositories/jelsa/dist/
-    - /bin/rsync -rav --exclude '.git' --exclude '.cpanel.yml' --del $REPOPATH $SITEPATH
+    - export DEPLOYPATH=/home/jelsa/public_html/
+    - /bin/cp -R images $DEPLOYPATH
