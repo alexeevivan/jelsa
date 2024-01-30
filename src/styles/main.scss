@@ -91,14 +91,10 @@ body {
 					align-items: center;
 					background-color: #0A040B;
 
-					.banner {
-						max-width: 90%;
-						margin: 0 5%;
-					}
-
 					.modal-ny__call {
 						width: calc(var(--index) * 28);
 						border-radius: var(--index) 0 0 var(--index);
+						display: none;
 
 						.modal-ny__main-frame {
 
@@ -343,6 +339,15 @@ body {
 								stroke-width: 1px;
 								fill: #1b2033;
 							}
+						}
+					}
+
+					.banner {
+						width: 100%;
+
+						&__wallpaper {
+							max-width: 90%;
+							margin: auto 5%;
 						}
 					}
 				}
