@@ -23,9 +23,38 @@ $xl-large-max: 1439.98px;
 					padding: 0 calc($xs-small-max / 10);
 					align-items: center;
 
+					.gallery__space {
+						height: calc(var(--index) * 5);
+					}
+
 					.gallery__item {
 						width: calc(var(--index) * 25);
 						height: calc(var(--index) * 14);
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width:$xs-small-min) and (max-width: $large-max) and (orientation: landscape) {
+	.wrapper {
+		.content {
+			.gallery {
+
+				.gallery__container {
+					flex-direction: row;
+					padding: 0 calc($xs-small-max / 10);
+					align-items: center;
+					justify-content: space-evenly;
+
+					.gallery__space {
+						height: calc(var(--index) * 5);
+					}
+
+					.gallery__item {
+						width: calc(var(--index) * 25);
+						height: calc(var(--index) * 15);
 					}
 				}
 			}
