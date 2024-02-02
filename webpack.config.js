@@ -167,7 +167,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage"]
+				chunks: ["main", "partyPage", "galleryImgLightbox"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -177,7 +177,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage"]
+				chunks: ["main", "partyPage", "galleryImgLightbox"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -187,7 +187,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage"]
+				chunks: ["main", "partyPage", "galleryImgLightbox"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -197,7 +197,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage"]
+				chunks: ["main", "partyPage", "galleryImgLightbox"]
 			}
 		),
 		new HTMLWebpackPlugin(

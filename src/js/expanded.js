@@ -94,7 +94,7 @@ const mobileKaraokeSlider = new swiper(".mp-gallery__container", {
 
 
 // ==========================================================
-// Cocktails list animation
+// Cocktails list animations
 // ==========================================================
 
 const textArray = [
