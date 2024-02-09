@@ -65,6 +65,18 @@
 						.contact__social {
 							margin: 20px 0 0 0;
 						}
+
+						.contact__social {
+							a {
+								display: inline-block;
+
+								.icon {
+									width: 24px;
+									height: 24px;
+									background: url("../assets/svg/instagram.svg") no-repeat center / contain;
+								}
+							}
+						}
 					}
 
 					.contact__rules {
