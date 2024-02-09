@@ -182,7 +182,7 @@ $lighter: lighten($color2, 10%);
 				transition: 1s;
 				border-radius: 50%;
 				background-color: var(--transparent);
-				visibility: hidden;
+				// visibility: hidden;
 
 				.frame {
 					height: calc(var(--index) * 1.8);

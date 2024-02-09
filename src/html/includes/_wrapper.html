@@ -1051,7 +1051,7 @@
 							love in jel'sa
 						</h2>
 						<ul>
-							<li>
+							<li id="modal-head-line">
 								Шоу-программа
 							</li>
 							<li>
@@ -1061,13 +1061,23 @@
 								DJ-сеты
 							</li>
 						</ul>
-						<a href="tel:+375445201201">
+						<a href="tel:+375445201201" id="modal-details">
 							подробности
 						</a>
+						<!-- <form id="bookingForm">
+							<label for="name">Имя:</label>
+							<input type="text" id="name" name="name" required>
+
+							<label for="phoneNumber">Номер телефона:</label>
+							<input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+								required>
+
+							<button type="button" onclick="bookReservation()">Забронировать</button>
+						</form> -->
 					</div>
 					<div class="modal-ny__outer">
 						<div class="modal-ny__inner">
-							<a href="#" class="modal-ny__close-btn">
+							<a href="#" class="modal-ny__close-btn" id="modal-close-btn">
 								Закрыть
 							</a>
 						</div>
@@ -1118,10 +1128,10 @@
 					<div data-speed=".9" class="gallery__left">
 						<div class="gallery__item gallery__description">
 							<div class="gallery__text">
-								<p>
+								<p id="karaoke-description">
 									Караоке клуб JEL'SA &mdash; это профессиональный звук ТОП класса &laquo;HK
 									Audio&raquo;, профессиональный свет,
-									сцена, караоке-система от лидеров
+									сцена, караоке-система от лидера
 									индустрии
 									&laquo;AST&raquo;! Уникальный дизайн
 									интерьера, множество арт-объектов и авторская мебель! Профессиональная
@@ -1144,7 +1154,7 @@
 							</div>
 						</div>
 						<div class="text-block gallery__item">
-							<h2 class="text-block__h">
+							<h2 class="text-block__h" id="m-bar-header">
 								бар
 							</h2>
 						</div>
@@ -1155,13 +1165,13 @@
 							</div>
 						</div>
 						<div class="text-block gallery__item">
-							<h2 class="text-block__h">
+							<h2 class="text-block__h" id="m-restaurant-header">
 								ресторан
 							</h2>
 						</div>
 						<div class="gallery__item gallery__description">
 							<div class="gallery__text">
-								<p>
+								<p id="cuisine-description">
 									В основе концепции лежит тезисное убеждение, что идеала можно достичь за
 									счёт простого и уважительного отношения к продуктам.<br> Наше <span
 										class="gallery__menu-a-la-karte">menu a
@@ -1170,13 +1180,13 @@
 								</p>
 							</div>
 							<a class="gallery__button" href="restaurant.html" target="_blank" rel="noopener noreferrer">
-								меню <span></span>
+								<span id="menu-list-link">меню</span> <span></span>
 							</a>
 						</div>
 					</div>
 					<div data-speed="1.1" class="gallery__right">
 						<div class="text-block gallery__item">
-							<h2 class="text-block__h">
+							<h2 class="text-block__h" id="karaoke-header">
 								караоке
 							</h2>
 						</div>
@@ -1203,16 +1213,18 @@
 						</div>
 						<div class="gallery__item gallery__description">
 							<div class="gallery__text">
-								<p>
+								<p id="m-restaurant-description">
 									Ощутите вкус и аромат классического коктейля, будто заказали его в
 									баре Сингапура.<br> Лучшие ингредиенты, приверженность рецептурам
 									IBA &mdash; для нас качество &mdash; главный
 									приоритет.<br> Для новых эмоций мы создали коктейли категории
-									<span class="gallery__signature">signature</span>
+									<span class="gallery__signature" id="signature">
+										signature
+									</span>
 								</p>
 							</div>
 							<a class="gallery__button" href="bar-list.html" rel="noopener noreferrer">
-								барное меню <span></span>
+								<span id="bar-list-link">барное меню</span> <span></span>
 							</a>
 						</div>
 					</div>
@@ -1224,13 +1236,13 @@
 			<div class="mp-container">
 				<div class="mp-gallery">
 					<div class="mp-gallery__item mp-text-block reveal">
-						<h2 class="mp-text-block__h">
+						<h2 class="mp-text-block__h" id="m-karaoke-header">
 							караоке
 						</h2>
 					</div>
 					<div class="mp-gallery__item mp-gallery__description reveal">
 						<div class="mp-gallery__text">
-							<p>
+							<p id="m-karaoke-description">
 								Караоке клуб JEL'SA &mdash; это профессиональный звук ТОП класса &laquo;HK Audio&raquo;,
 								профессиональный свет, сцена,
 								караоке-система от лидера
@@ -1277,7 +1289,7 @@
 						</div>
 					</div>
 					<div class="mp-gallery__item mp-text-block reveal">
-						<h2 class="mp-text-block__h">
+						<h2 class="mp-text-block__h" id="bar-header">
 							бар
 						</h2>
 					</div>
@@ -1300,28 +1312,30 @@
 					</div>
 					<div class="mp-gallery__item mp-gallery__description mp-gallery__bar reveal">
 						<div class="mp-gallery__text">
-							<p>
+							<p id="restaurant-description">
 								Ощутите вкус и аромат классического коктейля, будто заказали его в
 								баре Сингапура.<br> Лучшие ингредиенты, приверженность рецептурам
 								IBA &mdash; для нас качество &mdash; главный
 								приоритет.<br> Для новых эмоций мы создали коктейли категории
-								<span class="mp-gallery__signature">
+								<span class="mp-gallery__signature" id="signature">
 									signature
 								</span>
 							</p>
 						</div>
 						<a class="mp-gallery__button" href="bar-list.html" rel="noopener noreferrer">
-							барное меню <span></span>
+							<span id="m-bar-list-link">
+								барное меню
+							</span> <span></span>
 						</a>
 					</div>
 					<div class="mp-gallery__item mp-text-block reveal">
-						<h2 class="mp-text-block__h">
+						<h2 class="mp-text-block__h" id="restaurant-header">
 							ресторан
 						</h2>
 					</div>
 					<div class="mp-gallery__item mp-gallery__description mp-gallery__cuisine reveal">
 						<div class="mp-gallery__text">
-							<p>
+							<p id="m-cuisine-description">
 								В основе концепции лежит тезисное убеждение, что идеала можно достичь за
 								счёт простого и уважительного отношения к продуктам.<br> Наше <span
 									class="mp-gallery__menu-a-la-karte">menu a
@@ -1331,7 +1345,7 @@
 						</div>
 						<a class="mp-gallery__button" href="../../assets/content/menu/menu.jpg"
 							rel="noopener noreferrer" target="_blank">
-							меню <span></span>
+							<span id="m-menu-list-link">меню</span> <span></span>
 						</a>
 					</div>
 				</div>
@@ -1343,7 +1357,7 @@
 				<h2 class="hall__h">
 					в<span>и</span>ртуальный т<span>у</span>р
 				</h2>
-				<p class="hall__p">
+				<p class="hall__p" id="hall-choice">
 					выберите стол
 				</p>
 			</div>
@@ -1352,10 +1366,10 @@
 					<img class="lazyload" data-src="../../assets/content/hall-scheme.png" loading="lazy"
 						alt="hall-scheme">
 					<div class="hall__interactive">
-						<a class="hall__scene" href="#" target="_blank" rel="noopener noreferrer">
+						<a class="hall__scene" href="#" target="_blank" rel="noopener noreferrer" id="virtual-scene">
 							сцена
 						</a>
-						<a class="hall__bar" href="#" target="_blank" rel="noopener noreferrer">
+						<a class="hall__bar" href="#" target="_blank" rel="noopener noreferrer" id="virtual-bar">
 							бар
 						</a>
 						<a class="hall__table-1" href="./view-tour-1.html" target="_blank" rel="noopener noreferrer">
@@ -1401,20 +1415,20 @@
 				</div>
 				<div class="hall__reserve">
 					<ul class="hall__specials">
-						<li>
-							Вход свободный. Всегда
+						<li id="hall__free-entry">
+							Вход свободный. Всегда.
 						</li>
-						<li>
+						<li id="hall__capacity">
 							Просторный зал на 90 мест.
 						</li>
-						<li>
+						<li id="hall__privacy">
 							Мы не следим за Вашей личной жизнью.
 						</li>
-						<li>
+						<li id="hall__secret">
 							Всё, что происходит в <span>Jel'sa</span> остаётся в <span>Jel'sa</span>.
 						</li>
 					</ul>
-					<a class="hall__reserve-h" href="tel:+375445201201">
+					<a class="hall__reserve-h" id="hall__reserve-link" href="tel:+375445201201">
 						забронировать стол
 					</a>
 				</div>
@@ -1426,13 +1440,13 @@
 				<li>
 					<a href="#home">
 						<img src="../../assets/content/wings.png" alt="logo">
-						<span>
+						<span id="footer__company-name">
 							ООО &laquo;Вокал Индастрит&raquo;
 						</span>
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a href="" id="footer__privacy-policy">
 						Политика конфиденциальности
 					</a>
 				</li>

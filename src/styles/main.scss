@@ -631,14 +631,16 @@ body {
 									font-size: calc(var(--index) * .65);
 
 									span {
-										display: inline-flex;
-										line-height: inherit;
-										height: 100%;
+										&:nth-child(even) {
+											display: inline-flex;
+											line-height: inherit;
+											height: 100%;
 
-										&::before {
-											content: ">";
-											position: absolute;
-											animation: opacityBtn 1.5s infinite;
+											&::before {
+												content: ">";
+												position: absolute;
+												animation: opacityBtn 1.5s infinite;
+											}
 										}
 									}
 								}

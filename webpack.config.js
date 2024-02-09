@@ -71,6 +71,16 @@ module.exports = {
 		},
 		barListSlider: "./js/components/bar-list-slider.js",
 		galleryImgLightbox: "./js/components/gallery-img-lightbox.js",
+		telegramLogic: './js/telegramLogic.js',
+		langSwapMain: "./js/translations/lang-swap-main.js",
+		langSwapGallery: "./js/translations/lang-swap-gallery.js",
+		langSwapView: "./js/translations/lang-swap-view.js",
+		langSwapContact: "./js/translations/lang-swap-contact.js",
+		langSwapRestaurant: "./js/translations/lang-swap-restaurant.js",
+		langSwapAlbum: "./js/translations/lang-swap-album.js",
+		langSwapSpecial: "./js/translations/lang-swap-special.js",
+		langSwapFaq: "./js/translations/lang-swap-faq.js",
+		langSwapBar: "./js/translations/lang-swap-bar.js",
 	},
 	output: {
 		filename: "assets/js/[name].bundle.js",
@@ -88,7 +98,22 @@ module.exports = {
 			"@fonts": path.resolve(__dirname, "src/assets/fonts"),
 			"@styles": path.resolve(__dirname, "src/styles"),
 		},
+		fallback: {
+			"fs": false,
+			"tls": false,
+			"net": false,
+			"path": false,
+			"zlib": false,
+			"http": false,
+			"https": false,
+			"stream": false,
+			"crypto": false,
+			"buffer": require.resolve("buffer/"),
+			"crypto-browserify": require.resolve('crypto-browserify'),
+			"querystring": require.resolve("querystring-es3")
+		} //if you want to use this module also don't forget npm i crypto-browserify
 	},
+	target: 'web',
 	devServer: {
 		port: 4300,
 		hot: isDev
@@ -104,7 +129,7 @@ module.exports = {
 					collapseWhitespace: isProd
 				},
 				include: /\/includes/,
-				chunks: ["main", "expanded", "circles"],
+				chunks: ["main", "expanded", "circles", "telegramLogic", "langSwapMain"],
 				cache: false,
 			}
 		),
@@ -116,7 +141,7 @@ module.exports = {
 					collapseWhitespace: isProd
 				},
 				include: /\/includes/,
-				chunks: ["main", "gallery", "galleryImgLightbox"],
+				chunks: ["main", "gallery", "galleryImgLightbox", "langSwapGallery"],
 				cache: false,
 			}
 		),
@@ -127,7 +152,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["panoramic"]
+				chunks: ["panoramic", "langSwapView"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -137,7 +162,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "contact"]
+				chunks: ["main", "contact", "langSwapContact"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -147,7 +172,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "restaurant"]
+				chunks: ["main", "restaurant", "langSwapRestaurant"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -157,7 +182,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "photo_report"]
+				chunks: ["main", "photo_report", "langSwapAlbum"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -167,7 +192,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage", "galleryImgLightbox"]
+				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbum"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -177,7 +202,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage", "galleryImgLightbox"]
+				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbum"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -187,7 +212,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage", "galleryImgLightbox"]
+				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbum"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -197,7 +222,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage", "galleryImgLightbox"]
+				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbum"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -207,7 +232,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "specialOffer"]
+				chunks: ["main", "specialOffer", "langSwapSpecial"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -217,7 +242,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "faq"]
+				chunks: ["main", "faq", "langSwapFaq"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -227,7 +252,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["barList", "barListSlider"]
+				chunks: ["barList", "barListSlider", "langSwapBar"]
 			}
 		),
 		new CleanWebpackPlugin(),

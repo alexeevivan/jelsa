@@ -338,6 +338,10 @@ header {
 						justify-content: center;
 						align-items: center;
 
+						#langSwap {
+							visibility: hidden;
+						}
+
 						.section-heading {
 							font-family: "SF Pro Display Ultra-Light";
 							font-size: clamp(1rem, 5vw, 5rem);
