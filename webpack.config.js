@@ -147,6 +147,18 @@ module.exports = {
 		),
 		new HTMLWebpackPlugin(
 			{
+				filename: "./googlef9c16ee7205e64de.html",
+				template: "./googlef9c16ee7205e64de.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				include: /\/includes/,
+				chunks: ["main"],
+				cache: false,
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
 				filename: "./view-tour-1.html",
 				template: "./view-tour-1.html",
 				minify: {
