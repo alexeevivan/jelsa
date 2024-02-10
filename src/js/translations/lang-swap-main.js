@@ -27,6 +27,8 @@ function setLanguage(language) {
 	document.getElementById("m-restaurant-link").innerText = translations.ресторан;
 	document.getElementById("m-faq-link").innerText = translations.faq;
 	document.getElementById("m-contacts-link").innerText = translations.контакты;
+	document.getElementById("langSwap__inner").innerText = translations.en;
+	document.getElementById("langSwap-mobile__inner").innerText = translations.en__inner;
 	document.getElementById("modal-head-line").innerText = translations.шоу_программа;
 	document.getElementById("modal-details").innerText = translations.подробности;
 	document.getElementById("modal-close-btn").innerText = translations.закрыть;
