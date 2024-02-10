@@ -1454,3 +1454,312 @@ $xxl-large-max: 1919.98px;
 		}
 	}
 }
+
+@media only screen and (min-width:$xs-small-min) and (max-width:$large-max) and (orientation: landscape) {
+	.wrapper {
+		.content {
+			.portfolio {
+				display: none;
+			}
+
+			.mobile-portfolio {
+				display: block;
+
+				.mp-container {
+					.mp-gallery {
+						display: flex;
+						padding: calc(var(--index) * 5) 0;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+
+						&>* {
+							flex: 1;
+							display: flex;
+							align-items: center;
+							flex-direction: column;
+						}
+
+						&__item {
+							max-width: calc(var(--index) * 25);
+							margin: 0 0 var(--gallery-gap) 0;
+							max-height: 90vh;
+							border-radius: 8px;
+
+							.mp-gallery__text {
+								height: auto;
+								text-align: justify;
+								user-select: none;
+
+								p {
+									line-height: calc(var(--index) * 1.25);
+									font-size: calc(var(--index) * .75);
+
+									span {
+										display: inline-block;
+
+										&.mp-gallery__signature {
+											font-family: "Shelley Andante Script", Snell Roundhand;
+											color: goldenrod;
+											text-transform: capitalize;
+											font-size: var(--index);
+										}
+
+										&.mp-gallery__menu-a-la-karte {
+											font-family: "Imprint MT Shadow";
+											text-transform: uppercase;
+											color: var(--cyan);
+										}
+									}
+								}
+							}
+
+							.mp-gallery__logo {
+								width: 100%;
+								height: 75px;
+								display: flex;
+								flex-wrap: wrap;
+								flex-direction: row;
+								justify-content: space-between;
+								align-items: center;
+
+								.mp-gallery__item {
+									width: 30%;
+									height: 100%;
+									display: inline-flex;
+									margin: 0;
+
+									img {
+										max-width: 100%;
+										max-height: 75px;
+										margin: auto 0;
+									}
+								}
+							}
+
+							&.mp-canvas__container {
+								position: relative;
+								top: 0;
+								width: 100%;
+								max-height: calc(var(--index) * 15);
+								border-radius: 10px;
+								overflow: hidden;
+								z-index: -1;
+								border: 1px solid var(--japanese-indigo);
+								border-radius: 8px;
+								filter: drop-shadow(2px 2px 6px var(--japanese-indigo));
+
+								.mp-gallery__circles {
+									position: absolute;
+									top: 0;
+									left: 0;
+									width: 100%;
+									height: 100%;
+									overflow: hidden;
+
+									.some {
+										position: absolute;
+										display: inline-block;
+										width: 20px;
+										height: 20px;
+										background: var(--japanese-indigo);
+										animation: test 25s linear infinite;
+										bottom: -150px;
+										border-radius: 50%;
+
+										&:nth-child(1) {
+											left: 25%;
+											animation-delay: 0s;
+										}
+
+										&:nth-child(2) {
+											left: 10%;
+											animation-delay: 2s;
+											animation-duration: 12s;
+											filter: opacity(.35);
+										}
+
+										&:nth-child(3) {
+											left: 70%;
+											animation-delay: 4s;
+										}
+
+										&:nth-child(4) {
+											left: 40%;
+											animation-delay: 0s;
+											animation-duration: 18s;
+											filter: opacity(.1);
+										}
+
+										&:nth-child(5) {
+											left: 65%;
+											animation-delay: 0s;
+										}
+
+										&:nth-child(6) {
+											left: 75%;
+											animation-delay: 3s;
+											filter: opacity(.75);
+										}
+
+										&:nth-child(7) {
+											left: 35%;
+											animation-delay: 7s;
+										}
+
+										&:nth-child(8) {
+											left: 50%;
+											animation-delay: 15s;
+											animation-duration: 45s;
+											filter: opacity(.5);
+										}
+
+										&:nth-child(9) {
+											left: 20%;
+											animation-delay: 2s;
+											animation-duration: 35s;
+										}
+
+										&:nth-child(10) {
+											left: 85%;
+											animation-delay: 0s;
+											animation-duration: 11s;
+											filter: opacity(.9);
+										}
+									}
+								}
+
+								.mp-gallery__cocktails {
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									width: 100%;
+									height: calc(var(--index) * 20);
+									position: relative;
+
+									p {
+										color: var(--creamy);
+										font-family: "Imprint MT Shadow";
+										font-size: calc(var(--index) * 1.25);
+										text-transform: uppercase;
+
+										&.js-animate-in {
+											animation-name: animate-in;
+											animation-duration: 500ms;
+											animation-fill-mode: forwards;
+											animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+										}
+
+										&.js-animate-out {
+											animation-name: animate-out;
+											animation-duration: 500ms;
+											animation-fill-mode: forwards;
+											animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+										}
+									}
+								}
+							}
+						}
+
+						&__description {
+							width: 564px;
+							height: calc(var(--index) * 20);
+							border: 1px solid var(--japanese-indigo);
+							border-radius: 8px;
+							display: flex;
+							flex-direction: column;
+							align-items: center;
+							justify-content: space-around;
+							padding: 5%;
+							overflow: hidden;
+							filter: drop-shadow(2px 2px 6px var(--japanese-indigo));
+
+							.mp-gallery__button {
+								width: auto;
+								display: inline-flex;
+								align-items: center;
+								justify-content: center;
+								padding: 5px;
+								border-radius: 8px;
+								text-transform: none;
+								color: var(--creamy);
+								font-size: calc(var(--index) * .65);
+								margin: 5% 0 0 0;
+								position: relative;
+
+								span {
+									&:nth-child(even) {
+										display: inline-flex;
+										line-height: inherit;
+										height: 100%;
+
+										&::before {
+											content: ">";
+											position: absolute;
+											animation: opacityBtn 1.5s infinite;
+											bottom: 6.5px;
+										}
+									}
+								}
+							}
+						}
+
+						&__bar,
+						&__cuisine {
+							min-height: calc(var(--index) * 15);
+							filter: drop-shadow(2px 2px 6px var(--japanese-indigo));
+						}
+
+						.mp-gallery__slider {
+							width: 564px;
+							height: calc(var(--index) * 20);
+							background: var(--transparent);
+
+							.mp-gallery__container {
+								width: 100%;
+								height: 100%;
+								overflow: hidden;
+
+								.mp-gallery__wrapper {
+
+									.mp-gallery__slide {
+										width: 100%;
+										height: calc(var(--index) * 20);
+										display: flex;
+										align-items: center;
+										background-color: var(--transparent);
+
+										.mp-gallery-image {
+											width: auto;
+											margin: 0;
+										}
+									}
+								}
+							}
+						}
+
+						.mp-text-block {
+							.mp-text-block__h {
+								font-size: calc(var(--index) * 2);
+								text-align: right;
+								text-transform: uppercase;
+							}
+						}
+
+						.reveal {
+							position: relative;
+							transform: translateY(100px);
+							opacity: 0;
+							transition: 1s all ease;
+
+							&.active {
+								transform: translateY(0);
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
