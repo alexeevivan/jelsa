@@ -174,7 +174,9 @@ $lg: 64rem;
 											text-transform: unset;
 
 											span {
-												text-transform: capitalize;
+												&:nth-child(1) {
+													text-transform: capitalize;
+												}
 											}
 										}
 									}
