@@ -50,6 +50,9 @@ module.exports = {
 		restaurant: {
 			import: "./js/restaurant.js"
 		},
+		cartel: {
+			import: "./js/cartel.js"
+		},
 		photo_report: {
 			import: "./js/photo-report.js"
 		},
@@ -185,6 +188,16 @@ module.exports = {
 					collapseWhitespace: isProd
 				},
 				chunks: ["main", "restaurant", "langSwapRestaurant"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
+				filename: "./cartel.html",
+				template: "./cartel.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "cartel"]
 			}
 		),
 		new HTMLWebpackPlugin(
