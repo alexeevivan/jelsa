@@ -29,7 +29,9 @@ function setLanguage(language) {
 	document.getElementById("m-contacts-link").innerText = translations.контакты;
 	document.getElementById("langSwap__inner").innerText = translations.en;
 	document.getElementById("langSwap-mobile__inner").innerText = translations.en__inner;
+	document.getElementById("modal-head-date").innerText = translations.дата;
 	document.getElementById("modal-head-line").innerText = translations.шоу_программа;
+	document.getElementById("modal-head-set").innerText = translations.сет;
 	document.getElementById("modal-details").innerText = translations.подробности;
 	document.getElementById("modal-close-btn").innerText = translations.закрыть;
 	document.getElementById("karaoke-header").innerText = translations.караоке;
