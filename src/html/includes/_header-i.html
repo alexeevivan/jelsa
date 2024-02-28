@@ -1,6 +1,6 @@
 <header class="header">
 	<nav class="navigation">
-		<button class="toggle-menu">
+		<button class="toggle-menu" aria-label="hidden menu">
 			<span></span>
 		</button>
 	</nav>
@@ -8,17 +8,17 @@
 		<nav class="main-nav">
 			<ul>
 				<li>
-					<a href="../gallery.html">
+					<a href="../gallery.html" id="m-gallery-link">
 						галерея
 					</a>
 				</li>
 				<li>
-					<a href="../photo-report.html">
+					<a href="../photo-report.html" id="m-photo-reports-link">
 						фотоотчёты
 					</a>
 				</li>
 				<li>
-					<a href="../restaurant.html">
+					<a href="../restaurant.html" id="m-restaurant-link">
 						ресторан
 					</a>
 				</li>
@@ -28,14 +28,23 @@
 					</a>
 				</li> -->
 				<li>
-					<a href="../faq.html">
+					<a href="../faq.html" id="m-faq-link">
 						FAQ
 					</a>
 				</li>
 				<li>
-					<a href="../contact.html">
+					<a href="../contact.html" id="m-contacts-link">
 						Контакты
 					</a>
+				</li>
+				<li class="lang-swap-btn">
+					<button class="btn" id="langSwap-mobile">
+						<div class="frame">
+							<span class="btn__text" id="langSwap-mobile__inner">
+								en
+							</span>
+						</div>
+					</button>
 				</li>
 			</ul>
 		</nav>
@@ -44,22 +53,22 @@
 		<div class="header__links">
 			<ul>
 				<li>
-					<a href="../index.html" class="home-btn">
+					<a href="../../index.html" class="home-btn">
 						<img src="../../assets/svg/wings.svg" alt="logo" id="logosvg">
 					</a>
 				</li>
 				<li>
-					<a href="../gallery.html">
+					<a href="../../gallery.html" id="gallery-link">
 						галерея
 					</a>
 				</li>
 				<li>
-					<a href="../photo-report.html">
+					<a href="../../photo-report.html" id="photo-reports-link">
 						фотоотчёты
 					</a>
 				</li>
 				<li>
-					<a href="../restaurant.html">
+					<a href="../../restaurant.html" id="restaurant-link">
 						ресторан
 					</a>
 				</li>
@@ -69,12 +78,12 @@
 					</a>
 				</li> -->
 				<li>
-					<a href="../faq.html">
+					<a href="../../faq.html" id="faq-link">
 						FAQ
 					</a>
 				</li>
 				<li>
-					<a href="../contact.html">
+					<a href="../../contact.html" id="contacts-link">
 						Контакты
 					</a>
 				</li>

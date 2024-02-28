@@ -81,6 +81,7 @@ module.exports = {
 		langSwapContact: "./js/translations/lang-swap-contact.js",
 		langSwapRestaurant: "./js/translations/lang-swap-restaurant.js",
 		langSwapAlbum: "./js/translations/lang-swap-album.js",
+		langSwapAlbumReport: "./js/translations/lang-swap-album-report.js",
 		langSwapSpecial: "./js/translations/lang-swap-special.js",
 		langSwapFaq: "./js/translations/lang-swap-faq.js",
 		langSwapBar: "./js/translations/lang-swap-bar.js",
@@ -217,17 +218,17 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbum"]
+				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
 			}
 		),
 		new HTMLWebpackPlugin(
 			{
-				filename: "./photo-report/party-matrix.html",
-				template: "./photo-report/party-matrix.html",
+				filename: "./photo-report/party-valentines.html",
+				template: "./photo-report/party-valentines.html",
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbum"]
+				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -237,7 +238,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbum"]
+				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
 			}
 		),
 		new HTMLWebpackPlugin(
@@ -247,7 +248,7 @@ module.exports = {
 				minify: {
 					collapseWhitespace: isProd
 				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbum"]
+				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
 			}
 		),
 		new HTMLWebpackPlugin(

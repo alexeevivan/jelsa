@@ -1,6 +1,6 @@
 // Импорт файлов с переводами
-import translationsRU from "../translations/album/ru-album.json";
-import translationsEN from "../translations/album/en-album.json";
+import translationsRU from "../translations/album-report/ru-album-report.json";
+import translationsEN from "../translations/album-report/en-album-report.json";
 
 // Функция для сохранения выбранного языка в localStorage
 function saveLanguageToStorage(language) {
@@ -22,8 +22,8 @@ function setLanguage(language) {
 	document.getElementById("restaurant-link").innerText = translations.ресторан;
 	document.getElementById("faq-link").innerText = translations.faq;
 	document.getElementById("contacts-link").innerText = translations.контакты;
-	document.getElementById("langSwap__inner").innerText = translations.en;
-	document.getElementById("langSwap-mobile__inner").innerText = translations.en__inner;
+	document.getElementById("langSwap__inner").innerText = translations.album_en;
+	document.getElementById("langSwap-mobile__inner").innerText = translations.album_en__inner;
 	document.getElementById("m-gallery-link").innerText = translations.галерея;
 	document.getElementById("m-photo-reports-link").innerText = translations.фотоотчеты;
 	document.getElementById("m-restaurant-link").innerText = translations.ресторан;
@@ -31,10 +31,6 @@ function setLanguage(language) {
 	document.getElementById("m-contacts-link").innerText = translations.контакты;
 	document.getElementById("company_name").innerText = translations.вокал_индастрит;
 	document.getElementById("privacy-policy").innerText = translations.политика_конфиденциальности;
-	document.getElementById("gallery__info-translate-1").innerText = translations.вечер;
-	document.getElementById("gallery__info-translate-2").innerText = translations.вечеринка_в;
-	document.getElementById("gallery__info-translate-3").innerText = translations.вечеринка_в_стиле;
-	document.getElementById("gallery__info-translate-4").innerText = translations.день_валентина;
 }
 
 // Пример переключения языка по кнопке
