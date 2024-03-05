@@ -93,7 +93,7 @@ body {
 					justify-content: center;
 					align-items: center;
 					background-color: var(--main-color);
-					background-color: #FFCBF3;
+					background-color: #010101;
 
 					.modal-ny__call {
 						width: calc(var(--index) * 28);
@@ -362,7 +362,7 @@ body {
 					align-items: center;
 					width: 35%;
 					// background-color: var(--main-color);
-					background-color: #FFCBF3;
+					background-color: #010101;
 					border-radius: 0 calc(var(--index) * .5) calc(var(--index) * .5) 0;
 
 					.modal-ny__proposal {
@@ -400,18 +400,18 @@ body {
 							display: inline-flex;
 							width: 60%;
 							padding: calc(var(--index) * .5);
-							border: 1px solid #b0269b;
+							border: 1px solid var(--creamy);
 							border-radius: calc(var(--index) * .4);
 							justify-content: center;
 							align-items: center;
 							text-transform: capitalize;
-							color: #a7219b;
+							color: var(--creamy);
 							transition: .5s;
 							font-size: calc(var(--index) * .7);
 
 							&:hover {
-								border: 1px solid var(--japanese-indigo);
-								color: var(--japanese-indigo);
+								border: 1px solid #FA2F40;
+								color: #FA2F40;
 							}
 
 						}
@@ -455,7 +455,7 @@ body {
 								content: '';
 								height: 1px;
 								width: inherit;
-								background: #a7219b;
+								background: #FA2F40;
 								left: 0;
 								transition: all .3s ease-in;
 							}
@@ -474,7 +474,7 @@ body {
 								font-size: calc(var(--index) * .4);
 								line-height: 4em;
 								text-transform: uppercase;
-								color: #a7219b;
+								color: #FA2F40;
 								transition: all .3s ease-in;
 								opacity: 0;
 								cursor: pointer;
