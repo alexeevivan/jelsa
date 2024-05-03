@@ -20,7 +20,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 
 				.modal-ny__card {
 					width: calc(100vw - var(--index) * 2);
@@ -494,7 +494,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 
 				.modal-ny__card {
 					width: calc(100vw - var(--index) * 2);
@@ -558,7 +558,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 
 				.modal-ny__card {
 					width: calc(100vw - var(--index) * 2);
@@ -618,7 +618,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				align-items: center;
 
 				.modal-ny__card {
@@ -680,7 +680,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 
 				.modal-ny__card {
 					width: calc(100vw - var(--index) * 2);
@@ -746,7 +746,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				align-items: center;
 
 				.modal-ny__card {
@@ -808,7 +808,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 
 				.modal-ny__card {
 					width: calc(100% - calc($large-max / 7));
@@ -822,7 +822,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				align-items: unset;
 
 				.modal-ny__card {
@@ -844,7 +844,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				align-items: unset;
 
 				.modal-ny__card {
@@ -867,7 +867,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				align-items: unset;
 
 				.modal-ny__card {
@@ -890,7 +890,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				align-items: unset;
 
 				.modal-ny__card {
@@ -913,7 +913,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				align-items: unset;
 
 				.modal-ny__card {
@@ -936,7 +936,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				align-items: unset;
 
 				.modal-ny__card {
@@ -959,7 +959,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				align-items: center;
 
 				.modal-ny__card {
@@ -982,7 +982,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				align-items: center;
 
 				.modal-ny__card {
@@ -1005,7 +1005,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				align-items: center;
 
 				.modal-ny__card {
@@ -1029,7 +1029,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 
 				.modal-ny__card {
 					width: calc(100% - calc($x-large-max / 7));
@@ -1046,7 +1046,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 
 				.modal-ny__card {
 					width: calc(100% - calc($xl-large-max / 7));
@@ -1063,7 +1063,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				width: 100%;
 
 				.modal-ny__card {
@@ -1079,7 +1079,7 @@ $xxl-large-max: 1919.98px;
 	.wrapper {
 		.content {
 			.modal-ny {
-				display: none;
+				display: flex;
 				width: 100%;
 			}
 		}
