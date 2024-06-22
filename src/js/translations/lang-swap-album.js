@@ -34,7 +34,12 @@ function setLanguage(language) {
 	document.getElementById("gallery__info-translate-1").innerText = translations.вечер;
 	document.getElementById("gallery__info-translate-2").innerText = translations.вечеринка_в;
 	document.getElementById("gallery__info-translate-3").innerText = translations.вечеринка_в_стиле;
-	document.getElementById("gallery__info-translate-4").innerText = translations.день_валентина;
+	document.getElementById("gallery__info-translate-4").innerText = translations.день_женщин;
+	document.getElementById("gallery__info-translate-5").innerText = translations.джельсашъян;
+	document.getElementById("gallery__info-translate-6").innerText = translations.день_защитника;
+	document.getElementById("gallery__info-translate-7").innerText = translations.день_валентина;
+	document.getElementById("gallery__info-translate-8").innerText = translations.новый_год;
+	document.getElementById("gallery__info-translate-8").innerText = translations.шашлычок;
 }
 
 // Пример переключения языка по кнопке
