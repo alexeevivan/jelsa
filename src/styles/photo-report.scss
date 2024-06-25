@@ -5,18 +5,19 @@
 		justify-content: center;
 		align-content: center;
 		background-color: var(--main-color);
-		margin: 85px 0 0 0;
+		margin: 85px 0 85px 0;
 		padding: 85px 0;
 		height: 100%;
 	}
 
 	&__items {
 		display: grid;
-		padding: 85px 144px 85px 144px;
+		padding: 0 144px 85px 144px;
 		grid-template-columns: auto auto auto;
 		align-content: center;
 		row-gap: 10%;
 		height: 100%;
+		margin: 85px 0 170px 0;
 	}
 
 	&__item {
