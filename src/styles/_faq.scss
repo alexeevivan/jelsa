@@ -17,8 +17,18 @@
 			overflow: hidden;
 			display: none;
 
-			&.visible {
-				width: 100%;
+			&#faq-translate-answer-1,
+			&#faq-translate-answer-2,
+			&#faq-translate-answer-3,
+			&#faq-translate-answer-4 {
+				&.visible {
+					width: 100%;
+
+					a {
+						color: var(--cyan);
+						cursor: pointer;
+					}
+				}
 			}
 		}
 
@@ -40,30 +50,33 @@
 		}
 
 		.accordion__toggle {
-			width: 100%;
-			display: inline-flex;
-			align-items: center;
-			border: 1px solid var(--japanese-indigo);
-			background-color: var(--transparent);
-			padding: calc(var(--index) * .8);
-			border-radius: 0.3rem;
-			transition: .75s ease;
-			font-family: "Raleway",
-				sans-serif;
-			font-weight: normal;
-			font-size: calc(var(--index) * 0.65);
-			text-align: inherit;
 
-			span {
-				color: #fefefe;
-			}
+			&#faq-translate-header-1,
+			&#faq-translate-header-2,
+			&#faq-translate-header-3,
+			&#faq-translate-header-4 {
+				width: 100%;
+				display: inline-flex;
+				align-items: center;
+				border: 1px solid var(--japanese-indigo);
+				background-color: var(--transparent);
+				padding: calc(var(--index) * .8);
+				border-radius: 0.3rem;
+				transition: .75s ease;
+				font-family: "Raleway",
+					sans-serif;
+				font-weight: normal;
+				font-size: calc(var(--index) * 0.65);
+				text-align: inherit;
+				color: var(--color-text);
 
-			&:hover {
-				background-color: var(--japanese-indigo);
-			}
+				&:hover {
+					background-color: var(--japanese-indigo);
+				}
 
-			&.open {
-				background-color: var(--japanese-indigo);
+				&.open {
+					background-color: var(--japanese-indigo);
+				}
 			}
 		}
 	}

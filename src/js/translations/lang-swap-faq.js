@@ -31,6 +31,14 @@ function setLanguage(language) {
 	document.getElementById("m-contacts-link").innerText = translations.контакты;
 	document.getElementById("company_name").innerText = translations.вокал_индастрит;
 	document.getElementById("privacy-policy").innerText = translations.политика_конфиденциальности;
+	document.getElementById("faq-translate-header-1").innerText = translations.детское_мероприятие;
+	document.getElementById("faq-translate-header-2").innerText = translations.навынос;
+	document.getElementById("faq-translate-header-3").innerText = translations.отдельные_залы;
+	document.getElementById("faq-translate-header-4").innerText = translations.корпоратив;
+	document.getElementById("faq-translate-answer-1").innerText = translations.детское_мероприятие_ответ;
+	document.getElementById("faq-translate-answer-2").innerText = translations.навынос_ответ;
+	document.getElementById("faq-translate-answer-3").innerText = translations.отдельные_залы_ответ;
+	document.getElementById("faq-translate-answer-4").innerText = translations.корпоратив_ответ;
 }
 
 // Пример переключения языка по кнопке

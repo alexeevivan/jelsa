@@ -8,5 +8,13 @@
 	"en": "ru",
 	"en__inner": "ru",
 	"вокал_индастрит": "«Vokal Indastreet» LLC",
-	"политика_конфиденциальности": "Privacy Policy"
+	"политика_конфиденциальности": "Privacy Policy",
+	"детское_мероприятие": "Is there a possibility of organizing a children's event in your institution?",
+	"навынос": "Is it possible to order takeaway food and drinks?",
+	"отдельные_залы": "Does your establishment have separate halls/rooms?",
+	"корпоратив": "I would like to organize a corporate event for my employees at your place. Tell me the conditions.",
+	"детское_мероприятие_ответ": "We can provide a platform for an unforgettable event for your children. Please contact our administrator at +375-44-5-201-201",
+	"навынос_ответ": "Yes. Please contact our administrator at +375-44-5-201-201 for more details.",
+	"отдельные_залы_ответ": "No. All the tables in our establishment are located in a common space.",
+	"корпоратив_ответ": "You can arrange the closing service of our institution for the purpose of holding a private event. The cost of this service depends on the day of the week: from Sunday to Thursday inclusive from 10.000BYN; on Friday and Saturday from 35.000BYN. For more details, please contact +375-44-5-201-201."
 }

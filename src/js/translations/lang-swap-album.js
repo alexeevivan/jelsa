@@ -40,6 +40,8 @@ function setLanguage(language) {
 	document.getElementById("gallery__info-translate-7").innerText = translations.день_валентина;
 	document.getElementById("gallery__info-translate-8").innerText = translations.новый_год;
 	document.getElementById("gallery__info-translate-8").innerText = translations.шашлычок;
+	document.getElementById("gallery__info-translate-9").innerText = translations.лето;
+	document.getElementById("gallery__info-translate-10").innerText = translations.предновогодняя;
 }
 
 // Пример переключения языка по кнопке
