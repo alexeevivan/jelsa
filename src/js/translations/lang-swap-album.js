@@ -42,6 +42,7 @@ function setLanguage(language) {
 	document.getElementById("gallery__info-translate-8").innerText = translations.шашлычок;
 	document.getElementById("gallery__info-translate-9").innerText = translations.лето;
 	document.getElementById("gallery__info-translate-10").innerText = translations.предновогодняя;
+	document.getElementById("gallery__info-translate-11").innerText = translations.старый_новый_год;
 }
 
 // Пример переключения языка по кнопке
