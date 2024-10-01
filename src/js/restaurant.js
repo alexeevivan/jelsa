@@ -1,5 +1,4 @@
 import "@styles/restaurant.scss";
-import "@styles/responsive/restaurant-responsive.scss";
 
 // ==========================================================
 // Menu-list opening
