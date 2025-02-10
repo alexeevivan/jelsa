@@ -223,6 +223,7 @@ $xl-large-max: 1439.98px;
 		.content {
 			.gallery__container {
 				padding: calc($large-max / 14) 0;
+				margin: 0;
 
 				.gallery__items {
 					display: flex;

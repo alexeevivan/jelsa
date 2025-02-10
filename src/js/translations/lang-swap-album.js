@@ -46,6 +46,7 @@ function setLanguage(language) {
 	document.getElementById("gallery__info-translate-12").innerText = translations.хэллоуин;
 	document.getElementById("gallery__info-translate-13").innerText = translations.ред_люкс;
 	document.getElementById("gallery__info-translate-14").innerText = translations.джингл_беллс;
+	document.getElementById("gallery__info-translate-15").innerText = translations.спорт_бухло;
 }
 
 // Пример переключения языка по кнопке
