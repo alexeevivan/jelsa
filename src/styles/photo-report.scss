@@ -6,7 +6,7 @@
 		align-content: center;
 		background-color: var(--main-color);
 		margin: 170px 0;
-		padding: 85px 0;
+		padding: 85px 0 300px 0;
 		height: 100%;
 	}
 
@@ -23,6 +23,12 @@
 	&__item {
 		width: 90%;
 		perspective: 2000px;
+
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3) {
+			margin: 200px 0 0 0;
+		}
 	}
 
 	&__inner {

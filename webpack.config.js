@@ -263,6 +263,16 @@ module.exports = {
 		),
 		new HTMLWebpackPlugin(
 			{
+				filename: "./photo-report/party-airlines.html",
+				template: "./photo-report/party-airlines.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
 				filename: "./photo-report/party-red-luxe.html",
 				template: "./photo-report/party-red-luxe.html",
 				minify: {
