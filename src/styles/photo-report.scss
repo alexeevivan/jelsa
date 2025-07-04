@@ -5,9 +5,8 @@
 		justify-content: center;
 		align-content: center;
 		background-color: var(--main-color);
-		margin: 170px 0;
-		padding: 170px 0 85px 0;
-		height: 100%;
+		padding: 170px 0 170px 0;
+		height: auto;
 	}
 
 	&__items {
@@ -15,9 +14,8 @@
 		padding: 0 144px 85px 144px;
 		grid-template-columns: auto auto auto;
 		align-content: center;
-		row-gap: 6%;
-		height: 100%;
-		margin: 85px 0 170px 0;
+		row-gap: 40px;
+		height: auto;
 	}
 
 	&__item {
@@ -27,7 +25,7 @@
 		&:nth-child(1),
 		&:nth-child(2),
 		&:nth-child(3) {
-			margin: 200px 0 0 0;
+			margin: 0 0 0 0;
 		}
 	}
 
