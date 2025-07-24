@@ -49,6 +49,7 @@ function setLanguage(language) {
 	document.getElementById("gallery__info-translate-15").innerText = translations.спорт_бухло;
 	document.getElementById("gallery__info-translate-16").innerText = translations.банный_день;
 	document.getElementById("gallery__info-translate-17").innerText = translations.эйрлайнс;
+	document.getElementById("gallery__info-translate-20").innerText = translations.круиз;
 }
 
 // Пример переключения языка по кнопке
