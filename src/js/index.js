@@ -67,17 +67,17 @@ $(".toggle-menu").click(function () {
 // ==========================================================
 // Index page new-year modal animation
 // ==========================================================
-window.onload = function () {
-	$(".modal-ny").addClass("modal-ny__active");
-	$(".header").addClass("hidden");
-	document.body.style.position = "fixed";
-};
+// window.onload = function () {
+// 	$(".modal-ny").addClass("modal-ny__active");
+// 	$(".header").addClass("hidden");
+// 	document.body.style.position = "fixed";
+// };
 
-$(".modal-ny__close-btn").click(function () {
-	$(".modal-ny").removeClass("modal-ny__active");
-	$(".modal-ny").addClass("hidden");
-	document.body.style.position = "unset";
-});
+// $(".modal-ny__close-btn").click(function () {
+// 	$(".modal-ny").removeClass("modal-ny__active");
+// 	$(".modal-ny").addClass("hidden");
+// 	document.body.style.position = "unset";
+// });
 
 var design = anime({
 	targets: "#newyear2020 #happy",
