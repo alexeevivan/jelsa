@@ -453,6 +453,16 @@ module.exports = {
 		),
 		new HTMLWebpackPlugin(
 			{
+				filename: "./photo-report/party-new-year-2026.html",
+				template: "./photo-report/party-new-year-2026.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
 				filename: "./restaurant/special-offer.html",
 				template: "./restaurant/special-offer.html",
 				minify: {
