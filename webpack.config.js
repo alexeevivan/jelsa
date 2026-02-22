@@ -463,6 +463,16 @@ module.exports = {
 		),
 		new HTMLWebpackPlugin(
 			{
+				filename: "./photo-report/party-love.html",
+				template: "./photo-report/party-love.html",
+				minify: {
+					collapseWhitespace: isProd
+				},
+				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
+			}
+		),
+		new HTMLWebpackPlugin(
+			{
 				filename: "./restaurant/special-offer.html",
 				template: "./restaurant/special-offer.html",
 				minify: {
