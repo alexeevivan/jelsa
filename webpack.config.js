@@ -5,9 +5,26 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
+const pagesConfig = require("./webpack.pages.js");
 
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
+
+// Функция для генерации HTMLWebpackPlugin из конфигурации
+const generateHtmlPlugins = () => {
+	return Object.entries(pagesConfig).map(([filename, config]) => {
+		return new HTMLWebpackPlugin({
+			filename: `./${filename}`,
+			template: `./${filename}`,
+			minify: {
+				collapseWhitespace: isProd
+			},
+			include: config.include || undefined,
+			chunks: config.chunks,
+			cache: false,
+		});
+	});
+};
 
 const optimization = () => {
 	const config = {
@@ -89,7 +106,7 @@ module.exports = {
 	output: {
 		filename: "assets/js/[name].bundle.js",
 		path: path.resolve(__dirname, "dist"),
-		assetModuleFilename: "assets/content/[path][name][ext]",
+		assetModuleFilename: "assets/[path][name][ext]",
 	},
 	resolve: {
 		extensions: [
@@ -112,10 +129,9 @@ module.exports = {
 			"https": false,
 			"stream": false,
 			"crypto": false,
-			"buffer": require.resolve("buffer/"),
-			"crypto-browserify": require.resolve('crypto-browserify'),
-			"querystring": require.resolve("querystring-es3")
-		} //if you want to use this module also don't forget npm i crypto-browserify
+			"buffer": false,
+			"querystring": false
+		}
 	},
 	target: 'web',
 	devServer: {
@@ -125,399 +141,22 @@ module.exports = {
 	devtool: isProd ? false : "source-map",
 	optimization: optimization(),
 	plugins: [
-		new HTMLWebpackPlugin(
-			{
-				filename: "./index.html",
-				template: "./index.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				include: /\/includes/,
-				chunks: ["main", "expanded", "circles", "telegramLogic", "langSwapMain"],
-				cache: false,
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./gallery.html",
-				template: "./gallery.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				include: /\/includes/,
-				chunks: ["main", "gallery", "galleryImgLightbox", "langSwapGallery"],
-				cache: false,
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./googlef9c16ee7205e64de.html",
-				template: "./googlef9c16ee7205e64de.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				include: /\/includes/,
-				chunks: ["main"],
-				cache: false,
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./view-tour-1.html",
-				template: "./view-tour-1.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["panoramic", "langSwapView"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./contact.html",
-				template: "./contact.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "contact", "langSwapContact"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./restaurant.html",
-				template: "./restaurant.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "restaurant", "langSwapRestaurant"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./cartel.html",
-				template: "./cartel.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "cartel"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report.html",
-				template: "./photo-report.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "photo_report", "langSwapAlbum"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-ussr.html",
-				template: "./photo-report/party-ussr.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-jelsashian.html",
-				template: "./photo-report/party-jelsashian.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-jingle-bells.html",
-				template: "./photo-report/party-jingle-bells.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-sport-n-buhlo.html",
-				template: "./photo-report/party-sport-n-buhlo.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-halloween-25.html",
-				template: "./photo-report/party-halloween-25.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-find-ur-love.html",
-				template: "./photo-report/party-find-ur-love.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-airlines.html",
-				template: "./photo-report/party-airlines.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-fabrika.html",
-				template: "./photo-report/party-fabrika.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-women-day.html",
-				template: "./photo-report/party-women-day.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-bathhouse.html",
-				template: "./photo-report/party-bathhouse.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-airlines-summer.html",
-				template: "./photo-report/party-airlines-summer.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-cruise.html",
-				template: "./photo-report/party-cruise.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-red-luxe.html",
-				template: "./photo-report/party-red-luxe.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-halloween.html",
-				template: "./photo-report/party-halloween.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-summer.html",
-				template: "./photo-report/party-summer.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-eve-wknd.html",
-				template: "./photo-report/party-eve-wknd.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-old-ny24.html",
-				template: "./photo-report/party-old-ny24.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-valentines.html",
-				template: "./photo-report/party-valentines.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-money-heist.html",
-				template: "./photo-report/party-money-heist.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-theatrical.html",
-				template: "./photo-report/party-theatrical.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-iwd.html",
-				template: "./photo-report/party-iwd.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-man.html",
-				template: "./photo-report/party-man.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-school.html",
-				template: "./photo-report/party-school.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-new-year-2024.html",
-				template: "./photo-report/party-new-year-2024.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-new-year-2026.html",
-				template: "./photo-report/party-new-year-2026.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-victoria-secret-night.html",
-				template: "./photo-report/party-victoria-secret-night.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./photo-report/party-love.html",
-				template: "./photo-report/party-love.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "partyPage", "galleryImgLightbox", "langSwapAlbumReport"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./restaurant/special-offer.html",
-				template: "./restaurant/special-offer.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "specialOffer", "langSwapSpecial"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./faq.html",
-				template: "./faq.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["main", "faq", "langSwapFaq"]
-			}
-		),
-		new HTMLWebpackPlugin(
-			{
-				filename: "./bar-list.html",
-				template: "./bar-list.html",
-				minify: {
-					collapseWhitespace: isProd
-				},
-				chunks: ["barList", "barListSlider", "langSwapBar"]
-			}
-		),
-		new CleanWebpackPlugin(),
+		// Автоматическая генерация HTMLWebpackPlugin из webpack.pages.js
+		...generateHtmlPlugins(),
+		// new CleanWebpackPlugin(), // Временно отключен из-за проблем с правами
 		new CopyWebpackPlugin(
 			{
 				patterns: [
 					{
 						from: path.resolve(__dirname, "src/assets/"),
-						to: path.resolve(__dirname, "dist/assets")
+						to: path.resolve(__dirname, "dist/assets"),
+						globOptions: isProd ? {
+							ignore: [
+								'**/*.jpg',
+								'**/*.jpeg',
+								'**/*.png',
+							]
+						} : {}
 					},
 				]
 			}
@@ -548,7 +187,15 @@ module.exports = {
 						options: {},
 					},
 					"css-loader",
-					"sass-loader"
+					{
+						loader: "sass-loader",
+						options: {
+							sassOptions: {
+								quietDeps: true,
+								silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions'],
+							},
+						},
+					}
 				],
 			},
 			{
