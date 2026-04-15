@@ -150,13 +150,7 @@ module.exports = {
 					{
 						from: path.resolve(__dirname, "src/assets/"),
 						to: path.resolve(__dirname, "dist/assets"),
-						globOptions: isProd ? {
-							ignore: [
-								'**/*.jpg',
-								'**/*.jpeg',
-								'**/*.png',
-							]
-						} : {}
+						globOptions: {}
 					},
 				]
 			}
