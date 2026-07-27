@@ -126,6 +126,9 @@ module.exports = {
 	'photo-report/party-graduation.html': {
 		chunks: ['main', 'partyPage', 'galleryImgLightbox', 'langSwapAlbumReport'],
 	},
+	'photo-report/party-world-cup.html': {
+		chunks: ['main', 'partyPage', 'galleryImgLightbox', 'langSwapAlbumReport'],
+	},
 
 	// Ресторан
 	'restaurant/special-offer.html': {
